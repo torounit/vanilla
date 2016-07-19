@@ -1,0 +1,44 @@
+$app-layout-use-escape: true;
+
+.app-layout {
+	&__header {
+
+		-webkit-overflow-scrolling: touch;
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		.admin-bar & {
+			top: 32px;
+		}
+		z-index: 20;
+		pointer-events: none;
+		overflow: hidden;
+		a,
+		button {
+			pointer-events: auto;
+		}
+
+		width: 100%;
+		box-shadow: 0 2px 2px 0 rgba(#888, .14), 0 3px 1px -2px rgba(#888, .2), 0 1px 5px 0 rgba(#888, .12);
+		transition-delay: 0ms;
+		transition-duration: .28s;
+		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+		transition-property: transform, height, box-shadow;
+	}
+
+	&__content {
+		box-sizing: border-box;
+	}
+
+	& &__header {
+
+		@if $app-layout-use-escape {
+			&--escape {
+				transform: translateY(-100%);
+			}
+		}
+
+	}
+
+}

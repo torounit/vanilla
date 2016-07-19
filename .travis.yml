@@ -11,8 +11,6 @@ cache:
 
 env:
   global:
-    - PHPCS_DIR=/tmp/phpcs
-    - SNIFFS_DIR=/tmp/sniffs
     - GIT_COMMITTER_NAME=torounit
     - GIT_COMMITTER_EMAIL=mail@torounit.com
     - GIT_AUTHOR_NAME=torounit
@@ -22,7 +20,7 @@ env:
 before_script:
   - nvm install 5
   - npm install
-  - npm run build
+  #- npm run build
   - composer install
 
 script:

@@ -1,0 +1,67 @@
+//Typography
+$line-height: 1.8;
+$color-black: #212121;
+$base-font: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+// Gutter
+$gutter: 16px;
+
+// Color
+$color-highlight: #FFF;
+$color-primary: lighten(#B50422, 5%);
+$color-secondary: #4c4c4c;
+$background-color: #f5f5f5;
+
+
+// Media Queries
+$screen-small-min: 567px;
+$screen-medium-min: 768px;
+$screen-large-min: 1000px;
+$screen-xlarge-min: 1200px;
+
+$screen-small-max: $screen-medium-min - 1px;
+$screen-medium-max: $screen-large-min - 1px;
+$screen-large-max: $screen-xlarge-min - 1px;
+
+$screen: "only screen" !default;
+
+$small-up: "#{$screen} and (min-width:#{$screen-small-min})" !default;
+$small-only: "#{$screen} and (min-width:#{$screen-small-min}) and (max-width:#{$screen-small-max})" !default;
+
+$medium-up: "#{$screen} and (min-width:#{$screen-medium-min})" !default;
+$medium-only: "#{$screen} and (min-width:#{$screen-medium-min}) and (max-width:#{$screen-medium-max})" !default;
+
+$large-up: "#{$screen} and (min-width:#{$screen-large-min})" !default;
+$large-only: "#{$screen} and (min-width:#{$screen-large-min}) and (max-width:#{$screen-large-max})" !default;
+
+$xlarge-up: "#{$screen} and (min-width:#{$screen-xlarge-min})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{$screen-xlarge-min})" !default;
+
+
+
+// Bands
+$box-color-highlight:            $color-black;
+$box-color-highlight-background: #FFF;
+$box-color-tint:                 $color-black;
+$box-color-tint-background:      #e0e0e0;
+$box-color-dark:                 #fff;
+$box-color-dark-background:      $color-black;
+$box-color-cloudy:               $color-black;
+$box-color-cloudy-background:    #ddd;
+$box-color-primary:              $color-black;
+$box-color-primary-background:   rgba($color-primary, 0.3);
+$box-color-secondary:            $color-black;
+$box-color-secondary-background: rgba(#ffebc7, 0.3);
+
+// Boxes
+$container-max-width: 1200px;
+$container-gutter: $gutter;
+$container-gutter-medium: 32px;
+
+// Grid
+$grid-gutter: $gutter;
+
+$hamburger-button-width: 44px;
+$hamburger-button-height: 38px;
+$hamburger-button-bar-thickness: 4px;
+$hamburger-button-pad: 10px;

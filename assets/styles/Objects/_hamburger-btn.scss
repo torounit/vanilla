@@ -1,0 +1,81 @@
+// menu Button
+$hamburger-button-width: 52px !default;
+$hamburger-button-height: 46px !default;
+$hamburger-button-bar-thickness: 4px !default;
+$hamburger-button-pad: 14px !default;
+$hamburger-button-trans-delay: 0.2s !default;
+$hamburger-button-color: currentColor !default;
+
+.hamburger-button {
+
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: $hamburger-button-width;
+	height: $hamburger-button-height;
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+
+	&__bars {
+		display: block;
+		position: absolute;
+		top: ($hamburger-button-height / 2) - ($hamburger-button-bar-thickness / 2);
+		left: $hamburger-button-pad;
+		right: $hamburger-button-pad;
+		height: $hamburger-button-bar-thickness;
+		background-color: $hamburger-button-color;
+		transition: background 0s $hamburger-button-trans-delay;
+		&::before, &::after {
+			position: absolute;
+			display: block;
+			left: 0;
+			width: 100%;
+			height: $hamburger-button-bar-thickness;
+			background-color: $hamburger-button-color;
+			content: "";
+			transition-duration: $hamburger-button-trans-delay, $hamburger-button-trans-delay;
+			transition-delay: $hamburger-button-trans-delay, 0s;
+		}
+		&::before {
+			top: -(($hamburger-button-height / 2) - ($hamburger-button-bar-thickness / 2) - $hamburger-button-pad);
+			transition-property: top, transform;
+		}
+		&::after {
+			bottom: -(($hamburger-button-height / 2) - ($hamburger-button-bar-thickness / 2) - $hamburger-button-pad);
+			transition-property: bottom, transform;
+		}
+	}
+
+	&--fixed-pad {
+		margin: -1 * $hamburger-button-pad;
+	}
+
+	&[aria-expanded="true"] &__bars,
+	[aria-expanded="true"] & &__bars {
+		background: none;
+		&::before {
+			top: 0;
+			transform: rotate(45deg);
+		}
+		&::after {
+			bottom: 0;
+			transform: rotate(-45deg);
+		}
+		&::before, &::after {
+			transition-delay: 0s, $hamburger-button-trans-delay;
+		}
+	}
+
+}

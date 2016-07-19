@@ -1,0 +1,52 @@
+.posts-list {
+	margin-top: -16px;
+	margin-bottom: 40px;
+	padding: 0;
+
+	@media #{$small-up} {
+		display: table;
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+
+	&__item {
+		padding: 16px 0;
+		display: block;
+		border-bottom: 1px dotted #575757;
+
+		@media #{$small-up} {
+			display: table-row;
+			padding: 0;
+
+		}
+
+	}
+
+	&__title {
+		display: block;
+	}
+
+	&__date {
+		padding-right: 4em;
+		@media #{$small-up} {
+			width: 1em;
+		}
+
+	}
+
+	&__title,
+	&__date {
+
+		@media #{$small-up} {
+			display: table-cell;
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
+	}
+
+
+	&__categories {
+
+	}
+}

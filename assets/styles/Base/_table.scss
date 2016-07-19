@@ -1,0 +1,42 @@
+// Table
+//
+// Table Base Style.
+//
+// Styleguide 1.7
+
+table {
+	width: 100%;
+}
+
+thead {
+	background-color: #999;
+	color: #FFF;
+}
+tr {
+
+	&:nth-child(2n) {
+		background-color: #f2f2f2;
+	}
+	//display: block;
+	//@media #{$small-up} {
+	//	display: table-row;
+	//	border-bottom: none;
+	//}
+}
+
+th,
+td {
+	padding: 16px 16px;
+	text-align: center;
+	white-space: nowrap;
+	border: 1px solid #fff;
+
+	//display: block;
+	//@media #{$small-up} {
+	//	display: table-cell;
+	//}
+}
+
+th {
+	font-weight: bold;
+}

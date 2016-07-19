@@ -1,0 +1,64 @@
+.pagination {
+
+	margin: 3em 0;
+	text-align: center;
+
+	a {
+		background-image: none;
+	}
+
+
+
+
+
+	.page-numbers {
+		border: 3px solid #212121;
+		width: 2.4em;
+		height: 2.4em;
+		line-height: 2.4em;
+		text-align: center;
+		display: none;
+		font-size: 1.3em;
+		font-weight: bold;
+		color: inherit;
+		@media #{$small-up} {
+			display: inline-block;
+		}
+	}
+
+	.current {
+		background-color: #212121;
+		color: #FFF;
+	}
+
+	.dots,
+	.prev,
+	.next {
+		border: none;
+	}
+
+
+	.prev,
+	.next {
+		background: none;
+		margin: 0 1em;
+		display: inline-block;
+	}
+
+	&__arrow {
+		background: url("../images/arrow.svg") center center no-repeat;
+		background-origin: content-box;
+		width: 2.4em;
+		height: 2.4em;
+		display: inline-block;
+		vertical-align: middle;
+
+		&_prev {
+			transform: rotateZ(-90deg);
+		}
+
+		&_next {
+			transform: rotateZ(90deg);
+		}
+	}
+}

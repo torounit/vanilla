@@ -1,0 +1,40 @@
+$box-color-highlight:            $color-black !default;
+$box-color-highlight-background: #FFF !default;
+$box-color-tint:                 #FFF !default;
+$box-color-tint-background:      #666 !default;
+$box-color-dark:                 #fff !default;
+$box-color-dark-background:      $color-black !default;
+$box-color-cloudy:               $color-black !default;
+$box-color-cloudy-background:    #ddd !default;
+$box-color-primary:              #FFF !default;
+$box-color-primary-background:   $color-primary !default;
+
+
+.box-color {
+
+	&-primary {
+		background-color: $box-color-primary-background;
+		color: $box-color-primary;
+	}
+
+	&-highlight {
+		color: $box-color-highlight;
+		background-color: $box-color-highlight-background;
+	}
+
+	&-cloudy {
+		color: $box-color-cloudy;
+		background-color: $box-color-cloudy-background;
+	}
+
+
+	&-tint {
+		color: $box-color-tint;
+		background-color: $box-color-tint-background;
+	}
+
+	&-dark {
+		color: $box-color-dark;
+		background-color: $box-color-dark-background;
+	}
+}

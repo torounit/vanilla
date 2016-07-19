@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+$base-font: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif !default;
+
+html {
+	font-size: percentage(10/16);
+	min-height: 100%;
+}
+
+body {
+	font-family: $base-font;
+	font-size: 1.5em;
+	color: #333;
+	margin: 0;
+	///background-color: #f8f8f8;
+	line-height: 1.8;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	letter-spacing: .05rem;
+	text-align: justify;
+	-webkit-font-smoothing: subpixel-antialiased;
+
+}
+
+hr {
+	border: none;
+	border-top: #666 3px solid;
+
+	width: 80%;
+	margin: 20px auto;
+	clear: both;
+}
+
+strong {
+	font-weight: bold;
+}
+
+p {
+	margin: 1.2em 0;
+}

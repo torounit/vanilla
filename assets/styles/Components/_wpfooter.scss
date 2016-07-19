@@ -1,0 +1,26 @@
+.wpfooter {
+
+	overflow: hidden;
+	padding-top: 24px;
+	font-size: 0.8em;
+
+	&__social-links {
+		margin: 0;
+		font-size: 2em;
+		a {
+			color: inherit;
+		}
+	}
+
+	&__logo {
+		width: 150px;
+		@media #{$medium-up} {
+			width: 200px;
+		}
+
+		img,
+		svg {
+			display: block;
+		}
+	}
+}

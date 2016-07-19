@@ -1,0 +1,39 @@
+.side-menu {
+	background-color: #111;
+	color: #FFF;
+
+
+	&__close-button {
+
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+	&__links {
+		margin: 50px 0;
+		ul,
+		li {
+			width: 100%;
+			padding: 0;
+			list-style: none;
+		}
+		a {
+			color: inherit;
+			display: block;
+			padding: 10px 20px;
+			text-decoration: none;
+
+		}
+
+		li.current_page_item,
+		li:hover {
+			a {
+
+				background-color: $color-primary;
+			}
+		}
+	}
+
+
+}

@@ -1,0 +1,74 @@
+
+// Heading
+//
+// Markup:
+// <h1>h1</h1>
+// <h2>h2</h2>
+// <h3>h3</h3>
+// <h4>h4</h4>
+// <h5>h5</h5>
+// <h6>h6</h6>
+//
+// Styleguide 1.2
+
+@mixin heading-font-size( $size ) {
+
+	font-size: $size;
+	@media #{$medium-up} {
+		font-size: $size*1.2;
+	}
+}
+
+h1 {
+	@include heading-font-size(1.67em);
+	margin: 0.5em 0;
+}
+
+h2 {
+	clear: both;
+	box-sizing: border-box;
+	padding-top: 2.2em;
+	margin: 0 0 1em;
+	font-weight: normal;
+	@include heading-font-size(1.5em);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+
+}
+
+h3 {
+	clear: both;
+	box-sizing: border-box;
+	display: table;
+	padding-top: 2em;
+	margin: 0 0 1.1em;
+	font-weight: bold;
+	@include heading-font-size(1.38em);
+	border-bottom: 1px solid currentColor;
+
+}
+
+h4 {
+	clear: both;
+	font-weight: bold;
+	padding-top: 2em;
+	margin-top: 0;
+	margin-bottom: 0.8em;
+	@include heading-font-size(1.15em);
+}
+
+h5 {
+	clear: both;
+	font-weight: bold;
+	margin-top: 0;
+	padding-top: 2em;
+	margin-bottom: 0.8em;
+	@include heading-font-size(1em);
+}
+
+h6 {
+	clear: both;
+	font-weight: normal;
+	padding-top: 2em;
+	margin: 0 0 1.2em;
+	@include heading-font-size(1em);
+}

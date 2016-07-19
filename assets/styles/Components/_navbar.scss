@@ -1,0 +1,51 @@
+.navbar {
+	display: flex;
+	flex: 100% 1 0;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		max-width: 40%;
+		order: 1;
+		margin: 0;
+		height: 30px;
+		transition-duration: .2s;
+		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+		transition-property: height;
+
+		&--large {
+			height: 45px;
+		}
+
+		a {
+			color: inherit;
+		}
+
+		svg,
+		img {
+			width: auto;
+			height: 100%;
+			display: block;
+
+		}
+	}
+
+	.app-layout__header--compact & {
+		&__logo {
+			height: 30px;
+			img {
+
+			}
+		}
+	}
+
+	&__drawer-button {
+
+		white-space: nowrap;
+		order: 20;
+		color: inherit;
+		font-size: 1.6rem;
+		font-weight: normal;
+
+	}
+}

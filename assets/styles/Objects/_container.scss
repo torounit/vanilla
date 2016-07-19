@@ -1,0 +1,27 @@
+$container-max-width: 1200px !default;
+$container-gutter: 20px !default;
+$container-gutter-small: $container-gutter !default;
+$container-gutter-medium: $container-gutter-small !default;
+$container-gutter-large: $container-gutter-medium !default;
+
+.container {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 $container-gutter;
+	max-width: $container-max-width;
+
+	//overflow: hidden;
+
+	@media #{$small-up} {
+		padding: 0 $container-gutter-small;
+	}
+
+	@media #{$medium-up} {
+		padding: 0 $container-gutter-medium;
+	}
+
+	@media #{$large-up} {
+		padding: 0 $container-gutter-large;
+	}
+
+}

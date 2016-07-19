@@ -1,0 +1,35 @@
+.text-center {
+	text-align: center;
+}
+
+.text-inherit {
+	color: inherit;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-primary {
+	color: $color-primary;
+}
+
+.text-highlight {
+	color: $color-highlight;
+}
+
+.text-large {
+	font-size: 1.3em;
+}
+
+.text-xlarge {
+	font-size: 1.5em;
+}
+
+.text-shadow {
+	text-shadow: 0 0 5px rgba(0, 0, 0, .7);
+}
