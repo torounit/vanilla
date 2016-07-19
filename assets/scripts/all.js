@@ -24,7 +24,7 @@ $(function() {
 	});
 
 	let $appLayout = $(".app-layout");
-	new HeaderClassController( $appLayout, "app-layout__header--fixed", 300 );
+	new HeaderClassController( $appLayout, "app-layout__header--fixed", 46 );
 	new HeaderEscaper( $appLayout, "app-layout__header--escape", 150 );
 	new ContentSpacer( $appLayout );
 

@@ -3,6 +3,8 @@ $app-layout-use-escape: true;
 .app-layout {
 	&__header {
 
+		background: #FFF;
+
 		-webkit-overflow-scrolling: touch;
 		position: fixed;
 		left: 0;
@@ -10,7 +12,19 @@ $app-layout-use-escape: true;
 
 		.admin-bar & {
 			padding-top: 46px;
+			position: absolute;
+
+			&--fixed {
+				padding-top: 0px;
+				position: fixed;
+			}
+			
+			@media #{$small-up} {
+				position: fixed;
+				padding-top: 46px;
+			}
 			@media #{$medium-up} {
+				position: fixed;
 				padding-top: 32px;
 			}
 		}
