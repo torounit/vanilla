@@ -3,9 +3,9 @@
 import $ from 'jquery';
 
 import Drawer from './Drawer';
+import HeaderClassController from './AppLayout/HeaderClassController';
 import HeaderEscaper from './AppLayout/HeaderEscaper';
-import ContentSpacer from './AppLayout/ContentSpacer';
-
+import ContentSpacer from './AppLayout/ContentSpacer'
 
 $(function() {
 
@@ -24,8 +24,10 @@ $(function() {
 	});
 
 	let $appLayout = $(".app-layout");
+	new HeaderClassController( $appLayout, "app-layout__header--fixed", 300 );
 	new HeaderEscaper( $appLayout, "app-layout__header--escape", 150 );
 	new ContentSpacer( $appLayout );
+
 
 
 });

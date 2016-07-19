@@ -5,11 +5,14 @@ $app-layout-use-escape: true;
 
 		-webkit-overflow-scrolling: touch;
 		position: fixed;
-		top: 0;
 		left: 0;
+		top: 0;
 
 		.admin-bar & {
-			top: 32px;
+			padding-top: 46px;
+			@media #{$medium-up} {
+				padding-top: 32px;
+			}
 		}
 		z-index: 20;
 		pointer-events: none;

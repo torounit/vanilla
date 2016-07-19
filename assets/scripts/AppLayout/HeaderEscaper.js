@@ -18,7 +18,7 @@ export default class extends HeaderClassController {
 			this.$header.removeClass( this.classString );
 			this.$header.attr('aria-hidden', 'false');
 		}
-		else if( Math.abs( currentPos - this.scrollPos ) > 40 ) {
+		else if( Math.abs( currentPos - this.scrollPos ) > 10 ) {
 			if ( currentPos > this.scrollPos ) {
 				this.$header.addClass( this.classString );
 				this.$header.attr('aria-hidden', 'true');
