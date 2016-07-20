@@ -3,60 +3,6 @@
 .band {
 	background-size: cover;
 	background-position: center;
-//	margin: 32px 0;
-	padding:16px 0;
-
-	@media #{$small-up} {
-//		margin: 48px 0;
-		padding:24px 0;
-	}
-
-	@media #{$medium-up} {
-//		margin: 64px 0;
-		padding:32px 0;
-	}
-
-	@media #{$large-up} {
-//		margin: 96px 0;
-		padding:48px 0;
-	}
-
-	&--fat {
-		padding: 32px 0;
-
-		@media #{$small-up} {
-			padding: 48px 0;
-		}
-
-		@media #{$medium-up} {
-			padding: 64px 0;
-		}
-
-		@media #{$large-up} {
-			padding: 96px 0;
-		}
-	}
-
-
-	&--fixed-bg {
-		background-position: center center;
-		@media #{$large-up} {
-			background-attachment: fixed;
-		}
-
-	}
-
-	&--primary {
-		background-color: $box-color-primary-background;
-		color: $box-color-primary;
-	}
-
-	&--secondary {
-		background-color: $box-color-secondary-background;
-		color: $box-color-secondary;
-	}
-
-
 	&--highlight {
 		color: $box-color-highlight;
 		background-color: $box-color-highlight-background;
