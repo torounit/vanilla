@@ -11,7 +11,7 @@
 // Styleguide 1.2
 
 h1 {
-	font-size: 1.67em;
+	font-size: 2em;
 	margin: 0.5em 0;
 }
 
@@ -19,9 +19,8 @@ h2 {
 	clear: both;
 	box-sizing: border-box;
 	margin: 2em 0 1em;
-	font-weight: normal;
-	font-size: 1.5em;
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	font-size: 1.7em;
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
 
 }
 
@@ -29,7 +28,7 @@ h3 {
 	margin: 2em 0 1em;
 	font-weight: bold;
 	font-size: 1.38em;
-	border-bottom: 1px solid currentColor;
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
 
 }
 

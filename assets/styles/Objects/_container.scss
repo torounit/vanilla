@@ -5,7 +5,7 @@ $container-gutter-medium: $container-gutter-small !default;
 $container-gutter-large: $container-gutter-medium !default;
 
 .container {
-	box-sizing: border-box;
+	box-sizing: content-box;
 	margin: 0 auto;
 	padding: 0 $container-gutter;
 	max-width: $container-max-width;

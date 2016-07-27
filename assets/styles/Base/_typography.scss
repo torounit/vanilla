@@ -1,35 +1,24 @@
 @charset "UTF-8";
 
-$base-font: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif !default;
-
 html {
 	font-size: percentage(10/16);
 	min-height: 100%;
 }
 
 body {
-	font-family: $base-font;
-	overflow-x: hidden;
-	font-size: 1.5em;
-	color: #333;
+	font-family:  "Yu Gothic Medium", "游ゴシック体", YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif ;
 	margin: 0;
-	///background-color: #f8f8f8;
+
+	//overflow-x: hidden;
+	font-size: 1.6em;
+	color: #333;
+	background-color: #fff;
 	line-height: 1.8;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
-	letter-spacing: .05rem;
-	text-align: justify;
+	//letter-spacing: .05rem;
+	//text-align: justify;
 	-webkit-font-smoothing: subpixel-antialiased;
-
-}
-
-hr {
-	border: none;
-	border-top: #666 3px solid;
-
-	width: 80%;
-	margin: 20px auto;
-	clear: both;
 }
 
 strong {
@@ -38,4 +27,11 @@ strong {
 
 p {
 	margin: 1.2em 0;
+}
+
+pre {
+	overflow: scroll;
+	background: #EEE;
+	margin: 1.2em 0;
+	padding: 1em;
 }

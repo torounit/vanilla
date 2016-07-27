@@ -24,12 +24,12 @@
 <div id="page" class="site [ app-layout ]" data-app-layout-header=".app-layout__header" data-app-layout-content=".app-layout__content" data-app-layout-scroll-area="window">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'components-portfolio' ); ?></a>
 
-	<div class="app-layout__header band band--highlight"  aria-hidden="false">
+	<div class="app-layout__header"  aria-hidden="false">
 		<div class="container">
-			<header id="masthead" class="site-header wpheader" role="banner">
+			<header id="masthead" class="site-header [ wpheader ]" role="banner">
 				<div class="site-branding">
 					<h1 class="site-title [ wpheader__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					<p class="site-description [ wpheader__description ]"><?php bloginfo( 'description' ); ?></p>
 				</div><!-- .site-branding -->
 				<?php the_custom_logo(); ?>
 

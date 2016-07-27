@@ -7,18 +7,12 @@
 		background-image: none;
 	}
 
-
-
-
-
 	.page-numbers {
-		border: 3px solid #212121;
-		width: 2.4em;
-		height: 2.4em;
-		line-height: 2.4em;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
 		text-align: center;
 		display: none;
-		font-size: 1.3em;
 		font-weight: bold;
 		color: inherit;
 		@media #{$small-up} {
@@ -27,7 +21,7 @@
 	}
 
 	.current {
-		background-color: #212121;
+		background-color: #333;
 		color: #FFF;
 	}
 
@@ -37,7 +31,6 @@
 		border: none;
 	}
 
-
 	.prev,
 	.next {
 		background: none;
@@ -46,10 +39,10 @@
 	}
 
 	&__arrow {
-		background: url("../images/arrow.svg") center center no-repeat;
+		background: url("assets/images/arrow.svg") center center no-repeat;
 		background-origin: content-box;
-		width: 2.4em;
-		height: 2.4em;
+		width: 100%;
+		height: 100%;
 		display: inline-block;
 		vertical-align: middle;
 

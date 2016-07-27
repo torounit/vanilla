@@ -23,9 +23,7 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'vanilla-featured-image', 640, 9999 );
-		add_image_size( 'vanilla-featured-image', 800, 9999 );
-
+		add_image_size( 'vanilla-featured-image', 1200, 9999 );
 
 		/**
 		 * Add support for core custom logo.
@@ -78,7 +76,7 @@ add_action( 'after_setup_theme', 'vanilla_setup' );
  * @global int $content_width
  */
 function vanilla_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'vanilla_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'vanilla_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'vanilla_content_width', 0 );
 
@@ -152,7 +150,7 @@ if ( ! function_exists( 'vanilla_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			esc_html_x( 'Posted on %s', 'post date', 'vanilla' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
 		);
 
 		$byline = sprintf(

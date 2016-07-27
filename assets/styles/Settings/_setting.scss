@@ -7,10 +7,6 @@ $base-font: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 $gutter: 16px;
 
 // Color
-$color-highlight: #FFF;
-$color-primary: lighten(#B50422, 5%);
-$color-secondary: #4c4c4c;
-$background-color: #f5f5f5;
 
 
 // Media Queries
@@ -37,21 +33,6 @@ $large-only: "#{$screen} and (min-width:#{$screen-large-min}) and (max-width:#{$
 $xlarge-up: "#{$screen} and (min-width:#{$screen-xlarge-min})" !default;
 $xlarge-only: "#{$screen} and (min-width:#{$screen-xlarge-min})" !default;
 
-
-
-// Bands
-$box-color-highlight:            $color-black;
-$box-color-highlight-background: #FFF;
-$box-color-tint:                 $color-black;
-$box-color-tint-background:      #e0e0e0;
-$box-color-dark:                 #fff;
-$box-color-dark-background:      $color-black;
-$box-color-cloudy:               $color-black;
-$box-color-cloudy-background:    #ddd;
-$box-color-primary:              $color-black;
-$box-color-primary-background:   rgba($color-primary, 0.3);
-$box-color-secondary:            $color-black;
-$box-color-secondary-background: rgba(#ffebc7, 0.3);
 
 // Boxes
 $container-max-width: 1200px;

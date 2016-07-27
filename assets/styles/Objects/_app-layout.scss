@@ -1,7 +1,9 @@
 $app-layout-use-escape: true;
 
 .app-layout {
+	background-color: inherit;
 	&__header {
+		background-color: inherit;
 
 		-webkit-overflow-scrolling: touch;
 		position: fixed;

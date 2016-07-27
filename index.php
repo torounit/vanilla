@@ -4,37 +4,42 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package vanilla-portfolio
+ * @package vanilla
  */
 
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<?php
-			if ( have_posts() ) :
-				if ( is_home() && ! is_front_page() ) : ?>
-					<header>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-					</header>
-					<?php
-				endif;
+			<div class="container">
+				<?php
+				if ( have_posts() ) :
+					if ( is_home() && ! is_front_page() ) : ?>
+						<header>
+							<h1 class="site-main__title screen-reader-text"><?php single_post_title(); ?></h1>
 
-				while ( have_posts() ) : the_post(); ?>
+						</header>
+						<?php
+					endif;
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php if ( get_the_post_thumbnail() ) : ?>
-							<div class="post-thumbnail">
-								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail( 'vanilla-featured-image' ); ?>
-								</a>
-							</div>
-						<?php endif; ?>
-						<div class="container">
-							<header class="entry-header">
-								<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+					while ( have_posts() ) : the_post(); ?>
+
+						<article id="post-<?php the_ID(); ?>" <?php post_class("entry"); ?>>
+							<?php if ( get_the_post_thumbnail() ) : ?>
+								<div class="post-thumbnail">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail( 'vanilla-featured-image' ); ?>
+									</a>
+								</div>
+							<?php endif; ?>
+
+							<header class="entry-header entry__header">
+								<h1 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h1>
+								<div class="entry__meta">
+									<?php vanilla_posted_on();?>
+								</div>
 
 							</header>
-							<div class="entry-content">
+							<div class="entry-content entry__content">
 								<?php
 								the_content();
 
@@ -45,25 +50,31 @@ get_header(); ?>
 								?>
 							</div>
 
-							<div class="entry-meta">
-								<?php vanilla_posted_on();?>
-							</div>
+						</article><!-- #post-## -->
 
-						</div>
+						<?php
 
+					endwhile;
+					?>
+					<div class="pagination">
+						<?php
+						the_posts_pagination( [
+							'prev_text' => '<span class="pagination__arrow pagination__arrow_prev"><span class="screen-reader-text">Prev</span></span>',
+							'next_text' => '<span class="pagination__arrow pagination__arrow_next"><span class="screen-reader-text">Next</span></span>',
+						]);?>
+					</div>
 
-					</article><!-- #post-## -->
 
 					<?php
 
-				endwhile;
 
-				the_posts_navigation();
 
-			else :
-				//for not found.
+				else :
+					//for not found.
 
-			endif; ?>
+				endif; ?>
+
+			</div>
 
 		</main>
 	</div>
