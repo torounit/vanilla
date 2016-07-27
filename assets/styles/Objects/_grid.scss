@@ -75,17 +75,6 @@ $colslist: 1, 2, 3, 4, 5, 6, 7, 12;
 			}
 		}
 
-		@media #{$xlarge-up} {
-			&--xlarge {
-				@each $cols in $colslist {
-					@for $i from 1 through $cols {
-						&-#{$i}-#{$cols} {
-							@include grid-sizer(percentage($i/$cols));
-						}
-					}
-				}
-			}
-		}
 	}
 
 	&--center {

@@ -12,13 +12,6 @@ get_header(); ?>
 		<main id="main" class="container site-main" role="main">
 			<?php
 			if ( have_posts() ) :
-				if ( is_home() && ! is_front_page() ) : ?>
-					<header>
-						<h1 class="site-main__title screen-reader-text"><?php single_post_title(); ?></h1>
-					</header>
-					<?php
-				endif;
-
 				while ( have_posts() ) : the_post(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class("entry"); ?>>
@@ -41,7 +34,12 @@ get_header(); ?>
 							</header>
 							<div class="entry-content entry__content">
 								<?php
-								the_excerpt();
+								the_content();
+
+								wp_link_pages( array(
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'vanilla' ),
+									'after'  => '</div>',
+								) );
 								?>
 							</div>
 
@@ -65,7 +63,7 @@ get_header(); ?>
 
 
 				<?php
-
+			
 			else :
 				//for not found.
 

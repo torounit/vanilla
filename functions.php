@@ -23,7 +23,11 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'vanilla-featured-image', 1200, 9999 );
+		add_image_size( 'vanilla-featured-image', 1000, 9999 );
+
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary Menu', 'vanilla' ),
+		) );
 
 		/**
 		 * Add support for core custom logo.
@@ -76,7 +80,7 @@ add_action( 'after_setup_theme', 'vanilla_setup' );
  * @global int $content_width
  */
 function vanilla_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'vanilla_content_width', 1200 );
+	$GLOBALS['content_width'] = apply_filters( 'vanilla_content_width', 1000 );
 }
 add_action( 'after_setup_theme', 'vanilla_content_width', 0 );
 

@@ -18,11 +18,12 @@ export default class ContentSpacer {
 	}
 
 	on() {
-		$(window).on( 'load resize', () => this.setPadding() );
+		$(window).on( 'load resize', () => {
+			this.setPadding()
+		} );
 	}
 
 	setPadding() {
-		console.log('set');
 		this.$content.css({paddingTop: this.getHeaderHeight() + 'px'});
 	}
 

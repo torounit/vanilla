@@ -5,6 +5,9 @@ $base-font: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 
 // Gutter
 $gutter: 16px;
+$gutter-small: 16px;
+$gutter-medium: 32px;
+$gutter-large: 32px;
 
 // Color
 
@@ -13,11 +16,9 @@ $gutter: 16px;
 $screen-small-min: 600px;
 $screen-medium-min: 782px;
 $screen-large-min: 1000px;
-$screen-xlarge-min: 1200px;
 
 $screen-small-max: $screen-medium-min - 1px;
 $screen-medium-max: $screen-large-min - 1px;
-$screen-large-max: $screen-xlarge-min - 1px;
 
 $screen: "only screen" !default;
 
@@ -28,14 +29,10 @@ $medium-up: "#{$screen} and (min-width:#{$screen-medium-min})" !default;
 $medium-only: "#{$screen} and (min-width:#{$screen-medium-min}) and (max-width:#{$screen-medium-max})" !default;
 
 $large-up: "#{$screen} and (min-width:#{$screen-large-min})" !default;
-$large-only: "#{$screen} and (min-width:#{$screen-large-min}) and (max-width:#{$screen-large-max})" !default;
-
-$xlarge-up: "#{$screen} and (min-width:#{$screen-xlarge-min})" !default;
-$xlarge-only: "#{$screen} and (min-width:#{$screen-xlarge-min})" !default;
-
+$large-only: "#{$screen} and (min-width:#{$screen-large-min})" !default;
 
 // Boxes
-$container-max-width: 1200px;
+$container-max-width: 1000px;
 $container-gutter: $gutter;
 $container-gutter-medium: 32px;
 

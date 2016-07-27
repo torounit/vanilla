@@ -4,11 +4,14 @@ $app-layout-use-escape: true;
 	background-color: inherit;
 	&__header {
 		background-color: inherit;
-
 		-webkit-overflow-scrolling: touch;
 		position: fixed;
 		left: 0;
 		top: 0;
+
+		.app-layout--disable & {
+			position: relative;
+		}
 
 		.admin-bar & {
 			padding-top: 46px;
@@ -28,8 +31,8 @@ $app-layout-use-escape: true;
 				padding-top: 32px;
 			}
 		}
-		z-index: 20;
-		pointer-events: none;
+		z-index: 2;
+		pointer-events: visible;
 		overflow: hidden;
 		a,
 		button {

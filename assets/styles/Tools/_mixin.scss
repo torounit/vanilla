@@ -18,3 +18,20 @@
 	transition: color .1s ease-in 0s;
 	-webkit-font-smoothing: antialiased;
 }
+
+@mixin gutter( $prop ) {
+
+	#{$prop}: $gutter;
+
+	@media #{$small-up} {
+		#{$prop}: $gutter-small;
+	}
+
+	@media #{$medium-up} {
+		#{$prop}: $gutter-medium;
+	}
+
+	@media #{$large-up} {
+		#{$prop}: $gutter-large;
+	}
+}

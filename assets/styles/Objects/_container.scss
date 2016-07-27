@@ -1,8 +1,4 @@
 $container-max-width: 1200px !default;
-$container-gutter: 16px !default;
-$container-gutter-small: $container-gutter !default;
-$container-gutter-medium: $container-gutter-small !default;
-$container-gutter-large: $container-gutter-medium !default;
 
 .container {
 	box-sizing: content-box;
@@ -12,16 +8,7 @@ $container-gutter-large: $container-gutter-medium !default;
 
 	//overflow: hidden;
 
-	@media #{$small-up} {
-		padding: 0 $container-gutter-small;
-	}
-
-	@media #{$medium-up} {
-		padding: 0 $container-gutter-medium;
-	}
-
-	@media #{$large-up} {
-		padding: 0 $container-gutter-large;
-	}
+	@include gutter( padding-left );
+	@include gutter( padding-right );
 
 }

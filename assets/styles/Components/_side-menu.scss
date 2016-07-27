@@ -1,17 +1,9 @@
 .side-menu {
-	background-color: #111;
-	color: #FFF;
-
-
-	&__close-button {
-
-		position: absolute;
-		right: 10px;
-		top: 10px;
-	}
 
 	&__links {
-		margin: 50px 0;
+		ul {
+			margin: 0;
+		}
 		ul,
 		li {
 			width: 100%;
