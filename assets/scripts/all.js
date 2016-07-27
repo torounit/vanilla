@@ -23,6 +23,24 @@ $(function() {
 		return false;
 	});
 
+	$(".sub-menu,.children").each(function () {
+		//set default height for animation
+		let height = $(this).height();
+		$(this).height( height );
+
+		$(this).attr('aria-expanded',"false");
+	}).on( 'click', function (event) {
+		event.stopPropagation();
+		if( 'true' == $(this).attr('aria-expanded')  ) {
+			$(this).attr('aria-expanded',"false");
+		}
+		else {
+			$(this).attr('aria-expanded',"true");
+		}
+
+	});
+
+
 	let $appLayout = $(".app-layout");
 	$(window).on( 'load resize', () => {
 		$appLayout.removeClass("app-layout--disable");

@@ -1,8 +1,11 @@
 .side-menu {
 
 	&__links {
-		ul {
+		padding: 0;
+		margin: 0;
+		> ul {
 			margin: 0;
+			padding: 0;
 		}
 		ul,
 		li {
@@ -13,9 +16,48 @@
 		a {
 			color: inherit;
 			display: block;
-			padding: 10px 20px;
+			padding: 16px;
 			text-decoration: none;
+			border-bottom: 1px solid rgba(0,0,0,.1);
 
+		}
+
+		li {
+
+			position: relative;
+			.sub-menu,
+			.children {
+
+				overflow: hidden;
+				transition: height 0.2s ease-out 0s;
+
+				&[aria-expanded="false"] {
+					height: 0 !important;
+				}
+
+				&[aria-expanded="true"] {
+					height: auto;
+				}
+
+				//toggle button
+				&::before {
+					font-family: "dashicons";
+					line-height: 1;
+					font-size: 1.75em;
+					content: "\f140";
+					position: absolute;
+					top: 0;
+					padding: 16px;
+					right: 0;
+					transform: rotateZ(0deg);
+					transition: transform 0.2s ease-out 0s;
+					cursor: pointer;
+				}
+
+				&[aria-expanded="true"]::before {
+					transform: rotateZ(180deg);
+				}
+			}
 		}
 
 		li.current_page_item,
@@ -24,6 +66,8 @@
 			}
 		}
 	}
+
+
 
 
 }
