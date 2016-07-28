@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( "entry" ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 	<?php if ( get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail entry__featured-image">
 			<a href="<?php the_permalink(); ?>">
@@ -18,7 +18,7 @@
 
 		<div class="entry-content entry__content">
 			<?php
-			if (is_singular()) {
+			if ( is_singular() ) {
 				the_content();
 
 				wp_link_pages( array(
@@ -28,8 +28,7 @@
 					'link_after'  => '</span>',
 
 				) );
-			}
-			else {
+			} else {
 				the_excerpt();
 			}
 			?>

@@ -92,7 +92,7 @@ function vanilla_scripts() {
 	wp_enqueue_style( 'vanilla-style', get_stylesheet_uri(), array( 'dashicons' ) );
 	wp_enqueue_script( 'vanilla-bundle', get_template_directory_uri() . '/bundle.js', array(
 		'jquery',
-		'underscore'
+		'underscore',
 	), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

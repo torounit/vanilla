@@ -22,10 +22,10 @@
 
 <body <?php body_class(); ?>>
 <nav class="drawer"
-     data-drawer
-     data-drawer-container-selector="body"
-     id="primary-menu"
-     aria-expanded="false">
+	 data-drawer
+	 data-drawer-container-selector="body"
+	 id="primary-menu"
+	 aria-expanded="false">
 
 	<div class="drawer__body primary-menu">
 

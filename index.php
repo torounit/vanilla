@@ -17,12 +17,12 @@ get_header(); ?>
 				<section>
 					<header class="container">
 						<h1 class="site-main__title "><?php the_archive_title(); ?></h1>
-						<p><?php term_description();?></p>
+						<p><?php echo term_description();?></p>
 					</header>
 					<?php
 					while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'template-parts/content');?>
+						<?php get_template_part( 'template-parts/content' );?>
 
 						<?php
 
@@ -41,8 +41,7 @@ get_header(); ?>
 				<?php
 
 			else :
-				//for not found.
-
+				// for not found.
 			endif; ?>
 
 		</main>
