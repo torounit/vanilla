@@ -27,48 +27,49 @@
      id="primary-menu"
      aria-expanded="false">
 
-	<div class="drawer__body side-menu">
+	<div class="drawer__body primary-menu">
 
 		<?php wp_nav_menu( [
 			'theme_location' => 'primary',
-			'menu_class' => 'side-menu__links',
+			'menu_class' => 'primary-menu__links',
 		] );?>
 
 
 	</div>
 </nav>
-<div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-content=".app-layout__content" data-app-layout-scroll-area="window">
+<div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".site-header" data-app-layout-scroll-area="window">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'components-portfolio' ); ?></a>
 
-	<div class="app-layout__header"  aria-hidden="false">
-		<div class="container">
-			<header id="masthead" class="site-header [ wpheader ]" role="banner">
+	<div class="app-layout__header" aria-hidden="false">
+		<div class="">
 
-				<div class="navbar">
-					<div  class="navbar__branding">
-						<div class="site-branding">
-							<h1 class="site-title [ site-branding__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<p class="site-description [ site-branding__description ]"><?php bloginfo( 'description' ); ?></p>
-						</div><!-- .site-branding -->
-						<?php the_custom_logo(); ?>
-
-					</div>
-
-					<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
-						<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
-						<span class="screen-reader-text">menu</span>
-					</button>
+			<div class="container navbar">
+				<div  class="navbar__branding">
+					<?php the_custom_logo(); ?>
 				</div>
 
+				<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
+					<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
+					<span class="screen-reader-text">menu</span>
+				</button>
+			</div>
 
-
-
-			</header>
 		</div>
 
 	</div>
 
 	<div id="content" class="site-content [ app-layout__content ]">
 
+		<header id="masthead" class="site-header" role="banner">
+			<div class="container">
+				<div class="site-branding">
+					<h1 class="site-title [ site-branding__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<p class="site-description [ site-branding__description ]"><?php bloginfo( 'description' ); ?></p>
+				</div><!-- .site-branding -->
+
+			</div>
+
+
+		</header>
 
 

@@ -5,4 +5,8 @@
 	@include gutter( margin-top );
 	@include gutter( margin-bottom );
 
+	&__title {
+		font-size: 1.3em;
+		font-weight: normal;
+	}
 }

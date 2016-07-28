@@ -10,60 +10,34 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="container site-main" role="main">
+			<?php do_action( 'vanilla_site_main_prepend' );?>
+
 			<?php
-			if ( have_posts() ) :
-				if ( is_home() && ! is_front_page() ) : ?>
-					<header>
-						<h1 class="site-main__title screen-reader-text"><?php single_post_title(); ?></h1>
+			if ( have_posts() ) :?>
+				<section>
+					<header class="container">
+						<h1 class="site-main__title "><?php the_archive_title(); ?></h1>
+						<p><?php term_description();?></p>
 					</header>
 					<?php
-				endif;
+					while ( have_posts() ) : the_post(); ?>
 
-				while ( have_posts() ) : the_post(); ?>
+						<?php get_template_part( 'template-parts/content');?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class("entry"); ?>>
-						<?php if ( get_the_post_thumbnail() ) : ?>
-							<div class="post-thumbnail entry__featured-image">
-								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail( 'vanilla-featured-image' ); ?>
-								</a>
-							</div>
-						<?php endif; ?>
+						<?php
 
-						<div class="entry__body">
-
-							<header class="entry-header entry__header">
-								<h1 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h1>
-								<div class="entry__meta">
-									<?php vanilla_posted_on();?>
-								</div>
-
-							</header>
-							<div class="entry-content entry__content">
-								<?php
-								the_excerpt();
-								?>
-							</div>
-
-						</div>
-
-
-
-					</article><!-- #post-## -->
-
-					<?php
-
-				endwhile;
-				?>
-				<div class="pagination">
+					endwhile;
+					?>
 					<?php
 					the_posts_pagination( [
 						'prev_text' => '<span class="pagination__arrow pagination__arrow_prev"><span class="screen-reader-text">Prev</span></span>',
 						'next_text' => '<span class="pagination__arrow pagination__arrow_next"><span class="screen-reader-text">Next</span></span>',
-					]);?>
-				</div>
+						'before_page_number' => '<span class="pagination__numbers">',
+						'after_page_number' => '</span>',
 
+					] ); ?>
 
+				</section>
 				<?php
 
 			else :

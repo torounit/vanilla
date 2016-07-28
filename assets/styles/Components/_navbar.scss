@@ -3,7 +3,20 @@
 	flex: 100% 1 0;
 	justify-content: space-between;
 	align-items: center;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	//@include gutter( padding-left );
 
+
+
+	&__branding {
+		width: 48px;
+		//padding: 8px;
+		height: auto;
+		img {
+			display: block;
+		}
+	}
 
 
 	//&__logo {
@@ -42,12 +55,13 @@
 	//}
 
 	&__drawer-button {
-
+		margin: 0.5em 0;
 		white-space: nowrap;
 		order: 20;
 		padding: 8px;
 		color: inherit;
 		font-size: 1.6rem;
+		border: none;
 		font-weight: normal;
 
 	}

@@ -5,7 +5,8 @@ import $ from 'jquery';
 import Drawer from './Drawer';
 import HeaderClassController from './AppLayout/HeaderClassController';
 import HeaderEscaper from './AppLayout/HeaderEscaper';
-import ContentSpacer from './AppLayout/ContentSpacer'
+import ContentSpacer from './AppLayout/ContentSpacer';
+import './skip-link-focus-fix';
 
 $(function() {
 
@@ -25,8 +26,8 @@ $(function() {
 
 	$(".sub-menu,.children").each(function () {
 		//set default height for animation
-		let height = $(this).height();
-		$(this).height( height );
+		// let height = $(this).height();
+		// $(this).height( height );
 
 		$(this).attr('aria-expanded',"false");
 	}).on( 'click', function (event) {

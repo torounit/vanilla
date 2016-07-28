@@ -1,4 +1,4 @@
-.side-menu {
+.primary-menu {
 
 	&__links {
 		padding: 0;
@@ -27,7 +27,6 @@
 			position: relative;
 			.sub-menu,
 			.children {
-
 				overflow: hidden;
 				transition: height 0.2s ease-out 0s;
 
@@ -42,6 +41,7 @@
 				//toggle button
 				&::before {
 					font-family: "dashicons";
+					opacity: 0.6;
 					line-height: 1;
 					font-size: 1.75em;
 					content: "\f140";

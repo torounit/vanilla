@@ -1,15 +1,14 @@
 // menu Button
-$hamburger-button-width: 40px !default;
-$hamburger-button-height: 32px !default;
+$hamburger-button-width: 24px !default;
+$hamburger-button-height: 16px !default;
 $hamburger-button-bar-thickness: 2px !default;
-$hamburger-button-pad: 8px !default;
+$hamburger-button-pad: 0 !default;
 $hamburger-button-trans-delay: 0.2s !default;
 $hamburger-button-color: currentColor !default;
 
 .hamburger-button {
-
 	background-color: transparent;
-	display: inline-block;
+	display: block;
 	vertical-align: middle;
 	position: relative;
 	overflow: hidden;
