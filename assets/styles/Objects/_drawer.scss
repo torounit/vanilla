@@ -30,6 +30,15 @@ $drawer-size: 280px !default;
 
 		transform: translate(100%, 0);
 		transition: transform 0.2s ease-out 0s;
+
+		// for WordPress
+		.admin-bar & {
+			padding-top: 46px;
+			@media #{$medium-up} {
+				position: fixed;
+				padding-top: 32px;
+			}
+		}
 	}
 
 	&[aria-expanded="true"] &__body {

@@ -18,8 +18,6 @@ get_header(); ?>
 
 				endwhile;
 
-			else :
-				// for not found.
 			endif; ?>
 
 		</main>

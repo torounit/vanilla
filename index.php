@@ -15,10 +15,13 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) :?>
 				<section>
-					<header class="container">
-						<h1 class="site-main__title "><?php the_archive_title(); ?></h1>
-						<p><?php echo term_description();?></p>
-					</header>
+					<div class="container">
+						<header class="main-header">
+							<h1 class="main-header__title"><?php the_archive_title(); ?></h1>
+							<?php echo term_description();?>
+						</header>
+					</div>
+
 					<?php
 					while ( have_posts() ) : the_post(); ?>
 
