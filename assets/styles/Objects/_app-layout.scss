@@ -1,7 +1,6 @@
 $app-layout-use-escape: true;
 
 .app-layout {
-	background-color: inherit;
 
 	&.app-layout--disable &__header {
 		position: relative !important;
@@ -15,7 +14,7 @@ $app-layout-use-escape: true;
 	//}
 
 	&__header {
-		background-color: inherit;
+		background-color: #FFF;
 		-webkit-overflow-scrolling: touch;
 		position: fixed;
 		left: 0;

@@ -45,8 +45,12 @@
 
 			<div class="container navbar">
 				<div  class="navbar__branding">
-					<?php the_custom_logo(); ?>
+					<div class="navbar__logo">
+						<?php the_custom_logo(); ?>
+					</div>
 				</div>
+
+
 
 				<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
 					<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
