@@ -1,81 +1,141 @@
 <?php
 
+
+function vanilla_get_customize_color_settings() {
+	return array(
+		'post_background_color' => array(
+			'label' => __( 'Post Background Color', 'valnilla' ),
+			'selector' => '.entry',
+			'property' => 'background-color'
+		),
+		'post_text_color'       => array(
+			'label' => __( 'Post Text Color', 'valnilla' ),
+			'selector' => '.entry',
+			'property' => 'color'
+		),
+		'post_link_color'       => array(
+			'label' => __( 'Link Color', 'valnilla' ),
+			'selector' => '.entry a',
+			'property' => 'color'
+		),
+	);
+}
+
 /**
  * Adds postMessage support for site title and description for the Customizer.
- *
- * @since Twenty Sixteen 1.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function vanilla_customize_register( $wp_customize ) {
 
-// $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-// $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-//
-// if ( isset( $wp_customize->selective_refresh ) ) {
-// $wp_customize->selective_refresh->add_partial( 'blogname', array(
-// 'selector' => '.site-title a',
-// 'container_inclusive' => false,
-// 'render_callback' => 'vanilla_customize_partial_blogname',
-// ) );
-// $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-// 'selector' => '.site-description',
-// 'container_inclusive' => false,
-// 'render_callback' => 'vanilla_customize_partial_blogdescription',
-// ) );
-// }
-	// Add page background color setting and control.
-	$wp_customize->add_setting( 'page_background_color', array(
-		'default'           => '',
-		'sanitize_callback' => 'sanitize_hex_color',
-		// 'transport'         => 'postMessage',
-	) );
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_background_color', array(
-		'label'       => __( 'Page Background Color', 'vanilla' ),
-		'section'     => 'colors',
-	) ) );
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector'            => '.site-title a',
+			'container_inclusive' => false,
+			'render_callback'     => 'vanilla_customize_partial_blogname',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector'            => '.site-description',
+			'container_inclusive' => false,
+			'render_callback'     => 'vanilla_customize_partial_blogdescription',
+		) );
+	}
 
-	// Add link color setting and control.
-	$wp_customize->add_setting( 'link_color', array(
-		'default'           => '',
-		'sanitize_callback' => 'sanitize_hex_color',
-		// 'transport'         => 'postMessage',
-	) );
+	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'       => __( 'Link Color', 'vanilla' ),
-		'section'     => 'colors',
-	) ) );
+		// Add page background color setting and control.
+		$wp_customize->add_setting( $key, array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'postMessage',
+		) );
 
-	// Add main text color setting and control.
-	$wp_customize->add_setting( 'main_text_color', array(
-		'default'           => '',
-		'sanitize_callback' => 'sanitize_hex_color',
-		// 'transport'         => 'postMessage',
-	) );
+		$control = new WP_Customize_Color_Control( $wp_customize, $key, array(
+			'label'   => $param['label'],
+			'section' => 'colors',
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_text_color', array(
-		'label'       => __( 'Main Text Color', 'vanilla' ),
-		'section'     => 'colors',
-	) ) );
+		$wp_customize->add_control( $control );
 
+	}
 }
+
 add_action( 'customize_register', 'vanilla_customize_register', 11 );
 
 
-function vanilla_page_background_color_css() {
-	$page_background_color = get_theme_mod( 'page_background_color' );
-
-	if ( ! $page_background_color ) {
-		return;
-	}
-	$css = '
-		.entry {
-			background-color: %1$s;
-		}
-	';
-
-	wp_add_inline_style( 'vanilla-style', sprintf( $css, $page_background_color ) );
+/**
+ * @param $selector
+ * @param $property
+ * @param $value
+ *
+ * @return string
+ */
+function vanilla_create_css( $selector, $property, $value ) {
+	return sprintf(
+		'%1$s { %2$s: %3$s; }',
+		$selector,
+		$property,
+		$value
+	);
 }
-add_action( 'wp_enqueue_scripts', 'vanilla_page_background_color_css', 11 );
+
+
+function vanilla_color_css() {
+
+	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
+
+		if ( $value = get_theme_mod( $key ) ) {
+			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
+			wp_add_inline_style( 'vanilla-style', $css );
+		}
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'vanilla_color_css', 11 );
+
+
+function vanilla_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+function vanilla_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+
+function vanilla_customize_control_js() {
+	wp_enqueue_script( 'vanilla-customize-color', get_template_directory_uri() . '/assets/scripts/customizer/color.js', array(
+		'customize-controls',
+		'iris',
+		'underscore',
+		'wp-util'
+	), '1.0.0', true );
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_control_js' );
+
+function vanilla_customize_preview_js() {
+	wp_enqueue_script( 'vanilla-customize-preview', get_template_directory_uri() . '/assets/scripts/customizer/preview.js', array( 'customize-preview' ), '1.0.0', true );
+}
+
+add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
+
+
+
+function vanilla_color_scheme_css_template() {
+
+	$settings = vanilla_get_customize_color_settings();
+	?>
+	<script type="text/html" id="tmpl-vanilla-color">
+		<?php
+		foreach ( $settings as $key => $setting ) {
+			echo vanilla_create_css( $setting['selector'], $setting['property'], ' {{ data.'.$key.' }}' );
+		}
+		?>
+	</script>
+	<?php
+}
+add_action( 'customize_controls_print_footer_scripts', 'vanilla_color_scheme_css_template' );
