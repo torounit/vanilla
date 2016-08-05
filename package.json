@@ -18,7 +18,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "start": "gulp"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
@@ -33,11 +34,9 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^2.3.2",
-    "gulp-sass-bulk-import": "^1.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.5.0",
     "gulp-watch": "^4.3.8",
-    "postcss-import": "^8.1.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
@@ -45,10 +44,15 @@
     "watchify": "^3.7.0"
   },
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   },
   "browserify-shim": {
     "jquery": "global:jQuery",
     "underscore": "global:_"
+  },
+  "dependencies": {
+    "normalize.css": "^4.2.0"
   }
 }

@@ -1,4 +1,4 @@
-$drawer-size: 280px !default;
+$drawer-size ?= 280px;
 .drawer {
 
 	//overlay
@@ -34,7 +34,7 @@ $drawer-size: 280px !default;
 		// for WordPress
 		.admin-bar & {
 			padding-top: 46px;
-			@media #{$medium-up} {
+			@media $medium-up {
 				position: fixed;
 				padding-top: 32px;
 			}

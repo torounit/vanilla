@@ -1,0 +1,107 @@
+$grid-gutter ?= 20px;
+
+$colslist ?= 1 2 3 4 5 6 7 12;
+
+grid-sizer($size) {
+	width: $size;
+	max-width: $size;
+	min-width: $size;
+	flex-basis: $size;
+}
+
+.grid {
+	clear: both;
+	margin: -1 * $grid-gutter / 2;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	&__u {
+
+		box-sizing: border-box;
+		width: 100%;
+		position: relative;
+
+		flex-grow: 0;
+		flex-shrink: 0;
+		padding: $grid-gutter / 2;
+	}
+
+	for $cols in $colslist {
+		for $i in (1..$cols) {
+			&__u-- {$i}--{$cols} {
+				$width = $i/$cols;
+				grid-sizer(percentage($width));
+			}
+		}
+	}
+
+	@media $small-up {
+		for cols in collist {
+			for i in (1..$cols) {
+				&__u--small-{$i}--{$cols} {
+					$width = $i/$cols;
+					grid-sizer(percentage($width));
+				}
+			}
+		}
+	}
+
+
+	@media $medium-up {
+	for cols in collist {
+		for i in (1..$cols) {
+			&__u--medium-{$i}--{$cols} {
+				$width = $i/$cols;
+				grid-sizer(percentage($width));
+			}
+		}
+	}
+}
+
+	@media $large-up {
+	for cols in collist {
+		for i in (1..$cols) {
+			&__u--large-{$i}--{$cols} {
+				$width = $i/$cols;
+				grid-sizer(percentage($width));
+			}
+		}
+	}
+}
+
+	&--center {
+		justify-content: center;
+	}
+
+	&--middle {
+		align-items: center;
+	}
+
+	&--bottom {
+		align-items: flex-end;
+	}
+
+	&--reverse {
+		flex-direction: row-reverse;
+	}
+
+	&--collapse {
+		margin: 0;
+	}
+
+	&--collapse > &__u {
+		padding: 0;
+	}
+
+	&--loose {
+		margin: -1 * $grid-gutter * 1.5 / 2;
+	}
+
+	&--loose > &__u {
+		padding: $grid-gutter * 1.5 / 2;
+	}
+
+}
+

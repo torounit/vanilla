@@ -1,5 +1,6 @@
 {
     "name": "torounit/vanilla",
+    "description": "Simple WordPress Theme",
     "type": "wordpress-theme",
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.6",

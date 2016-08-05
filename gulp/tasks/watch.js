@@ -23,8 +23,9 @@ gulp.task('setWatch', function () {
 });
 
 gulp.task('watch', function () {
-	watch(config.sass.src, function () {
-		gulp.start('sass');
+
+	watch(config.stylus.watch, function () {
+		gulp.start('stylus');
 	});
 });
 

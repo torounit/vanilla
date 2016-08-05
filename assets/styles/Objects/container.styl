@@ -1,4 +1,5 @@
-$container-max-width: 1200px !default;
+$container-gutter ?= 16px;
+$container-max-width ?= 1200px;
 
 .container {
 	box-sizing: content-box;
@@ -8,7 +9,7 @@ $container-max-width: 1200px !default;
 
 	//overflow: hidden;
 
-	@include gutter( padding-left );
-	@include gutter( padding-right );
+	gutter( padding-left );
+	gutter( padding-right );
 
 }

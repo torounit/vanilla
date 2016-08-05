@@ -9,18 +9,15 @@
 import config from '../config.js';
 import handleErrors from '../util/handleErrors.js';
 import gulp from 'gulp';
-import bulkSass from 'gulp-sass-bulk-import';
 import plumber from 'gulp-plumber';
-import sass from 'gulp-sass';
+import stylus from 'gulp-stylus';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import postcss from 'gulp-postcss';
-import atImport from "postcss-import";
-import debug from 'gulp-debug';
+
 
 var processors = [
 	autoprefixer(),
-	atImport
 ];
 
 // ==================================
@@ -30,18 +27,17 @@ var processors = [
 // ==================================
 
 
-gulp.task('sass', function () {
+gulp.task('stylus', function () {
 
-	return gulp.src([config.sass.src])
+	return gulp.src([config.stylus.src])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(bulkSass())
-		.pipe(sass())
+		.pipe(stylus())
 		.on('error', handleErrors)
 		.pipe(postcss(processors))
 		.pipe(sourcemaps.write({
 			includeContent: false,
-			sourceRoot: config.sass.sourceRoot
+			sourceRoot: config.stylus.sourceRoot
 		}))
-		.pipe(gulp.dest(config.sass.dest));
+		.pipe(gulp.dest(config.stylus.dest));
 });

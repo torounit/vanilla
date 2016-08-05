@@ -25,5 +25,5 @@ gulp.task('copy', function() {
 } );
 
 gulp.task('dist', function(cb){
-	return runSequence( 'build:dist', 'copy', cb );
+	return runSequence( 'build', 'copy', cb );
 });

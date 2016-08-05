@@ -11,7 +11,7 @@
 
 .visible-small-up {
 	display: none;
-	@media #{$small-up} {
+	@media $small-up {
 		display: block;
 		&_inline {
 			display: inline;
@@ -21,7 +21,7 @@
 
 .visible-medium-up {
 	display: none;
-	@media #{$medium-up} {
+	@media $medium-up {
 		display: block;
 		&_inline {
 			display: inline;
@@ -30,7 +30,7 @@
 }
 
 .hidden-medium-up {
-	@media #{$medium-up} {
+	@media $medium-up {
 		display: none;
 	}
 }
@@ -38,7 +38,7 @@
 
 .visible-large-up {
 	display: none;
-	@media #{$large-up} {
+	@media $large-up {
 		display: block;
 		&_inline {
 			display: inline;
@@ -47,7 +47,7 @@
 }
 
 .hidden-large-up {
-	@media #{$large-up} {
+	@media $large-up {
 		display: none;
 	}
 }

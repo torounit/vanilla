@@ -1,0 +1,54 @@
+fa() {
+	display: inline-block;
+	font: normal normal normal 14px / 1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+dashicons() {
+	display: inline-block;
+	font: normal normal normal 14px / 1 dashicons;
+	text-decoration: inherit;
+	font-weight: 400;
+	font-style: normal;
+	vertical-align: top;
+	text-align: center;
+	transition: color .1s ease-in 0s;
+	-webkit-font-smoothing: antialiased;
+}
+
+small-up() {
+	@media $small-up {
+	{block}
+	}
+}
+
+medium-up() {
+	@media $medium-up {
+	{block}
+	}
+}
+
+large-up() {
+	@media $large-up {
+	{block}
+	}
+}
+
+gutter($prop) {
+
+	{$prop}: $gutter;
+
+	+small-up() {
+		{$prop}: $gutter-small;
+	}
+
+	+medium-up() {
+		{$prop}: $gutter-medium;
+	}
+
+	+large-up() {
+		{$prop}: $gutter-large;
+	}
+}
