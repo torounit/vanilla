@@ -3,25 +3,19 @@
 	console.log( cssTemplate );
 	var colorSchemeKeys = [
 			'background_color',
-			'post_background_color',
-			'post_link_color',
-			'post_text_color',
-		],
-		colorSettings = [
-			'background_color',
+			'header_textcolor',
 			'post_background_color',
 			'post_link_color',
 			'post_text_color',
 		];
-
 
 	function updateCSS() {
 		var css,
 			colors = colorSchemeKeys;
 
 		// Merge in color scheme overrides.
-		_.each( colorSettings, function( setting ) {
-			console.log(setting,api( setting ));
+		_.each( colorSchemeKeys, function( setting ) {
+			console.log(setting);
 			colors[ setting ] = api( setting )();
 		} );
 
@@ -37,7 +31,7 @@
 	}
 
 	// Update the CSS whenever a color setting is changed.
-	_.each( colorSettings, function( setting ) {
+	_.each( colorSchemeKeys, function( setting ) {
 		api( setting, function( setting ) {
 			setting.bind( updateCSS );
 		} );

@@ -3,6 +3,11 @@
 
 function vanilla_get_customize_color_settings() {
 	return array(
+//		'header_textcolor'       => array(
+//			'label' => __( 'Header Text Color', 'valnilla' ),
+//			'selector' => '.site-branding .site-title, .site-description',
+//			'property' => 'color'
+//		),
 		'post_background_color' => array(
 			'label' => __( 'Post Background Color', 'valnilla' ),
 			'selector' => '.entry',
@@ -18,6 +23,7 @@ function vanilla_get_customize_color_settings() {
 			'selector' => '.entry a',
 			'property' => 'color'
 		),
+
 	);
 }
 
@@ -42,6 +48,7 @@ function vanilla_customize_register( $wp_customize ) {
 			'container_inclusive' => false,
 			'render_callback'     => 'vanilla_customize_partial_blogdescription',
 		) );
+
 	}
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
@@ -87,10 +94,17 @@ function vanilla_color_css() {
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
 
-		if ( $value = get_theme_mod( $key ) ) {
+
+		if ( $key == 'header_textcolor' and $value =  get_header_textcolor() ) {
 			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
 			wp_add_inline_style( 'vanilla-style', $css );
 		}
+
+		elseif ( $value = get_theme_mod( $key ) ) {
+			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
+			wp_add_inline_style( 'vanilla-style', $css );
+		}
+
 	}
 }
 
