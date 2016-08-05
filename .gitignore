@@ -3,3 +3,4 @@ node_modules
 bundle.js
 all.css
 npm-debug.log
+style.css

@@ -1,6 +1,6 @@
 fa() {
 	display: inline-block;
-	font: normal normal normal 14px / 1 FontAwesome;
+	font: normal normal normal 14px/1 FontAwesome;
 	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
@@ -8,7 +8,7 @@ fa() {
 
 dashicons() {
 	display: inline-block;
-	font: normal normal normal 14px / 1 dashicons;
+	font: normal normal normal 14px/1 dashicons;
 	text-decoration: inherit;
 	font-weight: 400;
 	font-style: normal;
@@ -18,37 +18,21 @@ dashicons() {
 	-webkit-font-smoothing: antialiased;
 }
 
-small-up() {
-	@media $small-up {
-	{block}
-	}
-}
 
-medium-up() {
-	@media $medium-up {
-	{block}
-	}
-}
 
-large-up() {
-	@media $large-up {
-	{block}
-	}
-}
-
-gutter($prop) {
+gutter( $prop ) {
 
 	{$prop}: $gutter;
 
-	+small-up() {
+	@media $small-up {
 		{$prop}: $gutter-small;
 	}
 
-	+medium-up() {
+	@media $medium-up {
 		{$prop}: $gutter-medium;
 	}
 
-	+large-up() {
+	@media $large-up {
 		{$prop}: $gutter-large;
 	}
 }

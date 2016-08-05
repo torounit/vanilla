@@ -41,23 +41,17 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'components-portfolio' ); ?></a>
 
 	<div class="app-layout__header" aria-hidden="false">
-		<div class="">
-
-			<div class="container navbar">
-				<div  class="navbar__branding">
-					<div class="navbar__logo">
-						<?php the_custom_logo(); ?>
-					</div>
+		<div class="container navbar">
+			<div  class="navbar__branding">
+				<div class="navbar__logo">
+					<?php the_custom_logo(); ?>
 				</div>
-
-
-
-				<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
-					<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
-					<span class="screen-reader-text">menu</span>
-				</button>
 			</div>
 
+			<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
+				<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
+				<span class="screen-reader-text">menu</span>
+			</button>
 		</div>
 
 	</div>
