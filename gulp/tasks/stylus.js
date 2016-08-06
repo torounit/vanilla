@@ -32,7 +32,9 @@ gulp.task('stylus', function () {
 	return gulp.src([config.stylus.src])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(stylus())
+		.pipe(stylus({
+			'include css': true
+		}))
 		.on('error', handleErrors)
 		.pipe(postcss(processors))
 		.pipe(sourcemaps.write({

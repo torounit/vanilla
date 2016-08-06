@@ -9,7 +9,7 @@
 
 get_header(); ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="container site-main" role="main">
+		<main id="main" class="site-main" role="main">
 			<?php do_action( 'vanilla_site_main_prepend' );?>
 
 			<?php

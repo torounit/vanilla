@@ -7,12 +7,12 @@
 		</div>
 	<?php endif; ?>
 
-	<div class="entry__body">
+	<div class="entry__body container">
 
 		<header class="entry-header entry__header">
 			<h1 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h1>
 			<div class="entry__meta">
-				<?php vanilla_posted_on(); ?>
+				<?php vanilla_entry_meta(); ?>
 			</div>
 		</header>
 

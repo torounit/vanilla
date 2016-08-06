@@ -1,0 +1,44 @@
+.musthead {
+	background-size: cover;
+	z-index: -1;
+	text-align: center;
+	gutter( padding-left );
+	gutter( padding-right );
+
+
+
+	&::before,
+	&::after {
+		content: "";
+		display block;
+		padding: 2em 0;
+
+		+medium-up() {
+			padding: 3em 0;
+		}
+	}
+
+	&__title {
+		font-size: 2em;
+		margin: 0 auto 0.4em;
+		+medium-up() {
+			font-size: 2.4em;
+			margin-bottom: 0;
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	&__description {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 1em;
+
+		+medium-up() {
+			font-size: 1.2em;
+
+		}
+	}
+}

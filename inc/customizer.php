@@ -3,25 +3,41 @@
 
 function vanilla_get_customize_color_settings() {
 	return array(
-//		'header_textcolor'       => array(
-//			'label' => __( 'Header Text Color', 'valnilla' ),
-//			'selector' => '.site-branding .site-title, .site-description',
-//			'property' => 'color'
-//		),
-		'post_background_color' => array(
-			'label' => __( 'Post Background Color', 'valnilla' ),
-			'selector' => '.entry',
-			'property' => 'background-color'
+		'musthead_textcolor'       => array(
+			'label' => __( 'Header Text Color', 'valnilla' ),
+			'selector' => '.musthead__title, .musthead__description',
+			'property' => 'color',
+			'default'  => '#333333',
 		),
-		'post_text_color'       => array(
+		'musthead_background_textcolor'       => array(
+			'label' => __( 'Header Background Color', 'valnilla' ),
+			'selector' => '.musthead',
+			'property' => 'background-color',
+			'default'  => '#ffffff',
+		),
+		'navbar_textcolor'       => array(
+			'label' => __( 'Navigation Bar Text Color', 'valnilla' ),
+			'selector' => '.navbar',
+			'property' => 'color',
+			'default'  => '#333333',
+		),
+		'navbar_background_textcolor'       => array(
+			'label' => __( 'Navigation Bar Background Color', 'valnilla' ),
+			'selector' => '.navbar',
+			'property' => 'background-color',
+			'default'  => '#ffffff',
+		),
+		'text_color'       => array(
 			'label' => __( 'Post Text Color', 'valnilla' ),
-			'selector' => '.entry',
-			'property' => 'color'
+			'selector' => 'body',
+			'property' => 'color',
+			'default'  => '#333333',
 		),
-		'post_link_color'       => array(
+		'link_color'       => array(
 			'label' => __( 'Link Color', 'valnilla' ),
-			'selector' => '.entry a',
-			'property' => 'color'
+			'selector' => 'a',
+			'property' => 'color',
+			'default'  => '#337ab7',
 		),
 
 	);
@@ -33,6 +49,8 @@ function vanilla_get_customize_color_settings() {
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function vanilla_customize_register( $wp_customize ) {
+
+	$wp_customize->remove_control( 'header_textcolor' );
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -55,7 +73,7 @@ function vanilla_customize_register( $wp_customize ) {
 
 		// Add page background color setting and control.
 		$wp_customize->add_setting( $key, array(
-			'default'           => '',
+			'default'           => $param['default'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		) );
@@ -94,17 +112,10 @@ function vanilla_color_css() {
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
 
-
-		if ( $key == 'header_textcolor' and $value =  get_header_textcolor() ) {
+		if ( $value = get_theme_mod( $key ) ) {
 			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
 			wp_add_inline_style( 'vanilla-style', $css );
 		}
-
-		elseif ( $value = get_theme_mod( $key ) ) {
-			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
-			wp_add_inline_style( 'vanilla-style', $css );
-		}
-
 	}
 }
 
@@ -146,7 +157,7 @@ function vanilla_color_scheme_css_template() {
 	<script type="text/html" id="tmpl-vanilla-color">
 		<?php
 		foreach ( $settings as $key => $setting ) {
-			echo vanilla_create_css( $setting['selector'], $setting['property'], ' {{ data.'.$key.' }}' );
+			echo vanilla_create_css( $setting['selector'], $setting['property'], '{{ data.'.$key.' }}' );
 		}
 		?>
 	</script>

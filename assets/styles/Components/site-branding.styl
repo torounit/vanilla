@@ -1,29 +1,27 @@
 .site-branding {
-	text-align: center;
-	padding: 3em 0;
+	display: flex;
+	align-items: center;
 
 	&__logo {
+		width: 48px;
+		margin-right: $gutter;
 
-		height: auto;
-		img {
-			margin: auto;
-			width: 150px;
-			height: auto;
+		> * {
 			display: block;
 		}
 	}
 
-	&__title {
-		font-size: 2em;
-		margin: 0 auto 0.2em;
-
-		a {
-			color: inherit;
+	&__name {
+		color: currentColor;
+		flex-grow: 1;
+		margin 0;
+		font-weight:bold;
+		text-align: left;
+		display none;
+		@media $small-up {
+			display block;
 		}
+
 	}
 
-	&__description {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
 }

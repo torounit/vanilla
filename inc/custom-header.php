@@ -16,7 +16,7 @@ function vanilla_custom_header() {
 function vanilla_header_background() {
 
 	if ( get_header_image() ) {
-		$css = '.site-header { background-image: url(' . esc_url( get_header_image() ) . '); }';
+		$css = '.musthead { background-image: url(' . esc_url( get_header_image() ) . '); }';
 		wp_add_inline_style( 'vanilla-style', $css );
 	}
 }
@@ -27,22 +27,11 @@ if ( ! function_exists( 'vanilla_header_style' ) ) :
 
 	function vanilla_header_style() {
 
-		if ( display_header_text() ) :
-			?>
-			<style type="text/css" id="vanilla-header-css">
-				.site-branding .site-title,
-				.site-description {
-				<?php if ( get_header_textcolor() ) : ?>
-					color: <?php echo sprintf( '#%s', get_header_textcolor() );?>
-				<?php endif;?>
-				}
-			</style>
-			<?php
-		else : ?>
+		if ( !display_header_text() ) :?>
 			<style type="text/css" id="vanilla-header-css">
 
-				.site-branding .site-title,
-				.site-description {
+				.musthead__title,
+				.musthead__description {
 					clip: rect(1px, 1px, 1px, 1px);
 					position: absolute;
 				}

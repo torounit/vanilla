@@ -11,7 +11,7 @@ grid-sizer($size) {
 
 .grid {
 	clear: both;
-	margin: -1 * $grid-gutter / 2;
+	margin: (-1 * $grid-gutter / 2);
 
 	display: flex;
 	flex-wrap: wrap;
@@ -25,12 +25,12 @@ grid-sizer($size) {
 
 		flex-grow: 0;
 		flex-shrink: 0;
-		padding: $grid-gutter / 2;
+		padding: ($grid-gutter / 2);
 	}
 
 	for $cols in $colslist {
 		for $i in (1..$cols) {
-			&__u-- {$i}--{$cols} {
+			&__u--{$i}--{$cols} {
 				$width = $i/$cols;
 				grid-sizer(percentage($width));
 			}
@@ -96,11 +96,11 @@ grid-sizer($size) {
 	}
 
 	&--loose {
-		margin: -1 * $grid-gutter * 1.5 / 2;
+		margin: (-1 * $grid-gutter * 1.5 / 2);
 	}
 
 	&--loose > &__u {
-		padding: $grid-gutter * 1.5 / 2;
+		padding: ($grid-gutter * 1.5 / 2);
 	}
 
 }

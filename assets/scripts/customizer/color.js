@@ -1,39 +1,39 @@
-( function( api ) {
-	var cssTemplate = wp.template( 'vanilla-color' );
-	console.log( cssTemplate );
+(function (api) {
+	var cssTemplate = wp.template('vanilla-color');
 	var colorSchemeKeys = [
-			'background_color',
-			'header_textcolor',
-			'post_background_color',
-			'post_link_color',
-			'post_text_color',
-		];
+		'background_color',
+		'link_color',
+		'text_color',
+		'musthead_textcolor',
+		'musthead_background_textcolor',
+		'navbar_textcolor',
+		'navbar_background_textcolor',
+
+	];
 
 	function updateCSS() {
 		var css,
 			colors = colorSchemeKeys;
 
 		// Merge in color scheme overrides.
-		_.each( colorSchemeKeys, function( setting ) {
-			console.log(setting);
-			colors[ setting ] = api( setting )();
-		} );
+		_.each(colorSchemeKeys, function (setting) {
+			colors[setting] = api(setting)();
+		});
 
 		// Add additional color.
 		// jscs:disable
-		colors.border_color = Color( colors.main_text_color ).toCSS( 'rgba', 0.2 );
+		colors.border_color = Color(colors.main_text_color).toCSS('rgba', 0.2);
 		// jscs:enable
 
-		css = cssTemplate( colors );
-		console.log( css);
+		css = cssTemplate(colors);
 
-		api.previewer.send( 'update-color-css', css );
+		api.previewer.send('update-color-css', css);
 	}
 
 	// Update the CSS whenever a color setting is changed.
-	_.each( colorSchemeKeys, function( setting ) {
-		api( setting, function( setting ) {
-			setting.bind( updateCSS );
-		} );
-	} );
-} )( wp.customize );
+	_.each(colorSchemeKeys, function (setting) {
+		api(setting, function (setting) {
+			setting.bind(updateCSS);
+		});
+	});
+})(wp.customize);

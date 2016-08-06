@@ -20,19 +20,18 @@ dashicons() {
 
 
 
-gutter( $prop ) {
-
-	{$prop}: $gutter;
+gutter( $prop, $x = 1 ) {
+	{$prop}: ($gutter * $x);
 
 	@media $small-up {
-		{$prop}: $gutter-small;
+		{$prop}: ($gutter-small * $x);
 	}
 
 	@media $medium-up {
-		{$prop}: $gutter-medium;
+		{$prop}: ($gutter-medium * $x);
 	}
 
 	@media $large-up {
-		{$prop}: $gutter-large;
+		{$prop}: ($gutter-large * $x);
 	}
 }
