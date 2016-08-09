@@ -7,37 +7,37 @@ function vanilla_get_customize_color_settings() {
 			'label' => __( 'Header Text Color', 'valnilla' ),
 			'selector' => '.musthead__title, .musthead__description',
 			'property' => 'color',
-			'default'  => '#333333',
+			//'default'  => '#333333',
 		),
 		'musthead_background_textcolor'       => array(
 			'label' => __( 'Header Background Color', 'valnilla' ),
 			'selector' => '.musthead',
 			'property' => 'background-color',
-			'default'  => '#ffffff',
+			//'default'  => '#ffffff',
 		),
 		'navbar_textcolor'       => array(
 			'label' => __( 'Navigation Bar Text Color', 'valnilla' ),
 			'selector' => '.navbar',
 			'property' => 'color',
-			'default'  => '#333333',
+			//'default'  => '#333333',
 		),
 		'navbar_background_textcolor'       => array(
 			'label' => __( 'Navigation Bar Background Color', 'valnilla' ),
 			'selector' => '.navbar',
 			'property' => 'background-color',
-			'default'  => '#ffffff',
+			//'default'  => '#ffffff',
 		),
 		'text_color'       => array(
 			'label' => __( 'Post Text Color', 'valnilla' ),
 			'selector' => 'body',
 			'property' => 'color',
-			'default'  => '#333333',
+			//'default'  => '#333333',
 		),
 		'link_color'       => array(
 			'label' => __( 'Link Color', 'valnilla' ),
 			'selector' => 'a',
 			'property' => 'color',
-			'default'  => '#337ab7',
+			//'default'  => '#337ab7',
 		),
 
 	);
@@ -73,7 +73,7 @@ function vanilla_customize_register( $wp_customize ) {
 
 		// Add page background color setting and control.
 		$wp_customize->add_setting( $key, array(
-			'default'           => $param['default'],
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		) );
@@ -117,6 +117,7 @@ function vanilla_color_css() {
 			wp_add_inline_style( 'vanilla-style', $css );
 		}
 	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'vanilla_color_css', 11 );
