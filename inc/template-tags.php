@@ -6,7 +6,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function vanilla_entry_meta() {
-		echo '<div class="entry-meta">';
+		echo '<p class="entry-meta">';
 		if ( is_sticky() && is_home() && ! is_paged() ) {
 			printf( '<span class="sticky-post entry-meta__item">%s</span>', __( 'Featured', 'vanilla' ) );
 		}
@@ -14,28 +14,23 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 		$format = get_post_format();
 		if ( current_theme_supports( 'post-formats', $format ) ) {
 			printf( '<span class="entry-format entry-meta__item">%1$s<a href="%2$s">%3$s</a></span>',
-				sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'vanilla' ) ),
+				sprintf( '<span>%s </span>', _x( 'Format', 'Used before post format.', 'vanilla' ) ),
 				esc_url( get_post_format_link( $format ) ),
 				get_post_format_string( $format )
 			);
 		}
 
 		if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-			$time_string = '<time class="entry-date published updated entry-meta__item" datetime="%1$s">%2$s</time>';
-
-			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-				$time_string = '<time class="entry-date published entry-meta__item" datetime="%1$s">%2$s</time><time class="updated entry-meta__item" datetime="%3$s">%4$s</time>';
-			}
+			$time_string = '<span class="posted-on screen-reader-text">%1$s </span><time class="entry-date published updated" datetime="%2$s">%3$s</time>';
 
 			$time_string = sprintf( $time_string,
+				_x( 'Posted on', 'Used before publish date.', 'vanilla' ),
 				esc_attr( get_the_date( 'c' ) ),
-				get_the_date(),
-				esc_attr( get_the_modified_date( 'c' ) ),
-				get_the_modified_date()
+				get_the_date()
 			);
 
-			printf( '<span class="posted-on entry-meta__item"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
-				_x( 'Posted on', 'Used before publish date.', 'vanilla' ),
+			printf( '<span class="entry-meta__item"><a href="%1$s" rel="bookmark">%2$s</a></span>',
+
 				esc_url( get_permalink() ),
 				$time_string
 			);
@@ -43,7 +38,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 		if ( 'post' == get_post_type() ) {
 			if ( is_singular() || is_multi_author() ) {
-				printf( '<span class="byline entry-meta__item"><span class="author vcard"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
+				printf( '<span class="byline entry-meta__item"><span class="author vcard"><span class="entry-meta__icon dashicons dashicons-admin-users"></span><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
 					_x( 'Author', 'Used before post author name.', 'vanilla' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
@@ -52,7 +47,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
 			if ( $categories_list ) {
-				printf( '<span class="cat-links entry-meta__item"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				printf( '<span class="cat-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-category"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
 					_x( 'Categories', 'Used before category names.', 'vanilla' ),
 					$categories_list
 				);
@@ -60,7 +55,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links entry-meta__item"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				printf( '<span class="tags-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-tag"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
 					_x( 'Tags', 'Used before tag names.', 'vanilla' ),
 					$tags_list
 				);
@@ -86,7 +81,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 			echo '</span>';
 		}
 
-		echo '</div>';
+		echo '</p>';
 	}
 endif;
 
