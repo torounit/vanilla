@@ -33,8 +33,8 @@ get_header(); ?>
 					?>
 					<?php
 					the_posts_pagination( [
-						'prev_text' => '<span class="pagination__arrow pagination__arrow_prev"><span class="screen-reader-text">Prev</span></span>',
-						'next_text' => '<span class="pagination__arrow pagination__arrow_next"><span class="screen-reader-text">Next</span></span>',
+						'prev_text' => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
+						'next_text' => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
 						'before_page_number' => '<span class="pagination__numbers">',
 						'after_page_number' => '</span>',
 

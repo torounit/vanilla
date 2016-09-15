@@ -3,6 +3,10 @@
 	margin: 3em 0;
 	text-align: center;
 
+	&--small {
+		font-size: 0.8em;
+	}
+
 	a {
 		background-image: none;
 	}
@@ -15,6 +19,7 @@
 	.prev,
 	.next,
 	.pagination__numbers {
+		//background-color: #aaa;
 		border: none;
 		width: 2em;
 		height: 2em;
@@ -23,6 +28,7 @@
 		display: inline-block;
 		font-weight: bold;
 		color: inherit;
+		overflow: hidden;
 	}
 
 	.prev,
@@ -33,26 +39,20 @@
 	}
 
 	&__arrow {
-		background: url("assets/images/arrow.svg") center center no-repeat;
+		//background-color: #aaa;
 		background-origin: content-box;
 		width: 100%;
 		height: 100%;
 		display: inline-block;
-		vertical-align: middle;
+		font-size: 1em;
+		line-height: 2em;
 
-		&_prev {
-			transform: rotateZ(-90deg);
-		}
-
-		&_next {
-			transform: rotateZ(90deg);
-		}
 	}
 }
 
 .pagination {
 	.current {
-		background-color: #333;
-		color: #FFF;
+		border-bottom 3px solid currentColor
+
 	}
 }

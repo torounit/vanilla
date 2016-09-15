@@ -6,12 +6,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package components-portfolio-portfolio
+ * @package vanilla
  */
 
 ?>
 </div>
 <footer id="colophon" class="site-footer" role="contentinfo">
+	<div class="container">
+		<p><?php _e( 'Vanilla theme by Toro_Unit Powered by WordPress', 'vanilla' );?></p>
+	</div>
 </footer>
 </div>
 <?php wp_footer(); ?>

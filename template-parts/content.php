@@ -34,6 +34,10 @@
 			?>
 
 		</div>
+		<?php
+		if ( is_singular() and ( comments_open() || get_comments_number() ) ) : ?>
+			<?php comments_template(); ?>
+		<?php endif; ?>
 
 	</div>
 

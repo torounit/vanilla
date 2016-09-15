@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package components-portfolio-portfolio
+ * @package vanilla-portfolio
  */
 
 ?><!DOCTYPE html>
@@ -38,7 +38,7 @@
 	</div>
 </nav>
 <div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".musthead" data-app-layout-scroll-area="window">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'components-portfolio' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
 	<div class="app-layout__header" aria-hidden="false">
 		<div class="navbar">
