@@ -8,15 +8,15 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 	function vanilla_entry_meta() {
 		echo '<p class="entry-meta">';
 		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post entry-meta__item">%s</span>', __( 'Featured', 'vanilla' ) );
+			printf( '<span class="sticky-post entry-meta__item">%s</span>', esc_html__( 'Featured', 'vanilla' ) );
 		}
 
 		$format = get_post_format();
 		if ( current_theme_supports( 'post-formats', $format ) ) {
 			printf( '<span class="entry-format entry-meta__item">%1$s<a href="%2$s">%3$s</a></span>',
-				sprintf( '<span>%s </span>', _x( 'Format', 'Used before post format.', 'vanilla' ) ),
+				sprintf( '<span>%s </span>', esc_html_x( 'Format', 'Used before post format.', 'vanilla' ) ),
 				esc_url( get_post_format_link( $format ) ),
-				get_post_format_string( $format )
+				esc_html( get_post_format_string( $format ) )
 			);
 		}
 
@@ -24,39 +24,39 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 			$time_string = '<span class="posted-on screen-reader-text">%1$s </span><time class="entry-date published updated" datetime="%2$s">%3$s</time>';
 
 			$time_string = sprintf( $time_string,
-				_x( 'Posted on', 'Used before publish date.', 'vanilla' ),
+				esc_html_x( 'Posted on', 'Used before publish date.', 'vanilla' ),
 				esc_attr( get_the_date( 'c' ) ),
 				get_the_date()
 			);
 
 			printf( '<span class="entry-meta__item"><a href="%1$s" rel="bookmark">%2$s</a></span>',
 				esc_url( get_permalink() ),
-				$time_string
+				esc_html( $time_string )
 			);
 		}
 
 		if ( 'post' == get_post_type() ) {
 			if ( is_singular() || is_multi_author() ) {
 				printf( '<span class="byline entry-meta__item"><span class="author vcard"><span class="entry-meta__icon dashicons dashicons-admin-users"></span><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
-					_x( 'Author', 'Used before post author name.', 'vanilla' ),
+					esc_html_x( 'Author', 'Used before post author name.', 'vanilla' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
 				);
 			}
 
-			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
+			$categories_list = get_the_category_list( esc_html_x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
 			if ( $categories_list ) {
 				printf( '<span class="cat-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-category"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
-					_x( 'Categories', 'Used before category names.', 'vanilla' ),
-					$categories_list
+					esc_html_x( 'Categories', 'Used before category names.', 'vanilla' ),
+					wp_kses( $categories_list, wp_kses_allowed_html( 'post' ) )
 				);
 			}
 
-			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
 			if ( $tags_list ) {
 				printf( '<span class="tags-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-tag"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
-					_x( 'Tags', 'Used before tag names.', 'vanilla' ),
-					$tags_list
+					esc_html_x( 'Tags', 'Used before tag names.', 'vanilla' ),
+					wp_kses( $tags_list, wp_kses_allowed_html( 'post' ) )
 				);
 			}
 		}
@@ -66,10 +66,10 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 			$metadata = wp_get_attachment_metadata();
 
 			printf( '<span class="full-size-link entry-meta__item"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-				_x( 'Full size', 'Used before full size attachment link.', 'vanilla' ),
+				esc_html_x( 'Full size', 'Used before full size attachment link.', 'vanilla' ),
 				esc_url( wp_get_attachment_url() ),
-				$metadata['width'],
-				$metadata['height']
+				esc_html( $metadata['width'] ),
+				esc_html( $metadata['height'] )
 			);
 		}
 
@@ -96,14 +96,6 @@ if ( ! function_exists( 'vanilla_entry_footer' ) ) :
 			echo '</span>';
 		}
 
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'vanilla' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+		edit_post_link( sprintf( esc_html__( 'Edit %s', 'vanilla' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ), '<span class="edit-link">', '</span>' );
 	}
 endif;

@@ -13,7 +13,9 @@
 </div>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="container">
-		<p><?php _e( 'Vanilla theme by <a href="https://torounit.com" target="_blank">Toro_Unit</a> Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>', 'vanilla' );?></p>
+		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'vanilla' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'vanilla' ), 'WordPress' ); ?></a>
+		<span class="sep"> | </span>
+		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'vanilla' ), 'Vanilla', '<a href="https://torounit.com" target="_blank">Toro_Unit</a>' ); ?>
 	</div>
 </footer>
 </div>

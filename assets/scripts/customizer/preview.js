@@ -15,7 +15,7 @@
 	api.bind( 'preview-ready', function() {
 		api.preview.bind( 'update-color-css', function( css ) {
 			style.html( css );
-			$("#vanilla-style-inline-css").remove();
+			//$("#vanilla-color-css").remove();
 		} );
 	} );
 

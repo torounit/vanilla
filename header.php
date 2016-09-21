@@ -37,7 +37,7 @@
 
 	</div>
 </nav>
-<div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".musthead" data-app-layout-scroll-area="window">
+<div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".masthead" data-app-layout-scroll-area="window">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
 	<div class="app-layout__header" aria-hidden="false">
@@ -60,8 +60,8 @@
 
 	<div id="content" class="site-content [ app-layout__content ]">
 
-		<header id="masthead" class="site-header musthead" role="banner">
-			<h1 class="site-title [ musthead__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<p class="site-description [ musthead__description ]"><?php bloginfo( 'description' ); ?></p>
+		<header id="masthead" class="site-header masthead" role="banner">
+			<h1 class="site-title [ masthead__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<p class="site-description [ masthead__description ]"><?php bloginfo( 'description' ); ?></p>
 
 		</header>

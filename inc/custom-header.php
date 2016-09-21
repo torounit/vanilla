@@ -14,13 +14,14 @@ function vanilla_custom_header() {
 }
 
 function vanilla_header_background() {
-
+	$css = '';
 	if ( get_header_image() ) {
-		$css = '.musthead { background-image: url(' . esc_url( get_header_image() ) . '); }';
-		wp_add_inline_style( 'vanilla-style', $css );
+		$css = '#masthead { background-image: url(' . esc_url( get_header_image() ) . ') !important; }';
 	}
+	echo '<style type="text/css" id="vanilla-header-image-style-css">'. esc_js( $css ) .'</style>';
+	//wp_add_inline_style( 'vanilla-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'vanilla_header_background', 11 );
+add_action( 'wp_head', 'vanilla_header_background', 11 );
 
 
 if ( ! function_exists( 'vanilla_header_style' ) ) :
@@ -30,8 +31,8 @@ if ( ! function_exists( 'vanilla_header_style' ) ) :
 		if ( ! display_header_text() ) :?>
 			<style type="text/css" id="vanilla-header-css">
 
-				.musthead__title,
-				.musthead__description {
+				.masthead__title,
+				.masthead__description {
 					clip: rect(1px, 1px, 1px, 1px);
 					position: absolute;
 				}

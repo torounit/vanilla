@@ -3,15 +3,15 @@
 
 function vanilla_get_customize_color_settings() {
 	return array(
-		'musthead_textcolor'       => array(
+		'masthead_textcolor'       => array(
 			'label' => __( 'Header Text Color', 'vanilla' ),
-			'selector' => '.musthead__title, .musthead__description',
+			'selector' => '.masthead__title, .masthead__description',
 			'property' => 'color',
 			// 'default'  => '#333333',
 		),
-		'musthead_background_textcolor'       => array(
+		'masthead_background_textcolor'       => array(
 			'label' => __( 'Header Background Color', 'vanilla' ),
-			'selector' => '.musthead',
+			'selector' => '.masthead',
 			'property' => 'background-color',
 			// 'default'  => '#ffffff',
 		),
@@ -54,6 +54,8 @@ function vanilla_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -65,6 +67,12 @@ function vanilla_customize_register( $wp_customize ) {
 			'selector'            => '.site-description',
 			'container_inclusive' => false,
 			'render_callback'     => 'vanilla_customize_partial_blogdescription',
+		) );
+
+		$wp_customize->selective_refresh->add_partial( 'header_image_data', array(
+			'selector'            => '#vanilla-header-image-style-css',
+			'container_inclusive' => true,
+			'render_callback'     => 'vanilla_header_background',
 		) );
 
 	}
@@ -131,7 +139,6 @@ function vanilla_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
-
 function vanilla_customize_control_js() {
 	wp_enqueue_script( 'vanilla-customize-color', get_template_directory_uri() . '/assets/scripts/customizer/color.js', array(
 		'customize-controls',
@@ -158,8 +165,8 @@ function vanilla_color_scheme_css_template() {
 	<script type="text/html" id="tmpl-vanilla-color">
 		<?php
 		foreach ( $settings as $key => $setting ) {
-			echo '<# if ( data.'.$key.' ) { #>';
-			echo vanilla_create_css( $setting['selector'], $setting['property'], '{{ data.'.$key.' }}' );
+			echo '<# if ( data.'. esc_js( $key ) .' ) { #>';
+			echo esc_js( vanilla_create_css( $setting['selector'], $setting['property'], '{{ data.'. $key .' }}' ) );
 			echo '<# } #>';
 		}
 		?>
