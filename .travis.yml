@@ -20,7 +20,7 @@ env:
 before_script:
   - nvm install 5
   - npm install
-  #- npm run build
+  - npm run build
   - composer install
 
 script:
