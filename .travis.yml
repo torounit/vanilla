@@ -29,5 +29,8 @@ script:
   - find . -path './vendor' -prune -o -name '*.php' -exec php -lf {} \;
   - composer phpcs
 
-after_success:
-- bash ./bin/deploy.sh
+deploy:
+  provider: script
+  script: bin/deploy.sh
+  on:
+    branch: master

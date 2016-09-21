@@ -13,8 +13,9 @@ gulp.task('copy', function() {
 	return gulp.src(
 			[
 				'./**/*.php',
-				'./assets/dist/**',
+				'./assets/**',
 				'./style.css',
+				'./bundle.js',
 				"!./dist/**",
 				"!./node_modules/**/*.*",
 				"!./vendor/**/*.*"
