@@ -30,6 +30,7 @@ script:
   - composer phpcs
 
 deploy:
+  skip_cleanup: true
   provider: script
   script: bin/deploy.sh
   on:
