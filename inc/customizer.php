@@ -7,37 +7,37 @@ function vanilla_get_customize_color_settings() {
 			'label' => __( 'Header Text Color', 'vanilla' ),
 			'selector' => '.musthead__title, .musthead__description',
 			'property' => 'color',
-			//'default'  => '#333333',
+			// 'default'  => '#333333',
 		),
 		'musthead_background_textcolor'       => array(
 			'label' => __( 'Header Background Color', 'vanilla' ),
 			'selector' => '.musthead',
 			'property' => 'background-color',
-			//'default'  => '#ffffff',
+			// 'default'  => '#ffffff',
 		),
 		'navbar_textcolor'       => array(
 			'label' => __( 'Navigation Bar Text Color', 'vanilla' ),
 			'selector' => '.navbar',
 			'property' => 'color',
-			//'default'  => '#333333',
+			// 'default'  => '#333333',
 		),
 		'navbar_background_textcolor'       => array(
 			'label' => __( 'Navigation Bar Background Color', 'vanilla' ),
 			'selector' => '.navbar',
 			'property' => 'background-color',
-			//'default'  => '#ffffff',
+			// 'default'  => '#ffffff',
 		),
 		'text_color'       => array(
 			'label' => __( 'Post Text Color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
-			//'default'  => '#333333',
+			// 'default'  => '#333333',
 		),
 		'link_color'       => array(
 			'label' => __( 'Link Color', 'vanilla' ),
 			'selector' => 'a',
 			'property' => 'color',
-			//'default'  => '#337ab7',
+			// 'default'  => '#337ab7',
 		),
 
 	);
@@ -137,7 +137,7 @@ function vanilla_customize_control_js() {
 		'customize-controls',
 		'iris',
 		'underscore',
-		'wp-util'
+		'wp-util',
 	), '1.0.0', true );
 }
 

@@ -27,7 +27,7 @@ if ( ! function_exists( 'vanilla_header_style' ) ) :
 
 	function vanilla_header_style() {
 
-		if ( !display_header_text() ) :?>
+		if ( ! display_header_text() ) :?>
 			<style type="text/css" id="vanilla-header-css">
 
 				.musthead__title,

@@ -30,7 +30,6 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 			);
 
 			printf( '<span class="entry-meta__item"><a href="%1$s" rel="bookmark">%2$s</a></span>',
-
 				esc_url( get_permalink() ),
 				$time_string
 			);
