@@ -1,0 +1,27 @@
+.site-branding {
+	display: flex;
+	align-items: center;
+
+	&__logo {
+		width: 48px;
+		margin-right: $gutter;
+
+		> * {
+			display: block;
+		}
+	}
+
+	&__name {
+		color: currentColor;
+		flex-grow: 1;
+		margin 0;
+		font-weight:bold;
+		text-align: left;
+		display none;
+		@media $small-up {
+			display block;
+		}
+
+	}
+
+}

@@ -1,0 +1,58 @@
+.pagination {
+
+	margin: 3em 0;
+	text-align: center;
+
+	&--small {
+		font-size: 0.8em;
+	}
+
+	a {
+		background-image: none;
+	}
+
+	.page-numbers {
+		display: inline-block;
+	}
+
+	.dots,
+	.prev,
+	.next,
+	.pagination__numbers {
+		//background-color: #aaa;
+		border: none;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		display: inline-block;
+		font-weight: bold;
+		color: inherit;
+		overflow: hidden;
+	}
+
+	.prev,
+	.next {
+		background: none;
+		margin: 0 1em;
+		display: inline-block;
+	}
+
+	&__arrow {
+		//background-color: #aaa;
+		background-origin: content-box;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		font-size: 1em;
+		line-height: 2em;
+
+	}
+}
+
+.pagination {
+	.current {
+		border-bottom 3px solid currentColor
+
+	}
+}
