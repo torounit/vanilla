@@ -11,7 +11,6 @@ cache:
 
 env:
   global:
-    - TRAVIS_SECURE_ENV_VARS=true
     - GIT_COMMITTER_NAME=torounit
     - GIT_COMMITTER_EMAIL=mail@torounit.com
     - GIT_AUTHOR_NAME=torounit
