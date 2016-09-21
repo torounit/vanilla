@@ -16,7 +16,8 @@ gulp.task('copy', function() {
 				'./assets/dist/**',
 				'./style.css',
 				"!./dist/**",
-				"!./node_modules/**/*.*"
+				"!./node_modules/**/*.*",
+				"!./vendor/**/*.*"
 			],
 			{ base: './' }
 		)
