@@ -18,8 +18,7 @@ function vanilla_header_background() {
 	if ( get_header_image() ) {
 		$css = '#masthead { background-image: url(' . esc_url( get_header_image() ) . ') !important; }';
 	}
-	echo '<style type="text/css" id="vanilla-header-image-style-css">'. esc_js( $css ) .'</style>';
-	//wp_add_inline_style( 'vanilla-style', $css );
+	echo '<style type="text/css" id="vanilla-header-image-style-css">'. wp_kses( $css, array() ) .'</style>';
 }
 add_action( 'wp_head', 'vanilla_header_background', 11 );
 
@@ -40,4 +39,4 @@ if ( ! function_exists( 'vanilla_header_style' ) ) :
 			<?php
 		endif;
 	}
-endif; // vanilla_header_style
+endif;

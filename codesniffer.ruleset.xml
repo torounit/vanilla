@@ -10,7 +10,6 @@
     <rule ref="WordPress">
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-        <exclude name="Squiz.Commenting.ClassComment" />
         <exclude name="Squiz.Commenting.FunctionComment" />
         <exclude name="Generic.Commenting.DocComment" />
         <exclude name="Squiz.Commenting.FileComment.Missing" />
