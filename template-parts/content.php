@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template part for content.
+ *
+ * @package vanilla
+ */
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 	<?php if ( get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail entry__featured-image">
@@ -10,6 +19,13 @@
 	<div class="entry__body container">
 
 		<header class="entry-header entry__header">
+			<?php
+			if ( is_sticky() && is_home() && ! is_paged() ) :?>
+				<div class="sticky-post">
+					<span class="dashicons dashicons-admin-post"></span>
+					<?php esc_html_e( 'Featured', 'vanilla' );?>
+				</div>
+			<?php endif;?>
 			<h1 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h1>
 			<div class="entry__meta">
 				<?php vanilla_entry_meta(); ?>

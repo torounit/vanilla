@@ -1,4 +1,9 @@
 <?php
+/**
+ * header image settings.
+ *
+ * @package vanilla
+ */
 
 add_action( 'after_setup_theme', 'vanilla_custom_header' );
 
