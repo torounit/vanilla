@@ -23,9 +23,23 @@
 			if ( is_sticky() && is_home() && ! is_paged() ) :?>
 				<div class="sticky-post">
 					<span class="dashicons dashicons-admin-post"></span>
-					<?php esc_html_e( 'Featured', 'vanilla' );?>
+					<?php esc_html_e( 'Featured', 'vanilla' ); ?>
 				</div>
-			<?php endif;?>
+
+				<?php
+			elseif ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) : ?>
+
+				<div class="posted-on">
+					<span class="dashicons dashicons-calendar"></span>
+					<span
+						class="screen-reader-text"><?php echo esc_html_x( 'Posted on', 'Used before publish date.', 'vanilla' ); ?></span>
+					<time class="entry-date published"
+					      datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+				</div>
+
+				<?php
+			endif; ?>
+
 			<h1 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h1>
 			<div class="entry__meta">
 				<?php vanilla_entry_meta(); ?>
@@ -38,8 +52,8 @@
 				the_content();
 
 				wp_link_pages( array(
-					'before' => '<div class="page-links pagination">',
-					'after'  => '</div>',
+					'before'      => '<div class="page-links pagination">',
+					'after'       => '</div>',
 					'link_before' => '<span class="pagination__numbers">',
 					'link_after'  => '</span>',
 

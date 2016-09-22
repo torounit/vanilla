@@ -21,21 +21,6 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 			);
 		}
 
-		if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-			$time_string = '<span class="screen-reader-text">%1$s </span><time class="entry-date published updated" datetime="%2$s">%3$s</time>';
-
-			$time_string = sprintf( $time_string,
-				esc_html_x( 'Posted on', 'Used before publish date.', 'vanilla' ),
-				esc_attr( get_the_date( 'c' ) ),
-				get_the_date()
-			);
-
-			printf( '<span class="entry-meta__item posted-on"><span class="entry-meta__icon dashicons dashicons-calendar"></span><a href="%1$s" rel="bookmark">%2$s</a></span>',
-				esc_url( get_permalink() ),
-				wp_kses( $time_string, wp_kses_allowed_html( 'post' ) )
-			);
-		}
-
 		if ( 'post' == get_post_type() ) {
 			if ( is_singular() || is_multi_author() ) {
 				printf( '<span class="byline entry-meta__item"><span class="author vcard"><span class="entry-meta__icon dashicons dashicons-admin-users"></span><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
