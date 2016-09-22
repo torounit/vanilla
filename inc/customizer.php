@@ -192,8 +192,8 @@ function vanilla_color_scheme_css_template() {
 	<script type="text/html" id="tmpl-vanilla-color">
 		<?php
 		foreach ( $settings as $key => $setting ) {
-			echo '<# if ( data.'. esc_js( $key ) .' ) { #>';
-			echo esc_js( vanilla_create_css( $setting['selector'], $setting['property'], '{{ data.'. $key .' }}' ) );
+			echo '<# if ( data.' . esc_js( $key ) . ' ) { #>';
+			echo esc_js( vanilla_create_css( $setting['selector'], $setting['property'], '{{ data.' . $key . ' }}' ) );
 			echo '<# } #>';
 		}
 		?>
