@@ -1,6 +1,6 @@
 <?php
 /**
- * custom background settings.
+ * Custom background settings.
  *
  * @package vanilla
  */

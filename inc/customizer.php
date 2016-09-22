@@ -1,12 +1,13 @@
 <?php
 /**
- * theme customizer settings.
+ * Theme customizer settings.
  *
  * @package vanilla
  */
 
 /**
- * color settings.
+ * Color settings.
+ *
  * @return array
  */
 function vanilla_get_customize_color_settings() {
@@ -108,6 +109,8 @@ add_action( 'customize_register', 'vanilla_customize_register', 11 );
 
 
 /**
+ * Create css block.
+ *
  * @param $selector
  * @param $property
  * @param $value

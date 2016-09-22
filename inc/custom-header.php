@@ -1,6 +1,6 @@
 <?php
 /**
- * header image settings.
+ * Header image settings.
  *
  * @package vanilla
  */
