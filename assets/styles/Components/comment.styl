@@ -1,8 +1,13 @@
 .comment {
-	margin-top: 16px;
-	margin-bottom: 16px;
+	//overflow: hidden;
+	border-top: 1px solid rgba(51, 51, 51, 0.1);
 	& > & {
-		padding-left: 16px;
+		margin-left: 16px;
+	}
+
+	&.depth-1 {
+		margin: 16px 0;
+		overflow: hidden
 	}
 
 	.says {
@@ -18,15 +23,25 @@
 
 
 	.comment-body {
-		padding: 16px;
-		box-shadow: 0 1px 2px 0 rgba(44,44,44,0.14), 0 2px 1px -2px rgba(44,44,44,0.2), 0 0px 2px 0 rgba(44,44,44,0.12);
+		margin: 16px;
+		position relative;
+		padding-left: 32px;
 	}
 
 	.comment-author {
+		font-size: 0.9em
 		.fn,
 		.avatar {
 			vertical-align: middle;
 		}
+		.avatar {
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	.comment-metadata {
+		font-size: 0.8em;
 	}
 
 	.comment-content {
@@ -37,6 +52,10 @@
 		*:last-child {
 			margin-bottom:0
 		}
+	}
+
+	.reply {
+		font-size: 0.8em;
 	}
 
 }

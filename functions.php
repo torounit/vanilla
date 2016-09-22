@@ -14,10 +14,10 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 	function vanilla_setup() {
 
 		load_theme_textdomain( 'vanilla', get_template_directory() . '/languages' );
-		get_site_icon_url();
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
+		add_editor_style( get_stylesheet_uri() );
 
 		add_image_size( 'vanilla-featured-image', 1600, 9999 );
 
@@ -101,6 +101,7 @@ function vanilla_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'vanilla_scripts' );
+
 
 require 'inc/custom-header.php';
 require 'inc/custom-background.php';
