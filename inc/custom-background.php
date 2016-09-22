@@ -1,4 +1,9 @@
 <?php
+/**
+ * custom background settings.
+ *
+ * @package vanilla
+ */
 
 add_action( 'after_setup_theme', 'vanilla_custom_background' );
 

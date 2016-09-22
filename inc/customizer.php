@@ -1,6 +1,14 @@
 <?php
+/**
+ * theme customizer settings.
+ *
+ * @package vanilla
+ */
 
-
+/**
+ * color settings.
+ * @return array
+ */
 function vanilla_get_customize_color_settings() {
 	return array(
 		'masthead_textcolor'       => array(

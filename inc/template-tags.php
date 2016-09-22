@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * custom template tags.
+ *
+ * @package vanilla
+ */
 
 if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 	/**
@@ -7,9 +11,6 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 	 */
 	function vanilla_entry_meta() {
 		echo '<p class="entry-meta">';
-		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post entry-meta__item">%s</span>', esc_html__( 'Featured', 'vanilla' ) );
-		}
 
 		$format = get_post_format();
 		if ( current_theme_supports( 'post-formats', $format ) ) {
@@ -21,7 +22,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 		}
 
 		if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-			$time_string = '<span class="posted-on screen-reader-text">%1$s </span><time class="entry-date published updated" datetime="%2$s">%3$s</time>';
+			$time_string = '<span class="screen-reader-text">%1$s </span><time class="entry-date published updated" datetime="%2$s">%3$s</time>';
 
 			$time_string = sprintf( $time_string,
 				esc_html_x( 'Posted on', 'Used before publish date.', 'vanilla' ),
@@ -29,7 +30,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 				get_the_date()
 			);
 
-			printf( '<span class="entry-meta__item"><a href="%1$s" rel="bookmark">%2$s</a></span>',
+			printf( '<span class="entry-meta__item posted-on"><span class="entry-meta__icon dashicons dashicons-calendar"></span><a href="%1$s" rel="bookmark">%2$s</a></span>',
 				esc_url( get_permalink() ),
 				wp_kses( $time_string, wp_kses_allowed_html( 'post' ) )
 			);
@@ -75,7 +76,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link entry-meta__item">';
-			/* translators: %s: post title */
+			echo '<span class="entry-meta__icon dashicons dashicons-admin-comments"></span>';
 			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'vanilla' ), get_the_title() ) );
 			echo '</span>';
 		}
