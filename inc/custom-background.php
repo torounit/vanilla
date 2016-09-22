@@ -7,6 +7,9 @@
 
 add_action( 'after_setup_theme', 'vanilla_custom_background' );
 
+/**
+ * Register setting for custom background
+ */
 function vanilla_custom_background() {
 
 	add_theme_support( 'custom-background', apply_filters( 'vanilla_custom_background_args', array(

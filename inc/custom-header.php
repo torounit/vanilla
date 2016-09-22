@@ -5,8 +5,9 @@
  * @package vanilla
  */
 
-add_action( 'after_setup_theme', 'vanilla_custom_header' );
-
+/**
+ * Register custom header support.
+ */
 function vanilla_custom_header() {
 
 	add_theme_support( 'custom-header', apply_filters( 'vanilla_custom_header_args', array(
@@ -17,7 +18,11 @@ function vanilla_custom_header() {
 		'default-text-color' => '',
 	) ) );
 }
+add_action( 'after_setup_theme', 'vanilla_custom_header' );
 
+/**
+ * Show css for background-image.
+ */
 function vanilla_header_background() {
 	$css = '';
 	if ( get_header_image() ) {
@@ -30,6 +35,9 @@ add_action( 'wp_head', 'vanilla_header_background', 11 );
 
 if ( ! function_exists( 'vanilla_header_style' ) ) :
 
+	/**
+	 * Render style for disable title and description.
+	 */
 	function vanilla_header_style() {
 
 		if ( ! display_header_text() ) :?>

@@ -111,9 +111,9 @@ add_action( 'customize_register', 'vanilla_customize_register', 11 );
 /**
  * Create css block.
  *
- * @param $selector
- * @param $property
- * @param $value
+ * @param string $selector CSS selector.
+ * @param string $property CSS property name.
+ * @param string $value    CSS value.
  *
  * @return string
  */
@@ -127,6 +127,9 @@ function vanilla_create_css( $selector, $property, $value ) {
 }
 
 
+/**
+ * Register custom inline css.
+ */
 function vanilla_color_css() {
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
@@ -141,15 +144,23 @@ function vanilla_color_css() {
 
 add_action( 'wp_enqueue_scripts', 'vanilla_color_css', 11 );
 
-
+/**
+ * Customizer default value.
+ */
 function vanilla_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
+/**
+ * Customizer default value.
+ */
 function vanilla_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
+/**
+ * Customizer default value.
+ */
 function vanilla_customize_control_js() {
 	wp_enqueue_script( 'vanilla-customize-color', get_template_directory_uri() . '/assets/scripts/customizer/color.js', array(
 		'customize-controls',
@@ -161,6 +172,9 @@ function vanilla_customize_control_js() {
 
 add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_control_js' );
 
+/**
+ * Register script for customizer.
+ */
 function vanilla_customize_preview_js() {
 	wp_enqueue_script( 'vanilla-customize-preview', get_template_directory_uri() . '/assets/scripts/customizer/preview.js', array( 'customize-preview' ), '1.0.0', true );
 }
@@ -168,7 +182,9 @@ function vanilla_customize_preview_js() {
 add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
 
 
-
+/**
+ * Render script for customizer preview
+ */
 function vanilla_color_scheme_css_template() {
 
 	$settings = vanilla_get_customize_color_settings();
