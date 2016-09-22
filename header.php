@@ -29,10 +29,10 @@
 
 	<div class="drawer__body primary-menu">
 
-		<?php wp_nav_menu( [
+		<?php wp_nav_menu( array(
 			'theme_location' => 'primary',
 			'menu_class' => 'primary-menu__links',
-		] );?>
+		) );?>
 
 
 	</div>
