@@ -15,6 +15,8 @@ gulp.task('copy', function() {
 				'./**/*.php',
 				'./assets/**',
 				'./LICENSE',
+				'./readme.txt',
+				'./screenshot.png',
 				'./style.css',
 				'./bundle.js',
 				"!./dist/**",
