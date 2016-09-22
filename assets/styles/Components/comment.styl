@@ -1,6 +1,11 @@
 .comment {
-	//overflow: hidden;
-	border-top: 1px solid rgba(51, 51, 51, 0.1);
+	&::before {
+		display block
+		content: '';
+		border-top: 1px solid currentColor;
+		opacity: 0.2;
+	}
+
 	& > & {
 		margin-left: 16px;
 	}
@@ -23,7 +28,7 @@
 
 
 	.comment-body {
-		margin: 16px;
+		margin: 16px 0;
 		position relative;
 		padding-left: 32px;
 	}
@@ -32,11 +37,24 @@
 		font-size: 0.9em
 		.fn,
 		.avatar {
-			vertical-align: middle;
+			vertical-align: bottom;
 		}
 		.avatar {
 			position: absolute;
 			left: 0;
+		}
+
+	}
+
+	.bypostauthor {
+
+		.fn::after {
+			content: "\f110";
+			font-family "Dashicons";
+			font-size: 0.9em;
+			margin-inline-start: 0.1em;
+			opacity: 0.6;
+			vertical-align: middle;
 		}
 	}
 
