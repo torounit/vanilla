@@ -1,6 +1,6 @@
 <?php
 /**
- * custom template tags.
+ * Custom template tags.
  *
  * @package vanilla
  */

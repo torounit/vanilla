@@ -1,6 +1,6 @@
 <?php
 /**
- * components functions and definitions.
+ * Components functions and definitions.
  *
  * @package vanilla
  */
