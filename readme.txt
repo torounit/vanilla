@@ -33,9 +33,7 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 1. Activate the Theme through the "Themes" menu in WordPress.
 
 
-
 == Changelog ==
-
 
 = 1.0.0 =
 * Initial Release
