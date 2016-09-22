@@ -12,6 +12,7 @@ License URI: LICENSE
 Vanilla is the simple theme for blogging. And for single column modern websites.
 
 * Mobile-first, Responsive Layout
+* Custom Drawer Menu
 * Custom Colors
 * Custom Background
 * Custom Header
