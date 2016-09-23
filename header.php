@@ -37,18 +37,16 @@
 
 	</div>
 </nav>
-<div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".masthead" data-app-layout-scroll-area="window">
+<div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
 	<div class="app-layout__header" aria-hidden="false">
 		<div class="navbar">
 			<div  class="navbar__branding">
-				<div class="site-branding">
-					<?php if( get_custom_logo() ) : ?>
-						<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
-					<?php endif;?>
+				<header class="site-branding">
+					<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
 					<a class="site-branding__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</div>
+				</header>
 
 			</div>
 
@@ -61,7 +59,7 @@
 	</div>
 
 	<div id="content" class="site-content [ app-layout__content ]">
-
+		<div class="app-layout__spacer"></div>
 		<header id="masthead" class="site-header masthead" role="banner">
 			<h1 class="site-title [ masthead__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<p class="site-description [ masthead__description ]"><?php bloginfo( 'description' ); ?></p>
