@@ -41,13 +41,12 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
 	<div class="app-layout__header" aria-hidden="false">
-		<div class="navbar">
+		<div class="navbar container">
 			<div  class="navbar__branding">
 				<header class="site-branding">
 					<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
 					<a class="site-branding__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</header>
-
 			</div>
 
 			<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
