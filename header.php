@@ -44,7 +44,9 @@
 		<div class="navbar">
 			<div  class="navbar__branding">
 				<div class="site-branding">
-					<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
+					<?php if( get_custom_logo() ) : ?>
+						<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
+					<?php endif;?>
 					<a class="site-branding__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</div>
 

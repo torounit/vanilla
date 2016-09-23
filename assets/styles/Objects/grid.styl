@@ -4,8 +4,6 @@ $colslist ?= 1 2 3 4 5 6 7 12;
 
 grid-sizer($size) {
 	width: $size;
-	max-width: $size;
-	min-width: $size;
 	flex-basis: $size;
 }
 
@@ -26,6 +24,10 @@ grid-sizer($size) {
 		flex-grow: 0;
 		flex-shrink: 0;
 		padding: ($grid-gutter / 2);
+
+		&--grow {
+			flex-grow: 1;
+		}
 	}
 
 	for $cols in $colslist {
