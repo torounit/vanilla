@@ -13,10 +13,10 @@
 </div>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="container">
-		<?php dynamic_sidebar( 'footer-primary-widget-area' ); ?>
+		<?php dynamic_sidebar( 'footer-primary-widget' ); ?>
 
 		<div class="grid">
-			<?php dynamic_sidebar( 'footer-secondary-widget-area' ); ?>
+			<?php dynamic_sidebar( 'footer-secondary-widget' ); ?>
 		</div>
 	</div>
 	<div class="container">

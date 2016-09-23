@@ -72,21 +72,32 @@ add_action( 'after_setup_theme', 'vanilla_content_width', 0 );
 function vanilla_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer primary widget area', 'vanilla' ),
-		'id'            => 'footer-primary-widget-area',
+		'id'            => 'footer-primary-widget',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
+		'before_title'  => '<h4 class="widget-title widget__title">',
 		'after_title'   => '</h4>',
 	) );
 
+	$column        = apply_filters( 'vanilla_footer_secondary_widget_column', 1 );
+	$column_small  = apply_filters( 'vanilla_footer_secondary_widget_column_small', 2 );
+	$column_medium = apply_filters( 'vanilla_footer_secondary_widget_column_medium', 3 );
+	$column_large  = apply_filters( 'vanilla_footer_secondary_widget_column_large', 4 );
+	$class_name    = sprintf(
+		'grid__u grid__u--grow grid__u--1_%d grid__u--small--1_%d grid__u--medium--1_%d grid__u--large--1_%d',
+		$column,
+		$column_small,
+		$column_medium,
+		$column_large
+	);
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer secondary widget area', 'vanilla' ),
-		'id'            => 'footer-secondary-widget-area',
+		'id'            => 'footer-secondary-widget',
 		'description'   => '',
-		'before_widget' => '<div class="grid__u grid__u--small--1_2 grid__u--medium--1_3 grid__u--large--1_3"><section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div class="' . esc_attr( $class_name ) . '"><section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section></div>',
-		'before_title'  => '<h4 class="widget-title">',
+		'before_title'  => '<h4 class="widget-title widget__title">',
 		'after_title'   => '</h4>',
 	) );
 }

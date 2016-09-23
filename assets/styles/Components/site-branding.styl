@@ -3,12 +3,19 @@
 	align-items: center;
 
 	&__logo {
-		width: 48px;
-		margin-right: $gutter;
 
-		> * {
+		.custom-logo {
 			display: block;
+			max-width: 32px;
+			@media $small-up {
+				max-width: 32px;
+			}
+			@media $medium-up {
+				max-width: 48px;
+			}
+
 		}
+		margin-right: $gutter;
 	}
 
 	&__name {
@@ -17,11 +24,6 @@
 		margin 0;
 		font-weight:bold;
 		text-align: left;
-		display none;
-		@media $small-up {
-			display block;
-		}
-
 	}
 
 }
