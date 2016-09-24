@@ -1,7 +1,7 @@
 === Vanilla ===
 Contributors: Toro_Unit
 Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
-Tags: white, custom-logo, fluid-layout, responsive-layout, one-column, editor-style, sticky-post, microformats, featured-images, custom-colors, custom-menu, custom-background, custom-header, custom-colors
+Tags: one-column, custom-logo, custom-colors, custom-menu, custom-background, custom-header, editor-style, sticky-post, microformats, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography
 Requires at least: 4.6
 Tested up to: 4.6
 Stable tag: 1.0.0
