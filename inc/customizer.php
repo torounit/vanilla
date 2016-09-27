@@ -74,7 +74,7 @@ function vanilla_customize_register( $wp_customize ) {
 
 		// Add page background color setting and control.
 		$wp_customize->add_setting( $key, array(
-			'default'           => '',
+			'default'           => $param['default'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		) );
