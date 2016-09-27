@@ -1,6 +1,6 @@
 {
     "name": "torounit/vanilla",
-    "description": "Simple WordPress Theme",
+    "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
     "type": "wordpress-theme",
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.6",
