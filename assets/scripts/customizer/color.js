@@ -6,6 +6,8 @@
 		'text_color',
 		'navbar_textcolor',
 		'navbar_background_textcolor',
+		'footer_textcolor',
+		'footer_background_textcolor',
 
 	];
 

@@ -36,7 +36,18 @@ function vanilla_get_customize_color_settings() {
 			'property' => 'color',
 			'default'  => '#337ab7',
 		),
-
+		'footer_textcolor'       => array(
+			'label' => __( 'Footer Text Color', 'vanilla' ),
+			'selector' => '.site-footer',
+			'property' => 'color',
+			'default'  => '#333333',
+		),
+		'footer_background_textcolor'       => array(
+			'label' => __( 'Footer Background Color', 'vanilla' ),
+			'selector' => '.site-footer',
+			'property' => 'background-color',
+			'default'  => '#ffffff',
+		),
 	);
 }
 

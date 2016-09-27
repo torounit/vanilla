@@ -46,7 +46,7 @@
 
 		<div class="entry-content entry__content">
 			<?php
-			if ( is_singular() ) {
+			if ( is_singular() ) :
 				the_content();
 
 				wp_link_pages( array(
@@ -56,9 +56,12 @@
 					'link_after'  => '</span>',
 
 				) );
-			} else {
+			else :
 				the_excerpt();
-			}
+				?>
+				<p><a href="<?php the_permalink();?>" class="read-more"><?php printf( wp_kses_post( __( 'Continue reading <span class="screen-reader-text">%1$s</span>', 'vanilla' ) ), esc_attr( strip_tags( get_the_title() ) ) );?></a></p>
+				<?php
+			endif;
 			?>
 
 		</div>

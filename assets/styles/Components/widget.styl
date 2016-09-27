@@ -3,4 +3,62 @@
 	&__title {
 
 	}
+	ul {
+		padding-left: 0;
+	}
+
+	.sub-menu {
+		padding-left: 2em;
+	}
+	li {
+		display block;
+
+		a {
+			font-size: 0.9em;
+			padding 0.5em 0;
+			display block;
+			border-bottom  1px solid rgba(128,128,128, 0.2);
+		}
+
+		position: relative;
+		.sub-menu,
+		.children {
+			overflow: hidden;
+			transition: height 0.2s ease-out 0s;
+
+			&[aria-expanded="false"] {
+				height: 0 !important;
+			}
+
+			&[aria-expanded="true"] {
+				height: auto;
+			}
+
+			//toggle button
+			&::before {
+				font-family: "dashicons";
+				opacity: 0.6;
+				line-height: 1;
+				font-size: 1.5em;
+				content: "\f140";
+				position: absolute;
+				top: 0;
+				padding: 8px;
+				right: 0;
+				transform: rotateZ(0deg);
+				transition: transform 0.2s ease-out 0s;
+				cursor: pointer;
+			}
+
+			&[aria-expanded="true"]::before {
+				transform: rotateZ(180deg);
+			}
+		}
+
+		.genericon {
+			display inline
+		}
+	}
+
+
 }
