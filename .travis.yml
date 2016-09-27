@@ -30,5 +30,5 @@ script:
   - composer phpcs
 
 after_success:
-  - bash ./bin/deploy.sh
+  - bash ./bin/dist.sh
 
