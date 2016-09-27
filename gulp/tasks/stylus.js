@@ -14,10 +14,12 @@ import stylus from 'gulp-stylus';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import postcss from 'gulp-postcss';
+import mqpacker from 'css-mqpacker';
 
 
 var processors = [
 	autoprefixer(),
+	mqpacker()
 ];
 
 // ==================================
