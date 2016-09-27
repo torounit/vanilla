@@ -29,13 +29,11 @@
 				<?php
 			elseif ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) : ?>
 
-				<div class="posted-on">
+				<p class="entry__posted-on posted-on">
 					<span class="dashicons dashicons-calendar"></span>
-					<span
-						class="screen-reader-text"><?php echo esc_html_x( 'Posted on', 'Used before publish date.', 'vanilla' ); ?></span>
-					<time class="entry-date published"
-					      datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time>
-				</div>
+					<span class="screen-reader-text"><?php echo esc_html_x( 'Posted on', 'Used before publish date.', 'vanilla' ); ?></span>
+					<time class="entry-date published" datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+				</p>
 
 				<?php
 			endif; ?>
