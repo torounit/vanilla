@@ -1,0 +1,66 @@
+$grid-gutter ?= 20px;
+
+.gallery {
+
+	clear: both;
+	margin: (-1 * $grid-gutter / 2);
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+
+	&-item {
+		margin: 0 0 $grid-gutter;
+		box-sizing: border-box;
+		position: relative;
+		flex-grow: 0;
+		flex-shrink: 0;
+		padding: 0 ($grid-gutter / 2);
+	}
+
+	&-icon {
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	gallery-item-width($width) {
+		flex-basis: $width;
+	}
+
+
+	@media $medium-up {
+
+		for $i in (1..9) {
+
+			&.gallery-columns-{$i} &-item {
+				gallery-item-width(percentage(1 /$i));
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -12,43 +12,42 @@
  */
 function vanilla_get_customize_color_settings() {
 	return array(
-		'masthead_textcolor'       => array(
-			'label' => __( 'Header Text Color', 'vanilla' ),
-			'selector' => '.masthead__title, .masthead__description',
-			'property' => 'color',
-			// 'default'  => '#333333',
-		),
-		'masthead_background_textcolor'       => array(
-			'label' => __( 'Header Background Color', 'vanilla' ),
-			'selector' => '.masthead',
-			'property' => 'background-color',
-			// 'default'  => '#ffffff',
-		),
 		'navbar_textcolor'       => array(
 			'label' => __( 'Navigation Bar Text Color', 'vanilla' ),
-			'selector' => '.navbar',
+			'selector' => '.app-layout__header',
 			'property' => 'color',
-			// 'default'  => '#333333',
+			'default'  => '#333333',
 		),
 		'navbar_background_textcolor'       => array(
 			'label' => __( 'Navigation Bar Background Color', 'vanilla' ),
-			'selector' => '.navbar',
+			'selector' => '.app-layout__header',
 			'property' => 'background-color',
-			// 'default'  => '#ffffff',
+			'default'  => '#ffffff',
 		),
 		'text_color'       => array(
 			'label' => __( 'Post Text Color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
-			// 'default'  => '#333333',
+			'default'  => '#333333',
 		),
 		'link_color'       => array(
 			'label' => __( 'Link Color', 'vanilla' ),
 			'selector' => 'a',
 			'property' => 'color',
-			// 'default'  => '#337ab7',
+			'default'  => '#337ab7',
 		),
-
+		'footer_textcolor'       => array(
+			'label' => __( 'Footer Text Color', 'vanilla' ),
+			'selector' => '.site-footer',
+			'property' => 'color',
+			'default'  => '#333333',
+		),
+		'footer_background_textcolor'       => array(
+			'label' => __( 'Footer Background Color', 'vanilla' ),
+			'selector' => '.site-footer',
+			'property' => 'background-color',
+			'default'  => '#ffffff',
+		),
 	);
 }
 
@@ -59,12 +58,8 @@ function vanilla_get_customize_color_settings() {
  */
 function vanilla_customize_register( $wp_customize ) {
 
-	$wp_customize->remove_control( 'header_textcolor' );
-
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -90,7 +85,7 @@ function vanilla_customize_register( $wp_customize ) {
 
 		// Add page background color setting and control.
 		$wp_customize->add_setting( $key, array(
-			'default'           => '',
+			'default'           => $param['default'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		) );
@@ -159,11 +154,21 @@ function vanilla_customize_partial_blogdescription() {
 }
 
 /**
+ * Register script for customizer.
+ */
+function vanilla_customize_preview_js() {
+	wp_enqueue_script( 'vanilla-customize-preview', get_template_directory_uri() . '/assets/scripts/customizer/preview.js', array( 'customize-preview' ), '1.0.0', true );
+}
+
+add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
+
+/**
  * Customizer default value.
  */
 function vanilla_customize_control_js() {
 	wp_enqueue_script( 'vanilla-customize-color', get_template_directory_uri() . '/assets/scripts/customizer/color.js', array(
 		'customize-controls',
+		'customize-preview',
 		'iris',
 		'underscore',
 		'wp-util',
@@ -172,14 +177,7 @@ function vanilla_customize_control_js() {
 
 add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_control_js' );
 
-/**
- * Register script for customizer.
- */
-function vanilla_customize_preview_js() {
-	wp_enqueue_script( 'vanilla-customize-preview', get_template_directory_uri() . '/assets/scripts/customizer/preview.js', array( 'customize-preview' ), '1.0.0', true );
-}
 
-add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
 
 
 /**

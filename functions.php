@@ -52,6 +52,21 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'vanilla_setup' );
 
+
+if ( ! function_exists( 'vanilla_excerpt_more' ) && ! is_admin() ) :
+	/**
+	 * Replaces "[...]" (appended to automatically generated excerpts) with ...
+	 *
+	 * @return string an ellipsis.
+	 */
+	function vanilla_excerpt_more() {
+		return '&hellip;';
+	}
+	add_filter( 'excerpt_more', 'vanilla_excerpt_more' );
+endif;
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -122,7 +137,6 @@ function vanilla_scripts() {
 add_action( 'wp_enqueue_scripts', 'vanilla_scripts' );
 
 
-require 'inc/custom-header.php';
 require 'inc/custom-background.php';
 require 'inc/customizer.php';
 require 'inc/template-tags.php';

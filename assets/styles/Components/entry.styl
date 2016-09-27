@@ -1,18 +1,30 @@
 .entry {
 	overflow hidden;
-	//gutter( margin-top );
-	//gutter( margin-bottom );
+	gutter( padding-top );
+	gutter( padding-bottom );
+
+	&:first-child {
+		padding-top: 0;
+	}
 
 	&__featured-image {
 		//background-color: #aaaaaa;
 	}
 
 	&__body {
-		gutter( padding );
+		gutter( padding-left );
+		gutter( padding-right );
+
+	}
+
+	&__posted-on {
+		margin-top: 0;
+		margin-bottom: 0
 	}
 
 	&__header {
-		margin: 0 0 1em;
+		margin-bottom: 1em;
+		gutter( margin-top );
 	}
 
 	&__title {

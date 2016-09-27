@@ -1,7 +1,7 @@
 === Vanilla ===
 Contributors: Toro_Unit
 Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
-Tags: one-column, custom-logo, custom-colors, custom-menu, custom-background, custom-header, editor-style, sticky-post, microformats, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography
+Tags: one-column, custom-logo, custom-colors, custom-menu, custom-background, editor-style, sticky-post, microformats, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography
 Requires at least: 4.6
 Tested up to: 4.6
 Stable tag: 1.0.0
@@ -15,7 +15,6 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 * Custom Drawer Menu
 * Custom Colors
 * Custom Background
-* Custom Header
 * Custom Logo
 
 
