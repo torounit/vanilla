@@ -16,25 +16,25 @@ function vanilla_get_customize_color_settings() {
 			'label' => __( 'Navigation Bar Text Color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'color',
-			// 'default'  => '#333333',
+			'default'  => '#333333',
 		),
 		'navbar_background_textcolor'       => array(
 			'label' => __( 'Navigation Bar Background Color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'background-color',
-			// 'default'  => '#ffffff',
+			'default'  => '#ffffff',
 		),
 		'text_color'       => array(
 			'label' => __( 'Post Text Color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
-			// 'default'  => '#333333',
+			'default'  => '#333333',
 		),
 		'link_color'       => array(
 			'label' => __( 'Link Color', 'vanilla' ),
 			'selector' => 'a',
 			'property' => 'color',
-			// 'default'  => '#337ab7',
+			'default'  => '#337ab7',
 		),
 
 	);

@@ -122,7 +122,6 @@ function vanilla_scripts() {
 add_action( 'wp_enqueue_scripts', 'vanilla_scripts' );
 
 
-require 'inc/custom-header.php';
 require 'inc/custom-background.php';
 require 'inc/customizer.php';
 require 'inc/template-tags.php';
