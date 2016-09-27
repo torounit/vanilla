@@ -4,8 +4,6 @@
 		'background_color',
 		'link_color',
 		'text_color',
-		'masthead_textcolor',
-		'masthead_background_textcolor',
 		'navbar_textcolor',
 		'navbar_background_textcolor',
 

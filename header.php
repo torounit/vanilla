@@ -45,7 +45,10 @@
 			<div  class="navbar__branding">
 				<header class="site-branding">
 					<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
-					<a class="site-branding__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					<h1 class="site-branding__name">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a></h1>
 				</header>
 			</div>
 
@@ -59,8 +62,3 @@
 
 	<div id="content" class="site-content [ app-layout__content ]">
 		<div class="app-layout__spacer"></div>
-		<header id="masthead" class="site-header masthead" role="banner">
-			<h1 class="site-title [ masthead__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<p class="site-description [ masthead__description ]"><?php bloginfo( 'description' ); ?></p>
-
-		</header>
