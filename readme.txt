@@ -9,6 +9,7 @@ License: GPLv3 or later
 License URI: LICENSE
 
 == Description ==
+
 Vanilla is the simple theme for blogging. And for single column modern websites.
 
 * Mobile-first, Responsive Layout
