@@ -17,7 +17,7 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_editor_style( get_stylesheet_uri() );
 
-		add_image_size( 'vanilla-featured-image', 1600, 9999 );
+		add_image_size( 'vanilla-featured-image', 1920, 9999 );
 
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'vanilla' ),
