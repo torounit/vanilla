@@ -19,7 +19,8 @@
     "build": "gulp build",
     "gulp": "gulp",
     "start": "gulp",
-    "dist": "gulp dist"
+    "dist": "gulp dist",
+    "release": "gulp release"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
@@ -38,6 +39,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-stylus": "^2.5.0",
     "gulp-watch": "^4.3.9",
+    "gulp-zip": "^3.2.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
