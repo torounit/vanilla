@@ -11,6 +11,6 @@ import zip from 'gulp-zip';
 
 gulp.task('release', [ 'dist'], function(){
 	return gulp.src('dist/*', {base: 'dist'})
-		.pipe(zip('release.zip'))
+		.pipe(zip('vanilla.zip'))
 		.pipe(gulp.dest('./'));
 });
