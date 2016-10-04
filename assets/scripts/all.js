@@ -24,7 +24,7 @@ $(function() {
 		return false;
 	});
 
-	$(".sub-menu,.children").each(function () {
+	$(".primary-menu .sub-menu, .primary-menu .children").each(function () {
 		//set default height for animation
 		// let height = $(this).height();
 		// $(this).height( height );

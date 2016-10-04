@@ -4,7 +4,7 @@ Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
 Tags: one-column, custom-logo, custom-colors, custom-menu, custom-background, editor-style, sticky-post, microformats, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography, portfolio
 Requires at least: 4.6
 Tested up to: 4.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: LICENSE
 
