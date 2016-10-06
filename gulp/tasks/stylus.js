@@ -15,7 +15,8 @@ import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import postcss from 'gulp-postcss';
 import mqpacker from 'css-mqpacker';
-
+import packageJson from '../../package.json';
+import handlebars from 'gulp-compile-handlebars';
 
 var processors = [
 	autoprefixer(),
@@ -30,13 +31,13 @@ var processors = [
 
 
 gulp.task('stylus', function () {
-
 	return gulp.src([config.stylus.src])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(stylus({
 			'include css': true
 		}))
+		.pipe(handlebars(packageJson))
 		.on('error', handleErrors)
 		.pipe(postcss(processors))
 		.pipe(sourcemaps.write({

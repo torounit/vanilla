@@ -1,6 +1,6 @@
 {
-  "name": "vanilla",
-  "version": "1.0.2",
+  "name": "@torounit/vanilla",
+  "version": "1.0.3",
   "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
   "repository": {
     "type": "git",
@@ -8,13 +8,14 @@
   },
   "author": {
     "name": "Toro_Unit",
-    "email": "mail@torounit.com"
+    "email": "mail@torounit.com",
+    "url" : "https://torounit.com"
   },
   "license": "GPL-3.0+",
   "bugs": {
     "url": "https://github.com/torounit/vanilla/issues"
   },
-  "homepage": "https://github.com/torounit/vanilla#readme",
+  "homepage": "https://torounit.com/vanilla",
   "scripts": {
     "build": "gulp build",
     "gulp": "gulp",
@@ -31,6 +32,7 @@
     "browserify-shim": "^3.8.12",
     "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.1",
+    "gulp-compile-handlebars": "^0.6.1",
     "gulp-debug": "^2.1.2",
     "gulp-minify-css": "^1.2.4",
     "gulp-notify": "^2.2.0",
