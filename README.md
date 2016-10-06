@@ -1,6 +1,8 @@
 # Vanilla
 
 [![Build Status](https://travis-ci.org/torounit/vanilla.svg?branch=master)](https://travis-ci.org/torounit/vanilla)
+[![Latest Stable Version](https://poser.pugx.org/torounit/vanilla/v/stable)](https://packagist.org/packages/torounit/vanilla)
+[![License](https://poser.pugx.org/torounit/vanilla/license)](https://packagist.org/packages/torounit/vanilla)
 
 Vanilla is the simple theme for blogging. And for single column modern websites.
 
