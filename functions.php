@@ -62,9 +62,9 @@ if ( ! function_exists( 'vanilla_excerpt_more' ) && ! is_admin() ) :
 	function vanilla_excerpt_more() {
 		return '&hellip;';
 	}
+
 	add_filter( 'excerpt_more', 'vanilla_excerpt_more' );
 endif;
-
 
 
 /**
@@ -123,11 +123,16 @@ add_action( 'widgets_init', 'vanilla_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vanilla_scripts() {
-	wp_enqueue_style( 'vanilla-style', get_stylesheet_uri(), array( 'dashicons' ) );
+	$theme   = wp_get_theme( get_template() );
+	$version = $theme->get( 'Version' );
+	if ( is_child_theme() ) {
+		wp_enqueue_style( get_template() . '-style', get_template_directory_uri() . '/style.css', array( 'dashicons' ), $version );
+	}
+	wp_enqueue_style( get_stylesheet() . '-style', get_stylesheet_uri(), array( 'dashicons' ), $version );
 	wp_enqueue_script( 'vanilla-bundle', get_template_directory_uri() . '/bundle.js', array(
 		'jquery',
 		'underscore',
-	), '1.0.0', true );
+	), $version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

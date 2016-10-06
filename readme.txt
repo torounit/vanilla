@@ -4,9 +4,9 @@ Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
 Tags: one-column, custom-logo, custom-colors, custom-menu, custom-background, editor-style, sticky-post, microformats, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography, portfolio
 Requires at least: 4.6
 Tested up to: 4.6
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv3 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
@@ -35,5 +35,9 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 
 == Changelog ==
 
+= 1.0.3 =
+* Bug Fix.
+* Enqueue theme style for child theme.
+
 = 1.0.0 =
-* Initial Release
+* Initial Release.
