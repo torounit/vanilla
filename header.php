@@ -65,7 +65,7 @@
 			<div class="custom-header__media custom-header-media ">
 				<?php the_custom_header_markup();?>
 			</div>
-			<?php if( display_header_text() ) :?>
+			<?php if ( display_header_text() ) :?>
 				<div class="custom-header__branding">
 					<div class="container">
 						<p class="site-title [ custom-header__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
