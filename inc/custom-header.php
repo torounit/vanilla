@@ -12,10 +12,10 @@ function vanilla_custom_header() {
 
 	add_theme_support( 'custom-header', apply_filters( 'vanilla_custom_header_args', array(
 		'width'              => 1920,
-		'height'             => 1080,
+		'height'             => 960,
 		'flex-height'        => true,
 		'wp-head-callback'   => 'vanilla_header_style',
-		'default-text-color' => '#000',
+		'default-text-color' => '',
 	) ) );
 }
 add_action( 'after_setup_theme', 'vanilla_custom_header' );
