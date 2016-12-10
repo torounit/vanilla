@@ -64,7 +64,6 @@ function vanilla_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'            => '.site-title a',
@@ -76,12 +75,6 @@ function vanilla_customize_register( $wp_customize ) {
 			'container_inclusive' => false,
 			'render_callback'     => 'vanilla_customize_partial_blogdescription',
 		) );
-//
-//		$wp_customize->selective_refresh->add_partial( 'header_image_data', array(
-//			'selector'            => '#vanilla-header-image-style-css',
-//			'container_inclusive' => true,
-//			'render_callback'     => 'vanilla_header_background',
-//		) );
 
 	}
 

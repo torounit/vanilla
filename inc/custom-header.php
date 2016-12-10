@@ -25,9 +25,9 @@ add_action( 'after_setup_theme', 'vanilla_custom_header' );
  */
 function vanilla_header_background() {
 	echo '<style type="text/css" id="vanilla-header-image-style-css">';
-	$css = '';
 	if ( 'blank' != get_header_textcolor() ) {
-		echo '.custom-header { color: #' . get_header_textcolor() . ' !important; }';
+		$css = '.custom-header { color: #' . get_header_textcolor() . ' !important; }';
+		echo wp_kses( $css, array() );
 	}
 	echo '</style>';
 }
