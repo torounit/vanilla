@@ -48,6 +48,9 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 			'quote',
 			'link',
 		) );
+
+		// Indicate widget sidebars can use selective refresh in the Customizer.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 endif;
 add_action( 'after_setup_theme', 'vanilla_setup' );
