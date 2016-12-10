@@ -34,7 +34,7 @@ export default class AppLayoutClassController {
 	on() {
 		this.$content.on( 'scroll resize', _.throttle(function(){
 			this.toggleClass();
-		}, 300 ).bind(this) );
+		}, 1 ).bind(this) );
 	}
 
 	toggleClass() {
