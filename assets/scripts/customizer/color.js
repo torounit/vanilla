@@ -6,9 +6,9 @@
 		'text_color',
 		'header_textcolor',
 		'navbar_textcolor',
-		'navbar_background_textcolor',
+		'navbar_background_color',
 		'footer_textcolor',
-		'footer_background_textcolor',
+		'footer_background_color',
 
 	];
 
@@ -18,7 +18,16 @@
 
 		// Merge in color scheme overrides.
 		_.each(colorSchemeKeys, function (setting) {
-			colors[setting] = api(setting)();
+			var color = api(setting)();
+			if( !color ) {
+				if ( setting.indexOf('background_color') ) {
+					color = 'transparent'
+				}
+				else {
+					color = 'inherit'
+				}
+			}
+			colors[setting] = color;
 		});
 
 		css = cssTemplate(colors);
