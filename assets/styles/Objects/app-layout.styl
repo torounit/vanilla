@@ -7,6 +7,7 @@ $app-layout-use-escape = true;
 	//min-height: 100vh;
 	//flex-direction: column;
 
+	background-color: inherit
 	&.app-layout--disable &__header {
 		position: relative !important;
 		top: 0 !important;
@@ -41,7 +42,7 @@ $app-layout-use-escape = true;
 			}
 			@media $medium-up {
 				position: fixed;
-				padding-top: 32px;
+				padding-top: 32px !important;
 			}
 		}
 		z-index: 2;
@@ -67,6 +68,8 @@ $app-layout-use-escape = true;
 	&__content {
 		box-sizing: border-box;
 		//flex-grow: 1;
+
+		background-color: inherit
 	}
 
 	& &__header {

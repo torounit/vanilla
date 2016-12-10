@@ -12,38 +12,38 @@
  */
 function vanilla_get_customize_color_settings() {
 	return array(
-		'navbar_textcolor'       => array(
-			'label' => __( 'Navigation Bar Text Color', 'vanilla' ),
+		'navbar_textcolor'            => array(
+			'label'    => __( 'Navigation Bar Text Color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'navbar_background_textcolor'       => array(
-			'label' => __( 'Navigation Bar Background Color', 'vanilla' ),
+		'navbar_background_textcolor' => array(
+			'label'    => __( 'Navigation Bar Background Color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'background-color',
 			'default'  => '#ffffff',
 		),
-		'text_color'       => array(
-			'label' => __( 'Post Text Color', 'vanilla' ),
+		'text_color'                  => array(
+			'label'    => __( 'Post Text Color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'link_color'       => array(
-			'label' => __( 'Link Color', 'vanilla' ),
+		'link_color'                  => array(
+			'label'    => __( 'Link Color', 'vanilla' ),
 			'selector' => 'a',
 			'property' => 'color',
 			'default'  => '#337ab7',
 		),
-		'footer_textcolor'       => array(
-			'label' => __( 'Footer Text Color', 'vanilla' ),
+		'footer_textcolor'            => array(
+			'label'    => __( 'Footer Text Color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'footer_background_textcolor'       => array(
-			'label' => __( 'Footer Background Color', 'vanilla' ),
+		'footer_background_textcolor' => array(
+			'label'    => __( 'Footer Background Color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'background-color',
 			'default'  => '#ffffff',
@@ -58,11 +58,9 @@ function vanilla_get_customize_color_settings() {
  */
 function vanilla_customize_register( $wp_customize ) {
 
-	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -105,7 +103,7 @@ add_action( 'customize_register', 'vanilla_customize_register', 11 );
  *
  * @param string $selector CSS selector.
  * @param string $property CSS property name.
- * @param string $value    CSS value.
+ * @param string $value CSS value.
  *
  * @return string
  */
@@ -175,8 +173,6 @@ function vanilla_customize_control_js() {
 add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_control_js' );
 
 
-
-
 /**
  * Render script for customizer preview
  */
@@ -195,4 +191,5 @@ function vanilla_color_scheme_css_template() {
 	</script>
 	<?php
 }
+
 add_action( 'customize_controls_print_footer_scripts', 'vanilla_color_scheme_css_template' );
