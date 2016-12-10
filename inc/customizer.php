@@ -148,10 +148,6 @@ function vanilla_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
-function vanilla_customize_header_image() {
-	the_custom_header_markup();
-}
-
 /**
  * Register script for customizer.
  */
