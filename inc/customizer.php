@@ -12,38 +12,50 @@
  */
 function vanilla_get_customize_color_settings() {
 	return array(
-		'navbar_textcolor'            => array(
-			'label'    => __( 'Navigation Bar Text Color', 'vanilla' ),
-			'selector' => '.app-layout__header',
-			'property' => 'color',
-			'default'  => '#000000',
-		),
-		'navbar_background_color' => array(
-			'label'    => __( 'Navigation Bar Background Color', 'vanilla' ),
-			'selector' => '.app-layout__header',
-			'property' => 'background-color',
-			'default'  => '#ffffff',
-		),
 		'text_color'                  => array(
-			'label'    => __( 'Post Text Color', 'vanilla' ),
+			'label'    => __( 'Post text color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
 		'link_color'                  => array(
-			'label'    => __( 'Link Color', 'vanilla' ),
+			'label'    => __( 'Link color', 'vanilla' ),
 			'selector' => 'a',
 			'property' => 'color',
 			'default'  => '#337ab7',
 		),
+		'navbar_textcolor'            => array(
+			'label'    => __( 'Navigation bar text color', 'vanilla' ),
+			'selector' => '.app-layout__header',
+			'property' => 'color',
+			'default'  => '#000000',
+		),
+		'navbar_background_color' => array(
+			'label'    => __( 'Navigation bar background color', 'vanilla' ),
+			'selector' => '.app-layout__header',
+			'property' => 'background-color',
+			'default'  => '#ffffff',
+		),
+		'archive_header_textcolor'            => array(
+			'label'    => __( 'Archive header text color', 'vanilla' ),
+			'selector' => '.archive-header',
+			'property' => 'color',
+			'default'  => '#000000',
+		),
+		'archive_header_background_color' => array(
+			'label'    => __( 'Archive header background color', 'vanilla' ),
+			'selector' => '.archive-header',
+			'property' => 'background-color',
+			'default'  => '#ffffff',
+		),
 		'footer_textcolor'            => array(
-			'label'    => __( 'Footer Text Color', 'vanilla' ),
+			'label'    => __( 'Footer text color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
 		'footer_background_color' => array(
-			'label'    => __( 'Footer Background Color', 'vanilla' ),
+			'label'    => __( 'Footer background color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'background-color',
 			'default'  => '#ffffff',
