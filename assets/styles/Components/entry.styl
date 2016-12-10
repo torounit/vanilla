@@ -3,19 +3,21 @@
 	gutter( padding-top );
 	gutter( padding-bottom );
 
+	box-shadow: 0 1px 1px 0 rgba(128,128,128,0.12), 0 2px 1px -1px rgba(128,128,128,0.2);
+
 	&.has-post-thumbnail {
 		padding-top: 0
 	}
 
 	&__featured-image {
 		//background-color: #aaaaaa;
+		gutter( margin-bottom, 2 );
 	}
 
 
 	&__body {
 		gutter( padding-left );
 		gutter( padding-right );
-
 	}
 
 	&__posted-on {
@@ -34,5 +36,9 @@
 		line-height: 1.6;
 		margin: 0;
 		padding 0
+	}
+
+	&__content {
+		gutter( margin-bottom );
 	}
 }
