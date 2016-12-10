@@ -40,6 +40,7 @@
 		} );
 	} );
 
+
 	// Header text color.
 	api( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
@@ -68,6 +69,26 @@
 			}
 		});
 	});
+
+	// Whether a header image is available.
+	function hasHeaderImage() {
+		var image = api( 'header_image' )();
+		return '' !== image && 'remove-header' !== image;
+	}
+
+
+	// Toggle a body class if a custom header exists.
+	$.each( [ 'header_image' ], function( index, settingId ) {
+		wp.customize( settingId, function( setting ) {
+			setting.bind(function() {
+				if ( hasHeaderImage() ) {
+					$( ".custom-header" ).addClass( 'custom-header--has-image' );
+				} else {
+					$( ".custom-header" ).removeClass( 'custom-header--has-image' );
+				}
+			} );
+		} );
+	} );
 
 
 

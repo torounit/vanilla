@@ -37,9 +37,9 @@
 
 	</div>
 </nav>
+
 <div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
-
 	<header class="app-layout__header" aria-hidden="false">
 		<div class="navbar container">
 			<div  class="navbar__branding">
@@ -61,21 +61,21 @@
 	</header>
 
 	<div id="content" class="site-content [ app-layout__content ]">
-		<div class="app-layout__spacer"></div>
-		<?php if ( ! ( is_singular() and has_post_thumbnail() ) ) : ?>
-			<?php if ( get_header_image() ) : ?>
-			<div id="masthead" class="custom-header" role="banner">
-				<div class="custom-header__media">
-					<?php the_custom_header_markup();?>
-				</div>
-				<?php if( display_header_text() ) :?>
-					<div class="custom-header__branding container">
+		<div id="masthead" class="app-layout__spacer custom-header <?php if ( get_header_image() ) : ?> custom-header--has-image <?php endif;?>" role="banner">
+			<div class="custom-header__media custom-header-media ">
+				<?php the_custom_header_markup();?>
+			</div>
+			<?php if( display_header_text() ) :?>
+				<div class="custom-header__branding">
+					<div class="container">
 						<p class="site-title [ custom-header__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 						<p class="site-description [ custom-header__description ]"><?php bloginfo( 'description' ); ?></p>
 					</div>
-				<?php endif;?>
-			</div>
+				</div>
 			<?php endif;?>
-		<?php endif;?>
+		</div>
+		<div class="content-area">
+
+
 
 

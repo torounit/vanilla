@@ -1,18 +1,42 @@
 .custom-header {
+	box-sizing border-box;
+	position relative;
+	overflow hidden;
 
-	img {
-		display block
+	&--has-image {
+		height 100vh;
 	}
-	background-size: cover;
-	position relative
+
+
+	&__media {
+		position fixed;
+		top: 0;
+		left 0;
+		width 100%;
+		height 100%;
+
+		.wp-custom-header {
+			width 100%;
+			height 100%;
+		}
+		img {
+			display block
+			height: 100%;
+			left: 0;
+			-o-object-fit: cover;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
 
 	&__branding {
+		width 100%
 
 		gutter( padding-top, 2 );
 		gutter( padding-bottom, 2 );
 	}
 	&__media + &__branding {
-		position absolute
+		position fixed
 		bottom 0
 	}
 
@@ -38,7 +62,6 @@
 
 		+medium-up() {
 			font-size: 1.2em;
-
 		}
 	}
 }
