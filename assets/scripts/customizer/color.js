@@ -7,6 +7,8 @@
 		'header_textcolor',
 		'navbar_textcolor',
 		'navbar_background_color',
+		'archive_header_textcolor',
+		'archive_header_background_color',
 		'footer_textcolor',
 		'footer_background_color',
 

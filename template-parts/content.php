@@ -10,9 +10,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 	<?php if ( get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail entry__featured-image">
-			<a href="<?php the_permalink(); ?>">
+			<?php if ( is_singular() ) : ?>
 				<?php the_post_thumbnail( 'vanilla-featured-image' ); ?>
-			</a>
+			<?php else : ?>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'vanilla-featured-image' ); ?></a>
+			<?php endif;?>
+
 		</div>
 	<?php endif; ?>
 
@@ -38,7 +41,14 @@
 				<?php
 			endif; ?>
 
-			<h1 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h1>
+			<?php if ( is_singular() && ! is_front_page() ) : ?>
+				<h1 class="entry-title entry__title"><?php the_title(); ?></h1>
+			<?php elseif ( is_front_page() ) : ?>
+				<h2 class="entry-title entry__title"><?php the_title(); ?></h2>
+			<?php else : ?>
+				<h2 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h2>
+			<?php endif;?>
+
 			<div class="entry__meta">
 				<?php vanilla_entry_meta(); ?>
 			</div>

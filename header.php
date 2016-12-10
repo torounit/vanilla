@@ -45,10 +45,11 @@
 			<div  class="navbar__branding">
 				<div class="site-branding">
 					<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
-					<h1 class="site-branding__name site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a></h1>
+					<?php if ( is_front_page() ) : ?>
+					<h1 class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif;?>
 				</div>
 			</div>
 

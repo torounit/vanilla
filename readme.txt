@@ -35,6 +35,9 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 
 == Changelog ==
 
+= 1.1.0 =
+* Add support custom header.
+
 = 1.0.5 =
 * Bug Fix.
 
