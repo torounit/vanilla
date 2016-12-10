@@ -18,7 +18,7 @@ function vanilla_get_customize_color_settings() {
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'navbar_background_textcolor' => array(
+		'navbar_background_color' => array(
 			'label'    => __( 'Navigation Bar Background Color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'background-color',
@@ -42,7 +42,7 @@ function vanilla_get_customize_color_settings() {
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'footer_background_textcolor' => array(
+		'footer_background_color' => array(
 			'label'    => __( 'Footer Background Color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'background-color',
@@ -123,7 +123,6 @@ function vanilla_create_css( $selector, $property, $value ) {
 function vanilla_color_css() {
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
-
 		if ( $value = get_theme_mod( $key ) ) {
 			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
 			wp_add_inline_style( 'vanilla-style', $css );

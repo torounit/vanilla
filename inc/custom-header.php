@@ -11,21 +11,14 @@
 function vanilla_custom_header_setup() {
 
 	add_theme_support( 'custom-header', apply_filters( 'vanilla_custom_header_args', array(
-		'default-image'      => get_parent_theme_file_uri( '/assets/images/header.jpg' ),
 		'width'              => 1920,
-		'height'             => 960,
+		'height'             => 1080,
 		'flex-height'        => true,
 		'video'              => true,
+		'default-text-color' => '#FFF',
+		'header-text'            => true,
 		'wp-head-callback'   => 'vanilla_header_style',
 	) ) );
-
-	register_default_headers( array(
-		'default-image' => array(
-			'url'           => '%s/assets/images/header.jpg',
-			'thumbnail_url' => '%s/assets/images/header.jpg',
-			'description'   => __( 'Default Header Image', 'twentyseventeen' ),
-		),
-	) );
 }
 add_action( 'after_setup_theme', 'vanilla_custom_header_setup' );
 
