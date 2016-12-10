@@ -4,6 +4,7 @@
 		'background_color',
 		'link_color',
 		'text_color',
+		'header_textcolor',
 		'navbar_textcolor',
 		'navbar_background_textcolor',
 		'footer_textcolor',
@@ -19,11 +20,6 @@
 		_.each(colorSchemeKeys, function (setting) {
 			colors[setting] = api(setting)();
 		});
-
-		// Add additional color.
-		// jscs:disable
-		colors.border_color = Color(colors.main_text_color).toCSS('rgba', 0.2);
-		// jscs:enable
 
 		css = cssTemplate(colors);
 

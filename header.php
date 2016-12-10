@@ -62,3 +62,17 @@
 
 	<div id="content" class="site-content [ app-layout__content ]">
 		<div class="app-layout__spacer"></div>
+		<div id="masthead" class="custom-header" role="banner">
+			<?php if ( get_header_image() ) : ?>
+				<div class="custom-header__media">
+					<?php the_custom_header_markup();?>
+				</div>
+			<?php endif;?>
+			<div class="custom-header__branding container">
+				<div class="site-title [ custom-header__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+				<div class="site-description [ custom-header__description ]"><?php bloginfo( 'description' ); ?></div>
+			</div>
+
+		</div>
+
+
