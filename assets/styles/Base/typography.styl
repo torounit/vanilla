@@ -9,9 +9,13 @@ body {
 	font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 	margin: 0;
 
-	//overflow-x: hidden;
-	font-size: 1.6em;
-	color: #333;
+	font-size: 1.4em;
+
+	+medium-up() {
+		font-size: 1.6em;
+	}
+
+	color: #000;
 	background-color: #fff;
 	line-height: 1.8;
 	overflow-wrap: break-word;

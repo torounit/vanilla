@@ -16,7 +16,7 @@ function vanilla_get_customize_color_settings() {
 			'label' => __( 'Navigation Bar Text Color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'color',
-			'default'  => '#333333',
+			'default'  => '#000000',
 		),
 		'navbar_background_textcolor'       => array(
 			'label' => __( 'Navigation Bar Background Color', 'vanilla' ),
@@ -28,7 +28,7 @@ function vanilla_get_customize_color_settings() {
 			'label' => __( 'Post Text Color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
-			'default'  => '#333333',
+			'default'  => '#000000',
 		),
 		'link_color'       => array(
 			'label' => __( 'Link Color', 'vanilla' ),
@@ -40,7 +40,7 @@ function vanilla_get_customize_color_settings() {
 			'label' => __( 'Footer Text Color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'color',
-			'default'  => '#333333',
+			'default'  => '#000000',
 		),
 		'footer_background_textcolor'       => array(
 			'label' => __( 'Footer Background Color', 'vanilla' ),
@@ -60,6 +60,9 @@ function vanilla_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -71,12 +74,6 @@ function vanilla_customize_register( $wp_customize ) {
 			'selector'            => '.site-description',
 			'container_inclusive' => false,
 			'render_callback'     => 'vanilla_customize_partial_blogdescription',
-		) );
-
-		$wp_customize->selective_refresh->add_partial( 'header_image_data', array(
-			'selector'            => '#vanilla-header-image-style-css',
-			'container_inclusive' => true,
-			'render_callback'     => 'vanilla_header_background',
 		) );
 
 	}

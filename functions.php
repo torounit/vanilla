@@ -17,7 +17,7 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_editor_style( get_stylesheet_uri() );
 
-		add_image_size( 'vanilla-featured-image', 1920, 9999 );
+		add_image_size( 'vanilla-featured-image', 1920, 1080, true );
 
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'vanilla' ),
@@ -147,5 +147,6 @@ add_action( 'wp_enqueue_scripts', 'vanilla_scripts' );
 
 require 'inc/custom-background.php';
 require 'inc/customizer.php';
+require 'inc/custom-header.php';
 require 'inc/template-tags.php';
 
