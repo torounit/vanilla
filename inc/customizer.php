@@ -40,13 +40,13 @@ function vanilla_get_customize_color_settings() {
 			'label'    => __( 'Archive header text color', 'vanilla' ),
 			'selector' => '.archive-header',
 			'property' => 'color',
-			'default'  => '#000000',
+			'default'  => '#ffffff',
 		),
 		'archive_header_background_color' => array(
 			'label'    => __( 'Archive header background color', 'vanilla' ),
 			'selector' => '.archive-header',
 			'property' => 'background-color',
-			'default'  => '#ffffff',
+			'default'  => '#666666',
 		),
 		'footer_textcolor'            => array(
 			'label'    => __( 'Footer text color', 'vanilla' ),
