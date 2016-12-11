@@ -58,8 +58,7 @@ function vanilla_header_style() {
 			// Has the text been hidden?
 			if ( 'blank' === $header_text_color ) :
 		?>
-		.site-title,
-		.site-description {
+		.custom-header__branding {
 		position: absolute;
 		clip: rect(1px, 1px, 1px, 1px);
 		}

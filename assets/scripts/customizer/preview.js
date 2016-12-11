@@ -45,7 +45,7 @@
 	api( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.custom-header .site-title, .custom-header .site-description' ).css({
+				$( '.custom-header__branding' ).css({
 					clip: 'rect(1px, 1px, 1px, 1px)',
 					position: 'absolute'
 				});
@@ -57,7 +57,7 @@
 				if ( ! to.length ) {
 					$( '#vanilla-custom-header-styles' ).remove();
 				}
-				$( '.site-title, .site-description' ).css({
+				$( '.custom-header__branding' ).css({
 					clip: 'auto',
 					position: 'relative'
 				});

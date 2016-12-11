@@ -4,9 +4,9 @@ Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
 Tags: one-column, custom-logo, custom-colors, custom-header, custom-menu, custom-background, editor-style, sticky-post, post-formats, microformats, featured-image-header, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography, portfolio, food-and-drink
 Requires at least: 4.7
 Tested up to: 4.7
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
