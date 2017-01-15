@@ -145,8 +145,8 @@ function vanilla_scripts() {
 add_action( 'wp_enqueue_scripts', 'vanilla_scripts' );
 
 
-require 'inc/custom-background.php';
-require 'inc/customizer.php';
-require 'inc/custom-header.php';
-require 'inc/template-tags.php';
+require dirname( __FILE__ ) . '/inc/custom-background.php';
+require dirname( __FILE__ ) . '/inc/customizer.php';
+require dirname( __FILE__ ) . '/inc/custom-header.php';
+require dirname( __FILE__ ) . '/inc/template-tags.php';
 

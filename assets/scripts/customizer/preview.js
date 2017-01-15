@@ -57,10 +57,10 @@
 				if ( ! to.length ) {
 					$( '#vanilla-custom-header-styles' ).remove();
 				}
-				$( '.custom-header__branding' ).css({
-					clip: 'auto',
-					position: 'relative'
-				});
+				// $( '.custom-header__branding' ).css({
+				// 	clip: 'auto',
+				// 	position: 'relative'
+				// });
 				$( '.custom-header' ).css({
 					color: to
 				});
