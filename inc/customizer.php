@@ -141,13 +141,13 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 		$wp_customize->add_control( 'panel_' . $i, array(
 			/* translators: %d is the front page section number */
 			'label'          => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
-			//'description'    => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
+			// 'description'    => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
 			'section'        => 'theme_options',
 			'type'           => 'dropdown-pages',
 			'allow_addition' => true,
 			'active_callback' => function(){
 				return ( is_front_page() && ! is_home() );
-			}
+			},
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'panel_' . $i, array(
@@ -217,6 +217,15 @@ function vanilla_customize_preview_js() {
 }
 
 add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
+
+/**
+ * Load dynamic logic for the customizer controls area.
+ */
+function vanilla_customize_controls_js() {
+	wp_enqueue_script( 'vanilla-customize-controls',get_template_directory_uri() . '/assets/scripts/customizer/controls.js', array(), '1.0.0', true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_controls_js' );
+
 
 /**
  * Customizer default value.

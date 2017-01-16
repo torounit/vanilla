@@ -15,15 +15,6 @@ $(function() {
 		new Drawer($(this));
 	});
 
-	$("[data-page-top]").click(function() {
-		var speed;
-		speed = 800;
-		$("html, body").animate({
-			scrollTop: 0
-		}, speed, "easeOutExpo");
-		return false;
-	});
-
 	$(".primary-menu .sub-menu, .primary-menu .children").each(function () {
 		//set default height for animation
 		// let height = $(this).height();

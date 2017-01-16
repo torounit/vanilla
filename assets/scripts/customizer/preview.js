@@ -6,14 +6,28 @@
 	var style = $( '#vanilla-color-css' ),
 		api = wp.customize;
 
-	// Detect when the front page sections section is expanded (or closed) so we can adjust the preview accordingly.
-	wp.customize.section( 'theme_options', function( section ) {
-		section.expanded.bind( function( isExpanding ) {
+	api.bind( 'preview-ready', function() {
+		"use strict";
+		api.preview.bind( 'section-highlight', function( data ) {
+			// When the section is expanded, show and scroll to the content placeholders, exposing the edit links.
+			$( '.panel--placeholder' ).hide();
+			if ( true === data.expanded ) {
+				$( 'body' ).addClass( 'highlight-front-sections' );
+				$( '.panel--placeholder' ).slideDown( 200, function() {
+					$("html, body").animate({
+						scrollTop: $( '#panel1' ).offset().top
+					}, 600);
+				});
 
-			// Value of isExpanding will = true if you're entering the section, false if you're leaving it.
-			wp.customize.previewer.send( 'section-highlight', { expanded: isExpanding });
-		} );
-	} );
+				// If we've left the panel, hide the placeholders and scroll back to the top.
+			} else {
+				$( 'body' ).removeClass( 'highlight-front-sections' );
+				// Don't change scroll when leaving - it's likely to have unintended consequences.
+				$( '.panel--placeholder' ).slideUp( 200 );
+			}
+		});
+	});
+
 
 	if ( ! style.length ) {
 		style = $( 'head' ).append( '<style type="text/css" id="vanilla-color-css" />' )

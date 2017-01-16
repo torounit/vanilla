@@ -89,7 +89,7 @@ endif;
 
 /**
  * @param WP_Customize_Partial|null $partial
- * @param int $id
+ * @param int                       $id
  */
 function vanilla_front_page_section( $partial = null, $id = 0  ) {
 
@@ -113,9 +113,9 @@ function vanilla_front_page_section( $partial = null, $id = 0  ) {
 	} elseif ( is_customize_preview() ) {
 		// The output placeholder anchor.
 		?>
-		<article class="entry panel-placeholder panel vanilla-panel vanilla-panel-<?php echo $id;?>" id="panel-<?php echo $id;?>">
+		<article class="entry panel panel--placeholder" id="panel<?php echo esc_attr( $id );?>">
 			<div class="entry__body container">
-			<span class="vanilla-panel-title"><?php echo sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id );?></span>
+				<div class="panel__content"><?php echo esc_html( sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id ) );?></div>
 			</div>
 		</article>
 		<?php

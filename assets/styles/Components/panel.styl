@@ -1,0 +1,30 @@
+.panel {
+	position relative
+
+	&__content {
+		padding 20px;
+	}
+}
+
+.customize-partial-edit-shortcuts-shown .panel {
+	.customize-partial-edit-shortcut button {
+		top: 0;
+		left: 1em;
+	}
+}
+
+.highlight-front-sections {
+	.panel {
+		&::after {
+			border: 2px dashed #0085ba;
+			bottom: .5em;
+			content: "";
+			display: block;
+			left: .5em;
+			position: absolute;
+			right: .5em;
+			top: .5em;
+			z-index: 1;
+		}
+	}
+}
