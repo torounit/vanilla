@@ -153,9 +153,7 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 			'section'        => 'theme_options',
 			'type'           => 'dropdown-pages',
 			'allow_addition' => true,
-			'active_callback' => function(){
-				return ( is_front_page() && ! is_home() );
-			},
+			'active_callback' => 'vanilla_is_static_front_page',
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'panel_' . $i, array(
@@ -167,6 +165,14 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 }
 add_action( 'customize_register', 'vanilla_setup_theme_options_section', 12 );
 
+/**
+ * Return whether we're previewing the front page and it's a static page.
+ *
+ * @return bool
+ */
+function vanilla_is_static_front_page() {
+	return ( is_front_page() && ! is_home() );
+}
 
 /**
  * Create css block.
