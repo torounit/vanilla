@@ -8,9 +8,10 @@
 
 	api.bind( 'preview-ready', function() {
 		"use strict";
+		$( '.panel--placeholder' ).hide();
 		api.preview.bind( 'section-highlight', function( data ) {
 			// When the section is expanded, show and scroll to the content placeholders, exposing the edit links.
-			$( '.panel--placeholder' ).hide();
+
 			if ( true === data.expanded ) {
 				$( 'body' ).addClass( 'highlight-front-sections' );
 				$( '.panel--placeholder' ).slideDown( 200, function() {

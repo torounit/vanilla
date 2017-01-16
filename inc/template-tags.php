@@ -88,8 +88,10 @@ endif;
 
 
 /**
- * @param WP_Customize_Partial|null $partial
- * @param int                       $id
+ * Show front page section.
+ *
+ * @param WP_Customize_Partial|null $partial WP_Customize_Partial object.
+ * @param int                       $id      panel ID.
  */
 function vanilla_front_page_section( $partial = null, $id = 0  ) {
 
@@ -100,13 +102,13 @@ function vanilla_front_page_section( $partial = null, $id = 0  ) {
 		$vanillacounter = $id;
 	}
 
-	global $post; // Modify the global post object before setting up post data.
 	if ( get_theme_mod( 'panel_' . $id ) ) {
 		global $post;
-		$post = get_post( get_theme_mod( 'panel_' . $id ) );
+		$panel_post = get_post( get_theme_mod( 'panel_' . $id ) );
+		// @codingStandardsIgnoreStart
+		$post = $panel_post;
+		// @codingStandardsIgnoreEnd
 		setup_postdata( $post );
-		set_query_var( 'panel', $id );
-
 		get_template_part( 'template-parts/content', 'front-page-panels' );
 
 		wp_reset_postdata();

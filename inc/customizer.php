@@ -110,6 +110,8 @@ function vanilla_customize_register( WP_Customize_Manager $wp_customize ) {
 add_action( 'customize_register', 'vanilla_customize_register', 11 );
 
 /**
+ * Add front page panel section.
+ *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize ) {

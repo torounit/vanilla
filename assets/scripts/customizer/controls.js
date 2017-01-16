@@ -4,7 +4,6 @@
 
 ( function( $ ) {
 	var api = wp.customize;
-	console.log(api)
 	api.bind( 'ready', function() {
 		"use strict";
 		//Detect when the front page sections section is expanded (or closed) so we can adjust the preview accordingly.

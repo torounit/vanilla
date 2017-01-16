@@ -4,10 +4,12 @@
  *
  * @package vanilla
  */
+
 global $vanillacounter;
+
 ?>
 
-<article id="panel<?php echo $vanillacounter; ?>" <?php post_class( 'entry panel' ); ?>>
+<article id="panel<?php echo esc_attr( $vanillacounter ); ?>" <?php post_class( 'entry panel' ); ?>>
 	<?php if ( get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail entry__featured-image">
 			<?php if ( is_singular() ) : ?>
