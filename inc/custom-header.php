@@ -41,6 +41,24 @@ function vanilla_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'vanilla_custom_header_setup' );
 
+
+/**
+ * Custom header only front page.
+ *
+ * @param bool                 $active  Whether the Customizer control is active.
+ * @param WP_Customize_Control $control WP_Customize_Control instance.
+ *
+ * @return bool
+ */
+function header_image_control_filter( $active, $control ) {
+	if ( 'header_image' === $control->section ) {
+		$active = is_front_page();
+	}
+	return $active;
+}
+add_filter( 'customize_control_active', 'header_image_control_filter', 10, 2 );
+
+
 /**
  * Custom header callback.
  */
