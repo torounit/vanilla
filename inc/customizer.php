@@ -68,7 +68,7 @@ function vanilla_get_customize_color_settings() {
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
-function vanilla_customize_register( $wp_customize ) {
+function vanilla_customize_register( WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
@@ -108,6 +108,58 @@ function vanilla_customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'vanilla_customize_register', 11 );
+
+/**
+ * Add front page panel section.
+ *
+ * @param WP_Customize_Manager $wp_customize The Customizer object.
+ */
+function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize ) {
+	/**
+	 * Theme options.
+	 */
+	$wp_customize->add_section( 'theme_options', array(
+		'title'    => __( 'Theme Options', 'vanilla' ),
+		'priority' => 130, // Before Additional CSS.
+	) );
+
+	/**
+	 * Filter number of front page sections in Twenty Seventeen.
+	 *
+	 * @since Twenty Seventeen 1.0
+	 *
+	 * @param $num_sections integer
+	 */
+	$num_sections = apply_filters( 'vanilla_front_page_sections', 4 );
+
+	// Create a setting and control for each of the sections available in the theme.
+	for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+		$wp_customize->add_setting( 'panel_' . $i, array(
+			'default'           => false,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( 'panel_' . $i, array(
+			/* translators: %d is the front page section number */
+			'label'          => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
+			// 'description'    => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
+			'section'        => 'theme_options',
+			'type'           => 'dropdown-pages',
+			'allow_addition' => true,
+			'active_callback' => function(){
+				return ( is_front_page() && ! is_home() );
+			},
+		) );
+
+		$wp_customize->selective_refresh->add_partial( 'panel_' . $i, array(
+			'selector'            => '#panel' . $i,
+			'render_callback'     => 'vanilla_front_page_section',
+			'container_inclusive' => true,
+		) );
+	}
+}
+add_action( 'customize_register', 'vanilla_setup_theme_options_section', 12 );
 
 
 /**
@@ -167,6 +219,15 @@ function vanilla_customize_preview_js() {
 }
 
 add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
+
+/**
+ * Load dynamic logic for the customizer controls area.
+ */
+function vanilla_customize_controls_js() {
+	wp_enqueue_script( 'vanilla-customize-controls',get_template_directory_uri() . '/assets/scripts/customizer/controls.js', array(), '1.0.0', true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_controls_js' );
+
 
 /**
  * Customizer default value.
