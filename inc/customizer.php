@@ -52,7 +52,7 @@ function vanilla_get_customize_color_settings() {
 			'label'    => __( 'Post thumbnail background color', 'vanilla' ),
 			'selector' => '.post-thumbnail',
 			'property' => 'background-color',
-			'default'  => '#CCCCCC',
+			'default'  => '#eeeeee',
 		),
 		'footer_textcolor'            => array(
 			'label'    => __( 'Footer text color', 'vanilla' ),
