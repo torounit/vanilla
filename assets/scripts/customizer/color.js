@@ -9,6 +9,7 @@
 		'navbar_background_color',
 		'archive_header_textcolor',
 		'archive_header_background_color',
+		'post_thumbnail_background_color',
 		'footer_textcolor',
 		'footer_background_color',
 
