@@ -62,17 +62,20 @@
 	</header>
 
 	<div id="content" class="site-content [ app-layout__content ]">
-		<div id="masthead" class="app-layout__spacer custom-header <?php if ( get_header_image() ) : ?> custom-header--has-image <?php endif;?>" role="banner">
-			<div class="custom-header__media custom-header-media ">
-				<?php the_custom_header_markup();?>
-			</div>
-			<div class="custom-header__branding">
-				<div class="container">
-					<p class="site-title [ custom-header__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<p class="site-description [ custom-header__description ]"><?php bloginfo( 'description' ); ?></p>
+		<div class="app-layout__spacer"></div>
+		<?php if ( is_front_page() ) : ?>
+			<div id="masthead" class="custom-header <?php if ( get_header_image() ) : ?> custom-header--has-image <?php endif;?>" role="banner">
+				<div class="custom-header__media custom-header-media ">
+					<?php the_custom_header_markup();?>
+				</div>
+				<div class="custom-header__branding">
+					<div class="container">
+						<p class="site-title [ custom-header__title ]"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<p class="site-description [ custom-header__description ]"><?php bloginfo( 'description' ); ?></p>
+					</div>
 				</div>
 			</div>
-		</div>
+		<?php endif;?>
 		<div class="content-area">
 
 
