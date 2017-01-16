@@ -30,7 +30,11 @@ $(function() {
 			$(this).attr('aria-expanded',"true");
 		}
 
+	}).find('a').on( 'click', function (event) {
+		event.stopPropagation();
 	});
+
+
 
 
 	let $appLayout = $(".app-layout");
