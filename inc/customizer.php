@@ -48,6 +48,12 @@ function vanilla_get_customize_color_settings() {
 			'property' => 'background-color',
 			'default'  => '#666666',
 		),
+		'post_thumbnail_background_color' => array(
+			'label'    => __( 'Post thumbnail background color', 'vanilla' ),
+			'selector' => '.post-thumbnail',
+			'property' => 'background-color',
+			'default'  => '#CCCCCC',
+		),
 		'footer_textcolor'            => array(
 			'label'    => __( 'Footer text color', 'vanilla' ),
 			'selector' => '.site-footer',
