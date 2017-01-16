@@ -6,6 +6,30 @@
 	var style = $( '#vanilla-color-css' ),
 		api = wp.customize;
 
+	api.bind( 'preview-ready', function() {
+		"use strict";
+		$( '.panel--placeholder' ).hide();
+		api.preview.bind( 'section-highlight', function( data ) {
+			// When the section is expanded, show and scroll to the content placeholders, exposing the edit links.
+
+			if ( true === data.expanded ) {
+				$( 'body' ).addClass( 'highlight-front-sections' );
+				$( '.panel--placeholder' ).slideDown( 200, function() {
+					$("html, body").animate({
+						scrollTop: $( '#panel1' ).offset().top
+					}, 600);
+				});
+
+				// If we've left the panel, hide the placeholders and scroll back to the top.
+			} else {
+				$( 'body' ).removeClass( 'highlight-front-sections' );
+				// Don't change scroll when leaving - it's likely to have unintended consequences.
+				$( '.panel--placeholder' ).slideUp( 200 );
+			}
+		});
+	});
+
+
 	if ( ! style.length ) {
 		style = $( 'head' ).append( '<style type="text/css" id="vanilla-color-css" />' )
 			.find( '#vanilla-color-css' );
@@ -39,6 +63,8 @@
 			$( 'body' ).toggleClass( 'custom-background-image', '' !== to );
 		} );
 	} );
+
+
 
 
 	// Header text color.
