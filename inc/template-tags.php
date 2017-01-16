@@ -85,3 +85,39 @@ if ( ! function_exists( 'vanilla_entry_footer' ) ) :
 		edit_post_link( sprintf( esc_html__( 'Edit %s', 'vanilla' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ), '<span class="edit-link">', '</span>' );
 	}
 endif;
+
+
+/**
+ * @param WP_Customize_Partial|null $partial
+ * @param int $id
+ */
+function vanilla_front_page_section( $partial = null, $id = 0  ) {
+
+	if ( is_a( $partial, 'WP_Customize_Partial' ) ) {
+		// Find out the id and set it up during a selective refresh.
+		global $vanillacounter;
+		$id = str_replace( 'panel_', '', $partial->id );
+		$vanillacounter = $id;
+	}
+
+	global $post; // Modify the global post object before setting up post data.
+	if ( get_theme_mod( 'panel_' . $id ) ) {
+		global $post;
+		$post = get_post( get_theme_mod( 'panel_' . $id ) );
+		setup_postdata( $post );
+		set_query_var( 'panel', $id );
+
+		get_template_part( 'template-parts/content', 'front-page-panels' );
+
+		wp_reset_postdata();
+	} elseif ( is_customize_preview() ) {
+		// The output placeholder anchor.
+		?>
+		<article class="entry panel-placeholder panel vanilla-panel vanilla-panel-<?php echo $id;?>" id="panel-<?php echo $id;?>">
+			<div class="entry__body container">
+			<span class="vanilla-panel-title"><?php echo sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id );?></span>
+			</div>
+		</article>
+		<?php
+	}
+}
