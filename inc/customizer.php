@@ -189,8 +189,11 @@ function vanilla_color_css() {
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
 		if ( $value = get_theme_mod( $key ) ) {
 			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
-			wp_add_inline_style( 'vanilla-style', $css );
+		} else {
+			$css = vanilla_create_css( $param['selector'], $param['property'], $param['default'] );
 		}
+
+		wp_add_inline_style( 'vanilla-style', $css );
 	}
 
 }
