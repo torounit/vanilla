@@ -42,14 +42,14 @@ global $vanillacounter;
 
 				<?php if ( $recent_posts->have_posts() ) : ?>
 
-					<div class="recent-posts">
-						<ul>
+					<div >
+						<ul class="postlist">
 							<?php
 							while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 								?>
-								<li class="postList__item" itemscope
+								<li class="postlist__item" itemscope
 								    itemtype="http://schema.org/Article">
-									<time class="p-postList__pubdate"
+									<time class="postlist__pubdate"
 									      itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
 									<meta itemprop="dateModified" content="<?php the_modified_date( 'c' );?>">
 									<a href="<?php the_permalink(); ?>"><span itemprop="headline"><?php the_title(); ?></span></a></li>
