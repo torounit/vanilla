@@ -144,6 +144,25 @@ function vanilla_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'vanilla_scripts' );
 
+/**
+ * Set width for oembed contents.
+ *
+ * @param array $min_max_width {
+ *     Minimum and maximum widths for the oEmbed response.
+ *
+ * @type int $min Minimum width. Default 200.
+ * @type int $max Maximum width. Default 600.
+ * }
+ * @return array
+ */
+function vanilla_oembed_min_max_width( $min_max_width ) {
+
+	$min_max_width['max'] = $GLOBALS['content_width'];
+	return $min_max_width;
+}
+
+add_filter( 'oembed_min_max_width', 'vanilla_oembed_min_max_width' );
+
 
 require dirname( __FILE__ ) . '/inc/custom-background.php';
 require dirname( __FILE__ ) . '/inc/customizer.php';
