@@ -1,4 +1,3 @@
-
 import HeaderClassController from './HeaderClassController';
 
 export default class extends HeaderClassController {

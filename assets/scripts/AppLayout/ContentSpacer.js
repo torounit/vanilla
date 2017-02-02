@@ -1,6 +1,4 @@
 import $ from 'jquery';
-import _ from 'underscore';
-
 
 export default class ContentSpacer {
 	/**
