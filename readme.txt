@@ -36,12 +36,19 @@ GNU General Public License for more details.
 
 = Third-party resources =
 
-Bundled header images
+=== Bundled header images ===
+
 License: CC0 Public Domain
 
 * https://pixabay.com/photo-706092/
 * https://pixabay.com/photo-476361/
 * https://pixabay.com/photo-1575101/
+
+=== skip-link-focus-fix.js ( from _s ) ===
+
+License: GPL2.0+
+
+* https://github.com/Automattic/_s/blob/master/js/skip-link-focus-fix.js
 
 
 == Installation ==
