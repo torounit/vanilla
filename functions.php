@@ -41,14 +41,6 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 			'caption',
 		) );
 
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
-
 		// Indicate widget sidebars can use selective refresh in the Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
