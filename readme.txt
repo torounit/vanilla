@@ -60,6 +60,12 @@ License: CC0 Public Domain
 
 == Changelog ==
 
+= 1.2.3 =
+* Fix header video style.
+
+= 1.2.0 =
+* Customizer fix.
+
 = 1.1.2 =
 * Add default custom header images.
 
