@@ -13,7 +13,7 @@ function vanilla_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'vanilla_custom_header_args', array(
 		'default-image'      => get_parent_theme_file_uri( '/assets/images/default-header.jpg' ),
 		'width'              => 1920,
-		'height'             => 1200,
+		'height'             => 1080,
 		'flex-height'        => true,
 		'video'              => true,
 		'default-text-color' => '#ffffff',
