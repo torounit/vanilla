@@ -62,6 +62,8 @@ License: CC0 Public Domain
 
 = 1.2.3 =
 * Fix header video style.
+* Fix screenshot.
+* Change custom header size.
 
 = 1.2.0 =
 * Customizer fix.
