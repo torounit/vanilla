@@ -1,7 +1,4 @@
-
-
 import $ from 'jquery';
-
 import Drawer from './Drawer';
 import HeaderClassController from './AppLayout/HeaderClassController';
 import HeaderEscaper from './AppLayout/HeaderEscaper';
@@ -33,9 +30,6 @@ $(function() {
 	}).find('a').on( 'click', function (event) {
 		event.stopPropagation();
 	});
-
-
-
 
 	let $appLayout = $(".app-layout");
 	$(window).on( 'load resize', () => {
