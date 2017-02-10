@@ -54,6 +54,10 @@
 	     aria-expanded="false">
 
 		<div class="drawer__body primary-menu">
+			<div class="drawer__search">
+				<?php get_search_form();?>
+			</div>
+
 
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
