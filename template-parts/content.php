@@ -74,6 +74,7 @@
 			endif;
 			?>
 
+			<?php vanilla_entry_footer();?>
 		</div>
 		<?php
 		if ( is_singular() and ( comments_open() || get_comments_number() ) ) : ?>
