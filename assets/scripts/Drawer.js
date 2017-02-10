@@ -19,6 +19,12 @@ export default class Drawer {
 		this.$el.children().on('click', function(event){
 			event.stopPropagation();
 		})
+
+		$(document).on('keyup', (event) => {
+			if (event.keyCode == 27) {
+				this.close();
+			}
+		})
 	}
 
 	toggle(event) {
@@ -32,6 +38,7 @@ export default class Drawer {
 
 	open() {
 		this.$el.attr('aria-expanded',"true");
+		this.$el.attr('aria-hidden',"false");
 		this.$controller.attr('aria-expanded',"true");
 		this.$container.addClass("is-drawer-open");
 
@@ -40,6 +47,7 @@ export default class Drawer {
 
 	close() {
 		this.$el.attr('aria-expanded',"false");
+		this.$el.attr('aria-hidden',"true");
 		this.$controller.attr('aria-expanded',"false");
 		this.$container.removeClass("is-drawer-open");
 	}

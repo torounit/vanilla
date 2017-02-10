@@ -21,26 +21,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<nav class="drawer"
-	 role="navigation"
-	 data-drawer
-	 data-drawer-container-selector="body"
-	 id="primary-menu"
-	 aria-expanded="false">
-
-	<div class="drawer__body primary-menu">
-
-		<?php wp_nav_menu( array(
-			'theme_location' => 'primary',
-			'menu_class' => 'primary-menu__links',
-		) );?>
-
-
-	</div>
-</nav>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
 <div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 	<header class="app-layout__header" aria-hidden="false" role="banner">
 		<div class="navbar container">
 			<div  class="navbar__branding">
@@ -62,7 +45,26 @@
 
 	</header>
 
-	<div id="content" class="site-content [ app-layout__content ]">
+	<nav class="drawer"
+	     role="navigation"
+	     data-drawer
+	     data-drawer-container-selector="body"
+	     id="primary-menu"
+	     aria-hidden="true"
+	     aria-expanded="false">
+
+		<div class="drawer__body primary-menu">
+
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_class' => 'primary-menu__links',
+			) );?>
+
+
+		</div>
+	</nav>
+
+	<div class="site-content [ app-layout__content ]">
 
 		<?php if ( is_front_page() ) : ?>
 			<div id="masthead" class="app-layout__spacer custom-header <?php if ( get_header_image() ) : ?> custom-header--has-image <?php endif;?>" role="banner">
@@ -79,7 +81,7 @@
 		<?php else : ?>
 			<div class="app-layout__spacer"></div>
 		<?php endif;?>
-		<div class="content-area">
+		<div id="content" class="content-area">
 
 
 
