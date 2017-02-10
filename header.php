@@ -21,26 +21,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<nav class="drawer"
-	 role="navigation"
-	 data-drawer
-	 data-drawer-container-selector="body"
-	 id="primary-menu"
-	 aria-expanded="false">
-
-	<div class="drawer__body primary-menu">
-
-		<?php wp_nav_menu( array(
-			'theme_location' => 'primary',
-			'menu_class' => 'primary-menu__links',
-		) );?>
-
-
-	</div>
-</nav>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
 <div id="page" class="site [ app-layout app-layout--disable ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 	<header class="app-layout__header" aria-hidden="false" role="banner">
 		<div class="navbar container">
 			<div  class="navbar__branding">
@@ -61,6 +44,25 @@
 		</div>
 
 	</header>
+
+	<nav class="drawer"
+	     role="navigation"
+	     data-drawer
+	     data-drawer-container-selector="body"
+	     id="primary-menu"
+	     aria-hidden="true"
+	     aria-expanded="false">
+
+		<div class="drawer__body primary-menu">
+
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_class' => 'primary-menu__links',
+			) );?>
+
+
+		</div>
+	</nav>
 
 	<div class="site-content [ app-layout__content ]">
 
