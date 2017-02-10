@@ -13,7 +13,7 @@
 	<label>
 		<span class="screen-reader-text"><?php esc_attr_e( 'Search for:', 'vanilla' ) ?></span>
 		<input type="search" class="search-field"
-		       placeholder="<?php esc_attr_e( 'Search …', 'vanilla' ) ?>" value="<?php echo get_search_query() ?>"
+		       placeholder="<?php esc_attr_e( 'Search &hellip;', 'vanilla' ) ?>" value="<?php echo get_search_query() ?>"
 		       name="s" title="<?php esc_attr_e( 'Search for:', 'vanilla' ) ?>"/>
 	</label>
 	<button type="submit" class="search-submit">
