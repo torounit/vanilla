@@ -1,6 +1,5 @@
 $drawer-size ?= 280px;
 .drawer {
-
 	//overlay
 	&::before {
 
@@ -17,6 +16,7 @@ $drawer-size ?= 280px;
 	}
 	//content.
 	&__body {
+		visibility hidden;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 		position: fixed;
 		background-color: #fff;
@@ -42,8 +42,14 @@ $drawer-size ?= 280px;
 	}
 
 	&[aria-expanded="true"] &__body {
+		visibility visible
 		transform: translate(0, 0);
 	}
+
+	&.is-animated &__body {
+		visibility visible !important
+	}
+
 
 	&[aria-expanded="true"]::before {
 		display: block;

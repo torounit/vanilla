@@ -31,9 +31,10 @@ $(function() {
 		event.stopPropagation();
 	})
 
-	$('.menu-item-has-children').find('a').focusin(function () {
+	$('.menu-item-has-children, .page_item_has_children').find('a').focusin(function () {
 		$(this).parent().find('.sub-menu, .children').attr('aria-expanded',"true");
 	})
+
 
 	let $appLayout = $(".app-layout");
 	$(window).on( 'load resize', () => {
