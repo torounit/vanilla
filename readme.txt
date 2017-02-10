@@ -67,6 +67,11 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.3.0 =
+* Fix for accessibility.
+* Form styles.
+* Add searchform.php
+
 = 1.2.3 =
 * Fix header video style.
 * Fix screenshot.
