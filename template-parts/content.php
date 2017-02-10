@@ -43,7 +43,7 @@
 
 			<?php if ( is_singular() && ! is_front_page() ) : ?>
 				<h1 class="entry-title entry__title"><?php the_title(); ?></h1>
-			<?php elseif ( is_front_page() ) : ?>
+			<?php elseif ( is_singular() && is_front_page() ) : ?>
 				<h2 class="entry-title entry__title"><?php the_title(); ?></h2>
 			<?php else : ?>
 				<h2 class="entry-title entry__title"><?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?></h2>

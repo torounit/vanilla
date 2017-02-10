@@ -67,6 +67,10 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.3.4 =
+* Bug fix.
+* Custom header only not paged.
+
 = 1.3.3 =
 * Bug fix.
 
