@@ -75,13 +75,6 @@ if ( ! function_exists( 'vanilla_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function vanilla_entry_footer() {
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'vanilla' ), esc_html__( '1 Comment', 'vanilla' ), esc_html__( '% Comments', 'vanilla' ) );
-			echo '</span>';
-		}
-
 		edit_post_link( sprintf( esc_html__( 'Edit %s', 'vanilla' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ), '<span class="edit-link">', '</span>' );
 	}
 endif;
