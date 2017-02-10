@@ -67,6 +67,12 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.3.3 =
+* Bug fix.
+
+= 1.3.2 =
+* Show search query.
+
 = 1.3.1 =
 * Bug fix.
 
