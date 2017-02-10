@@ -6,7 +6,7 @@ export default class Drawer {
 		this.$el = $el;
 		this.$container = $($el.data("drawer-container-selector"));
 		this.id = $el.attr('id');
-		this.$controller = $( '[aria-controls="#'+this.id+'" ]' );
+		this.$controller = $( '[aria-controls="'+this.id+'" ]' );
 		this.$container.addClass("drawer-container");
 		this.on();
 
@@ -14,7 +14,6 @@ export default class Drawer {
 
 	on() {
 		this.$controller.on('click', this.toggle.bind(this));
-
 		this.$el.on('click', this.close.bind(this));
 		this.$el.children().on('click', function(event){
 			event.stopPropagation();
@@ -25,6 +24,12 @@ export default class Drawer {
 				this.close();
 			}
 		})
+
+		this.$el.on('transitionend', this.transitionend.bind(this));
+	}
+
+	transitionend() {
+		this.$el.removeClass('is-animated');
 	}
 
 	toggle(event) {
@@ -37,6 +42,7 @@ export default class Drawer {
 	}
 
 	open() {
+		this.$el.addClass('is-animated');
 		this.$el.attr('aria-expanded',"true");
 		this.$el.attr('aria-hidden',"false");
 		this.$controller.attr('aria-expanded',"true");
@@ -46,6 +52,7 @@ export default class Drawer {
 	}
 
 	close() {
+		this.$el.addClass('is-animated');
 		this.$el.attr('aria-expanded',"false");
 		this.$el.attr('aria-hidden',"true");
 		this.$controller.attr('aria-expanded',"false");

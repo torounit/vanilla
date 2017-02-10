@@ -37,7 +37,7 @@
 				</div>
 			</div>
 
-			<button class="navbar__drawer-button" aria-controls="#primary-menu" aria-expanded="false" >
+			<button class="navbar__drawer-button" aria-controls="primary-menu" aria-expanded="false" >
 				<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
 				<span class="screen-reader-text">menu</span>
 			</button>
