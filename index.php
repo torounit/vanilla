@@ -18,7 +18,7 @@ get_header(); ?>
 					<header class="archive-header">
 						<div class="container">
 							<?php if ( is_search() ) : ?>
-								<h1 class="archive-header__title"><?php printf( esc_html__( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+								<h1 class="archive-header__title"><?php printf( esc_html__( 'Search Results for: %s', 'vanilla' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 							<?php else : ?>
 								<h1 class="archive-header__title"><?php the_archive_title(); ?></h1>
 								<?php echo term_description(); ?>
