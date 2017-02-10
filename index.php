@@ -10,18 +10,23 @@
 get_header(); ?>
 	<div id="primary">
 		<main id="main" class="site-main" role="main">
-			<?php do_action( 'vanilla_site_main_prepend' );?>
+			<?php do_action( 'vanilla_site_main_prepend' ); ?>
 
 			<?php
 			if ( have_posts() ) :?>
 				<?php if ( ! is_front_page() ) : ?>
 					<header class="archive-header">
 						<div class="container">
-							<h1 class="archive-header__title"><?php the_archive_title(); ?></h1>
-							<?php echo term_description();?>
+							<?php if ( is_search() ) : ?>
+								<h1 class="archive-header__title"><?php printf( esc_html__( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+							<?php else : ?>
+								<h1 class="archive-header__title"><?php the_archive_title(); ?></h1>
+								<?php echo term_description(); ?>
+							<?php endif; ?>
+
 						</div>
 					</header>
-				<?php endif;?>
+				<?php endif; ?>
 
 				<?php
 				while ( have_posts() ) : the_post();
@@ -29,10 +34,10 @@ get_header(); ?>
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
-					'next_text' => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
+					'prev_text'          => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
+					'next_text'          => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
 					'before_page_number' => '<span class="pagination__numbers">',
-					'after_page_number' => '</span>',
+					'after_page_number'  => '</span>',
 
 				) ); ?>
 
