@@ -67,6 +67,9 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.3.5 =
+* Add search form in menu.
+
 = 1.3.4 =
 * Bug fix.
 * Custom header only not paged.
