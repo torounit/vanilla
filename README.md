@@ -20,11 +20,55 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 
 ## Install
 
-1. Download [latest release](https://github.com/torounit/vanilla/releases/latest) or [development build](https://github.com/torounit/vanilla/archive/dist.zip)
+1. Download [latest release](https://wordpress.org/themes/vanilla/) or [development build](https://github.com/torounit/vanilla/archive/dist.zip)
 2. Upload the "vanilla" folder to the "/wp-content/themes/" directory.
 
 ## Change log
 
-### 1.0.0
+### 1.3.6
+* reset button support.
 
-* First Release
+### 1.3.5
+* Add search form in menu.
+
+### 1.3.4
+* Bug fix.
+* Custom header only not paged.
+
+### 1.3.3
+* Bug fix.
+
+### 1.3.2
+* Show search query.
+
+### 1.3.1
+* Bug fix.
+
+### 1.3.0
+* Fix for accessibility.
+* Form styles.
+* Add searchform.php
+
+### 1.2.3
+* Fix header video style.
+* Fix screenshot.
+* Change custom header size.
+
+### 1.2.0
+* Customizer fix.
+
+### 1.1.2
+* Add default custom header images.
+
+### 1.1.0
+* Add support custom header.
+
+### 1.0.5
+* Bug Fix.
+
+### 1.0.3
+* Bug Fix.
+* Enqueue theme style for child theme.
+
+### 1.0.0
+* Initial Release.
