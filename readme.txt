@@ -67,6 +67,9 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.3.6 =
+* reset button support.
+
 = 1.3.5 =
 * Add search form in menu.
 
