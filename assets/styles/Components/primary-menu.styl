@@ -3,14 +3,14 @@
 	&__links {
 		padding: 0;
 		margin: 0;
-		border-top: 1px solid rgba(0,0,0,.1);
+		border-bottom: 1px solid rgba(0,0,0,.1);
 		> ul {
 			margin: 0;
 			padding: 0;
 		}
 		ul,
 		li {
-			width: 100%;
+			//width: 100%;
 			padding: 0;
 			list-style: none;
 		}
@@ -19,7 +19,7 @@
 			display: block;
 			padding: 1em;
 			text-decoration: none;
-			border-bottom: 1px solid rgba(0,0,0,.1);
+			border-top: 1px solid rgba(0,0,0,.1);
 
 		}
 
@@ -30,6 +30,14 @@
 			.children {
 				overflow: hidden;
 				transition: height 0.2s ease-out 0s;
+
+				li {
+					padding-left: 1em;
+				}
+
+				a {
+					//padding 0.5em;
+				}
 
 				&[aria-expanded="false"] {
 					height: 0 !important;
@@ -46,15 +54,11 @@
 					opacity: 0.6;
 					display block
 					text-align: center
-					line-height: 1.16666666676em;
-					width  1.16666666676em;
-					height  1.16666666676em;
-					text-align: center
-					font-size: 1.5em;
+					font-size: 1em;
 					content: "\f148";
 					position: absolute;
 					top: 0;
-					padding: 0.66666666676em;
+					padding: 1em;
 					right: 0;
 					transform: rotateZ(-90deg);
 					transition: transform 0.2s ease-out 0s;
