@@ -6,6 +6,7 @@ php:
 cache:
   directories:
   - node_modules
+  - vendor
 env:
   global:
   - GIT_COMMITTER_NAME=torounit
@@ -13,7 +14,7 @@ env:
   - GIT_AUTHOR_NAME=torounit
   - GIT_AUTHOR_EMAIL=mail@torounit.com
 before_script:
-- nvm install 5
+- nvm install 6
 - npm install
 - npm run build
 - composer install
