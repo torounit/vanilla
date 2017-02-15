@@ -1,5 +1,9 @@
 .comment,
 .pingback {
+
+	//border-top: 1px solid currentColor;
+	//opacity: 0.2;
+
 	&::before {
 		display block
 		content: '';
@@ -12,7 +16,7 @@
 	}
 
 	&.depth-1 {
-		margin: 16px 0;
+		//margin: 16px 0;
 		overflow: hidden
 	}
 
@@ -77,4 +81,11 @@
 		font-size: 0.8em;
 	}
 
+}
+
+.pingback {
+	.comment-body {
+		padding-left: 0;
+		font-size: 0.9em;
+	}
 }
