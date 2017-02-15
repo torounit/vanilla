@@ -19,11 +19,50 @@
 			display: block;
 			padding: 1em;
 			text-decoration: none;
-			border-top: 1px solid rgba(0,0,0,.1);
+			border-top: 1px solid rgba(0,0,0,.12);
 
 		}
 
+	//toggle button
+		.dropdown-toggle {
+			position absolute;
+			border none
+			top: 1px;
+			right: 0;
+			padding 1em;
+			//transition: transform 0.2s ease-out 0s;
+			cursor: pointer;
+			//border-left: 1px solid rgba(0,0,0,0.1);
+
+			&::before {
+				opacity: 0.6;
+				font-family: "dashicons";
+				display block
+				text-align: center
+				line-height: 1.1666666667em;
+				width  1.1666666667em;
+				height  1.1666666667em;
+				font-size: 1.5em;
+				content: "\f140";
+			}
+
+			&::after {
+				content: "";
+				position absolute;
+				left 0;
+				top: 1em;
+				border-left: 1px solid rgba(0,0,0,.16);
+				height 1.75em;
+			}
+
+			&[aria-expanded="true"]::before {
+				content: "\f142";
+			}
+		}
+
 		li {
+
+
 
 			position: relative;
 			.sub-menu,
@@ -41,37 +80,15 @@
 
 				&[aria-expanded="false"] {
 					height: 0 !important;
+					visibility: hidden;
 				}
 
 				&[aria-expanded="true"] {
 					height: auto;
 					overflow visible
+					visibility: visible;
 				}
 
-				//toggle button
-				&::before {
-					font-family: "dashicons";
-					opacity: 0.3;
-					display block
-					text-align: center
-					line-height: 1.1666666667em;
-					width  1.1666666667em;
-					height  1.1666666667em;
-					text-align: center
-					font-size: 1.5em;
-					content: "\f148";
-					position: absolute;
-					top: 0;
-					padding: 0.6666666667em;
-					right: 0;
-					transform: rotateZ(-90deg);
-					transition: transform 0.2s ease-out 0s;
-					cursor: pointer;
-				}
-
-				&[aria-expanded="true"]::before {
-					transform: rotateZ(90deg);
-				}
 			}
 		}
 
