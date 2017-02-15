@@ -67,6 +67,9 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.4.0 =
+* Fix submenu for accessibility.
+
 = 1.3.8 =
 * Fix comments style bug.
 
