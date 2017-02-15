@@ -46,7 +46,7 @@ export default  {
 			packageCache: {},
 			fullPaths: false,
 			debug: true,
-			entries: './assets/scripts/bundle.js',
+			entries: './assets/scripts/theme.js',
 			extensions: ['js', 'jsx']
 		},
 		dest: './',
