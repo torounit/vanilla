@@ -67,6 +67,9 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.3.8 =
+* Fix comments style bug.
+
 = 1.3.6 =
 * reset button support.
 
