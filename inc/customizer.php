@@ -12,31 +12,31 @@
  */
 function vanilla_get_customize_color_settings() {
 	return array(
-		'text_color'                  => array(
+		'text_color'                      => array(
 			'label'    => __( 'Post text color', 'vanilla' ),
 			'selector' => 'body',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'link_color'                  => array(
+		'link_color'                      => array(
 			'label'    => __( 'Link color', 'vanilla' ),
 			'selector' => 'a',
 			'property' => 'color',
 			'default'  => '#337ab7',
 		),
-		'navbar_textcolor'            => array(
+		'navbar_textcolor'                => array(
 			'label'    => __( 'Navigation bar text color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'navbar_background_color' => array(
+		'navbar_background_color'         => array(
 			'label'    => __( 'Navigation bar background color', 'vanilla' ),
 			'selector' => '.app-layout__header',
 			'property' => 'background-color',
 			'default'  => '#ffffff',
 		),
-		'archive_header_textcolor'            => array(
+		'archive_header_textcolor'        => array(
 			'label'    => __( 'Archive header text color', 'vanilla' ),
 			'selector' => '.archive-header',
 			'property' => 'color',
@@ -54,13 +54,13 @@ function vanilla_get_customize_color_settings() {
 			'property' => 'background-color',
 			'default'  => '#eeeeee',
 		),
-		'footer_textcolor'            => array(
+		'footer_textcolor'                => array(
 			'label'    => __( 'Footer text color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
-		'footer_background_color' => array(
+		'footer_background_color'         => array(
 			'label'    => __( 'Footer background color', 'vanilla' ),
 			'selector' => '.site-footer',
 			'property' => 'background-color',
@@ -76,9 +76,9 @@ function vanilla_get_customize_color_settings() {
  */
 function vanilla_customize_register( WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -139,7 +139,7 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 	$num_sections = apply_filters( 'vanilla_front_page_sections', 4 );
 
 	// Create a setting and control for each of the sections available in the theme.
-	for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+	for ( $i = 1; $i < ( 1 + $num_sections ); $i ++ ) {
 		$wp_customize->add_setting( 'panel_' . $i, array(
 			'default'           => false,
 			'sanitize_callback' => 'absint',
@@ -148,11 +148,11 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 
 		$wp_customize->add_control( 'panel_' . $i, array(
 			/* translators: %d is the front page section number */
-			'label'          => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
-			// 'description'    => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
-			'section'        => 'theme_options',
-			'type'           => 'dropdown-pages',
-			'allow_addition' => true,
+			'label'           => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
+			'description'    => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
+			'section'         => 'theme_options',
+			'type'            => 'dropdown-pages',
+			'allow_addition'  => true,
 			'active_callback' => 'vanilla_is_static_front_page',
 		) );
 
@@ -163,6 +163,7 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 		) );
 	}
 }
+
 add_action( 'customize_register', 'vanilla_setup_theme_options_section', 12 );
 
 /**
@@ -239,8 +240,9 @@ add_action( 'customize_preview_init', 'vanilla_customize_preview_js' );
  * Load dynamic logic for the customizer controls area.
  */
 function vanilla_customize_controls_js() {
-	wp_enqueue_script( 'vanilla-customize-controls',get_template_directory_uri() . '/assets/scripts/customizer/controls.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'vanilla-customize-controls', get_template_directory_uri() . '/assets/scripts/customizer/controls.js', array(), '1.0.0', true );
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_controls_js' );
 
 
