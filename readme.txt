@@ -67,6 +67,9 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.4.2 =
+* Fix default font weight.
+
 = 1.4.0 =
 * Fix submenu for accessibility.
 
