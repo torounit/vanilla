@@ -45,6 +45,7 @@ gulp.task('browserify', function () {
 			.pipe(gulp.dest(config.browserify.dest));
 	};
 	if (global.isWatching) {
+		console.log("watchify")
 		var bundler = watchify(b);
 		bundler.on('update', bundle);
 	}
