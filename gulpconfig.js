@@ -15,7 +15,7 @@ export default  {
 		proxy: '0.0.0.0:8888',
 		files: [
 			"./style.css",
-			".bundle.js",
+			"./bundle.js",
 			"./**/*.php"
 		]
 	}
