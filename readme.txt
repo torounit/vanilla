@@ -67,9 +67,11 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 1.5.0 =
+* Add widget area in site main area.
+
 = 1.4.3 =
 * Fix header image size for mobile.
-
 
 = 1.4.2 =
 * Fix default font weight.
