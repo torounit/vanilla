@@ -101,7 +101,6 @@ function vanilla_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 
-
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer primary widget area', 'vanilla' ),
 		'id'            => 'footer-primary-widget',
