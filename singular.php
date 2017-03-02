@@ -10,6 +10,12 @@
 get_header(); ?>
 	<div id="primary">
 		<main id="main" class="site-main" role="main">
+			<?php do_action( 'vanilla_site_main_prepend' ); ?>
+
+			<?php if ( is_active_sidebar( 'site-main-head-widget' ) ) : ?>
+				<?php dynamic_sidebar( 'site-main-head-widget' ); ?>
+			<?php endif; ?>
+
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
@@ -39,6 +45,12 @@ get_header(); ?>
 				}
 				?>
 			<?php endif; ?>
+
+			<?php if ( is_active_sidebar( 'site-main-tail-widget' ) ) : ?>
+				<?php dynamic_sidebar( 'site-main-tail-widget' ); ?>
+			<?php endif; ?>
+
+			<?php do_action( 'vanilla_site_main_append' ); ?>
 		</main>
 	</div>
 <?php

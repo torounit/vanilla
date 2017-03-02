@@ -12,6 +12,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php do_action( 'vanilla_site_main_prepend' ); ?>
 
+			<?php if ( is_active_sidebar( 'site-main-head-widget' ) ) : ?>
+				<?php dynamic_sidebar( 'site-main-head-widget' ); ?>
+			<?php endif; ?>
+
 			<?php
 			if ( have_posts() ) :?>
 				<?php if ( ! is_front_page() ) : ?>
@@ -49,6 +53,11 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'none' );
 			endif; ?>
 
+			<?php if ( is_active_sidebar( 'site-main-tail-widget' ) ) : ?>
+				<?php dynamic_sidebar( 'site-main-tail-widget' ); ?>
+			<?php endif; ?>
+
+			<?php do_action( 'vanilla_site_main_append' ); ?>
 		</main>
 	</div>
 <?php
