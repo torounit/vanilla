@@ -69,6 +69,8 @@ License: GPL2.0+
 
 = 1.5.0 =
 * Add widget area in site main area.
+* Fix navbar.
+* fixed custom header style on loading.
 
 = 1.4.3 =
 * Fix header image size for mobile.
