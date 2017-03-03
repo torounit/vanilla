@@ -10,9 +10,19 @@
 	}
 
 	&--has-image {
-		height 75vh;
-		@media $medium-up {
-			height 100vh;
+		//height 75vh;
+		height: 75vh;
+
+		.admin-bar & {
+			height: calc(75vh - 46px);
+		}
+
+		+medium-up() {
+			height: 100vh;
+
+		   .admin-bar & {
+			   height: calc(100vh - 32px);
+		   }
 		}
 	}
 
@@ -22,6 +32,7 @@
 		top: 0;
 		left 0;
 		height inherit;
+
 	}
 
 	&__media {
@@ -42,6 +53,20 @@
 			-o-object-fit: cover;
 			object-fit: cover;
 
+		}
+
+		.admin-bar &  {
+			iframe,
+			video,
+			img {
+
+				height: calc(100% + 46px);
+
+				+medium-up() {
+					height: 100%;
+					padding-top: 32px;
+				}
+			}
 		}
 	}
 
