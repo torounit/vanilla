@@ -282,3 +282,22 @@ function vanilla_color_scheme_css_template() {
 }
 
 add_action( 'customize_controls_print_footer_scripts', 'vanilla_color_scheme_css_template' );
+
+/**
+ * Add body class for customizer.
+ *
+ * @param $classes
+ *
+ * @return array
+ */
+function vanilla_customizer_body_class( $classes ) {
+	if ( 'block' == get_theme_mod( 'posts_layout_on_front_page' ) ) {
+		$classes[] = 'postlist-style-block';
+	}
+	else {
+		$classes[] = 'postlist-style-list';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'vanilla_customizer_body_class' );
