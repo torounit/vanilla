@@ -164,8 +164,9 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 	}
 
 	$wp_customize->add_setting( 'posts_layout_on_front_page', array(
-		'default'   => 'list',
-		'transport' => 'postMessage',
+		'default'           => 'list',
+		'sanitize_callback' => 'vanilla_sanitize_posts_layout_on_front_page',
+		'transport'         => 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'posts_layout_on_front_page', array(
@@ -209,6 +210,26 @@ function vanilla_create_css( $selector, $property, $value ) {
 		$property,
 		$value
 	);
+}
+
+/**
+ * Sanitize the posts_layout_on_front_page options.
+ *
+ * @param string $input input value.
+ *
+ * @return string
+ */
+function vanilla_sanitize_posts_layout_on_front_page( $input ) {
+	$valid = array(
+		'list'  => __( 'list', 'vanilla' ),
+		'block' => __( 'block', 'vanilla' ),
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	}
+
+	return '';
 }
 
 
