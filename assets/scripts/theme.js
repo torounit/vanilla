@@ -59,7 +59,7 @@ $(function() {
 		$appLayout.removeClass("app-layout--disable");
 	} );
 	new HeaderClassController( $appLayout, "app-layout__header--fixed", 46 );
-	new HeaderEscaper( $appLayout, "app-layout__header--escape", 0 );
+	new HeaderEscaper( $appLayout, "app-layout__header--escape", 64 );
 	new ContentSpacer( $appLayout );
 
 });
