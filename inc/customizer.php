@@ -162,6 +162,25 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 			'container_inclusive' => true,
 		) );
 	}
+
+	$wp_customize->add_setting( 'posts_layout_on_front_page', array(
+		'default'           => 'list',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'posts_layout_on_front_page', array(
+		'label'           => __( 'Posts Layout on Front Page', 'vanilla' ),
+		'description'    => __( 'Select style for posts list', 'vanilla' ),
+		'section'         => 'theme_options',
+		'type'            => 'radio',
+		'choices'  => array(
+			'list'   => __( 'list', 'vanilla' ),
+			'block'  => __( 'block', 'vanilla' ),
+		),
+		'active_callback' => 'vanilla_is_static_front_page',
+	) );
+
+
 }
 
 add_action( 'customize_register', 'vanilla_setup_theme_options_section', 12 );
