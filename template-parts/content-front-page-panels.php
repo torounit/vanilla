@@ -42,24 +42,22 @@ global $vanillacounter;
 
 				<?php if ( $recent_posts->have_posts() ) : ?>
 
-					<div >
-						<ul class="postlist">
+					<div class="postlist">
+						<?php
+						while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+							?>
+							<article class="postlist__item" itemscope
+							    itemtype="http://schema.org/Article">
+								<time class="postlist__pubdate"
+								      itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
+								<meta itemprop="dateModified" content="<?php the_modified_date( 'c' );?>">
+								<h5 class="postlist__title"><a href="<?php the_permalink(); ?>"><span itemprop="headline"><?php the_title(); ?></span></a></h5>
+							</article>
 							<?php
-							while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
-								?>
-								<li class="postlist__item" itemscope
-								    itemtype="http://schema.org/Article">
-									<time class="postlist__pubdate"
-									      itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
-									<meta itemprop="dateModified" content="<?php the_modified_date( 'c' );?>">
-									<a href="<?php the_permalink(); ?>"><span itemprop="headline"><?php the_title(); ?></span></a></li>
-								<?php
-							endwhile;
-							wp_reset_postdata();
-							?>							
-						</ul>
-
-					</div><!-- .recent-posts -->
+						endwhile;
+						wp_reset_postdata();
+						?>
+					</div>
 				<?php endif; ?>
 
 			<?php else : ?>

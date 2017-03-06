@@ -149,7 +149,7 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 		$wp_customize->add_control( 'panel_' . $i, array(
 			/* translators: %d is the front page section number */
 			'label'           => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
-			'description'    => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
+			'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
 			'section'         => 'theme_options',
 			'type'            => 'dropdown-pages',
 			'allow_addition'  => true,
@@ -162,6 +162,24 @@ function vanilla_setup_theme_options_section( WP_Customize_Manager $wp_customize
 			'container_inclusive' => true,
 		) );
 	}
+
+	$wp_customize->add_setting( 'posts_layout_on_front_page', array(
+		'default'   => 'list',
+		'transport' => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'posts_layout_on_front_page', array(
+		'label'           => __( 'Posts Layout on Front Page', 'vanilla' ),
+		'description'     => __( 'Select style for posts list', 'vanilla' ),
+		'section'         => 'theme_options',
+		'type'            => 'radio',
+		'choices'         => array(
+			'list'  => __( 'list', 'vanilla' ),
+			'block' => __( 'block', 'vanilla' ),
+		),
+		'active_callback' => 'vanilla_is_static_front_page',
+	) );
+
 }
 
 add_action( 'customize_register', 'vanilla_setup_theme_options_section', 12 );
@@ -282,3 +300,22 @@ function vanilla_color_scheme_css_template() {
 }
 
 add_action( 'customize_controls_print_footer_scripts', 'vanilla_color_scheme_css_template' );
+
+/**
+ * Add body class for customizer.
+ *
+ * @param String $classes body_class parts.
+ *
+ * @return array
+ */
+function vanilla_customizer_body_class( $classes ) {
+	if ( 'block' == get_theme_mod( 'posts_layout_on_front_page' ) ) {
+		$classes[] = 'postlist-style-block';
+	} else {
+		$classes[] = 'postlist-style-list';
+	}
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'vanilla_customizer_body_class' );

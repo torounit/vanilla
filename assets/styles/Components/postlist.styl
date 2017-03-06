@@ -1,6 +1,32 @@
 .postlist {
+	padding-left: 1.5em;
 
 	&__pubdate {
 		font-family: monospace;
+	}
+
+	&__item {
+		display: list-item;
+	}
+
+	&__title {
+		display inline;
+		font-weight: normal;
+		margin 0;
+	}
+
+	.postlist-style-block & {
+		padding-left: 0;
+	}
+
+	.postlist-style-block & &__item {
+		display block;
+		margin-bottom: 0.5em;
+	}
+
+	.postlist-style-block & &__title {
+		display block;
+		font-weight: normal;
+		font-size 1.2em;
 	}
 }

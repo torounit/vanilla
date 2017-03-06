@@ -43,6 +43,17 @@
 		} );
 	} );
 
+	// Page layouts.
+	api( 'posts_layout_on_front_page', function( value ) {
+		value.bind( function( to ) {
+			if ( 'list' === to ) {
+				$( 'body' ).addClass( 'postlist-style-list' ).removeClass( 'postlist-style-block' );
+			} else {
+				$( 'body' ).removeClass( 'postlist-style-list' ).addClass( 'postlist-style-block' );
+			}
+		} );
+	} );
+
 	// Site title.
 	api( 'blogname', function( value ) {
 		value.bind( function( to ) {
