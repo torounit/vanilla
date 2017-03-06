@@ -82,16 +82,6 @@ add_action( 'after_setup_theme', 'vanilla_content_width', 0 );
 function vanilla_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'The head of site main area', 'vanilla' ),
-		'id'            => 'site-main-head-widget',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title widget__title">',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
 		'name'          => esc_html__( 'The tail of site main area', 'vanilla' ),
 		'id'            => 'site-main-tail-widget',
 		'description'   => '',
