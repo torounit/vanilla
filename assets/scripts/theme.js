@@ -16,7 +16,7 @@ $(function() {
 
 $(function() {
 
-	let $toplevelMenuItems = $('.menu-item-has-children, .page_item_has_children');
+	let $toplevelMenuItems = $('.primary-menu .menu-item-has-children, .primary-menu .page_item_has_children');
 	// Add dropdown toggle that displays child menu items.
 	let $dropdownToggle = $( '<button />', {
 		'class': 'dropdown-toggle',
