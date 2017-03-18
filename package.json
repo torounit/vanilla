@@ -1,6 +1,6 @@
 {
   "name": "@torounit/vanilla",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/torounit/vanilla/issues"
   },
-  "homepage": "https://torounit.com/vanilla",
+  "homepage": "https://vanilla.torounit.com",
   "scripts": {
     "build": "gulp build",
     "gulp": "gulp",
