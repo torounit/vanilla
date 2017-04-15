@@ -8,3 +8,5 @@ style.css.map
 release.zip
 vanilla.zip
 dist
+server/wordpress
+.env.json

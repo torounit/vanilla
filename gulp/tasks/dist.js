@@ -21,7 +21,8 @@ gulp.task('copy', function() {
 				'./bundle.js',
 				"!./dist/**",
 				"!./node_modules/**/*.*",
-				"!./vendor/**/*.*"
+				"!./vendor/**/*.*",
+				"!./server/**"
 			],
 			{ base: './' }
 		)

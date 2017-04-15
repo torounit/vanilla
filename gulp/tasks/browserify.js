@@ -15,7 +15,7 @@ import babelify from 'babelify';
 import browserifyShim from 'browserify-shim';
 import watchify from 'watchify';
 
-import config from '../config.js';
+import config from '../../gulp.config.js';
 import handleErrors from '../util/handleErrors.js';
 import gulp from 'gulp';
 import debug from 'gulp-debug';
