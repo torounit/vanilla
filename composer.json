@@ -41,18 +41,10 @@
     "scripts": {
         "post-install-cmd": [
             "@create-local-config",
-            "@clone-theme",
-            "@setup-phpcs"
+            "@clone-theme"
         ],
         "post-update-cmd": [
-            "@clone-theme",
-            "@setup-phpcs"
-        ],
-        "phpcs": [
-            "php vendor/bin/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php"
-        ],
-        "setup-phpcs": [
-            "php vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/"
+            "@clone-theme"
         ],
         "provision": [
             "@create-salt",
@@ -78,6 +70,14 @@
         ],
         "server": [
             "bash ./bin/server.sh"
+        ],
+        "test": [
+            "find . -path './server/wordpress' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {}",
+            "@phpcs"
+        ],
+        "phpcs": [
+            "@php vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/",
+            "@php vendor/bin/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php"
         ]
     }
 }

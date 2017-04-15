@@ -19,8 +19,7 @@ before_script:
 - npm install
 - npm run build
 script:
-- find . -path './server/wordpress' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {} \;
-- composer phpcs
+- composer test
 after_success:
 - bash ./bin/dist.sh
 
