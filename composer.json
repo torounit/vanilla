@@ -3,7 +3,6 @@
     "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
     "type": "wordpress-theme",
     "require-dev": {
-        "php": ">=5.5",
         "composer/installers": "^1.0",
         "squizlabs/php_codesniffer": "^2.6",
         "wp-coding-standards/wpcs": "^0.10.0",
