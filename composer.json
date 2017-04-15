@@ -27,7 +27,8 @@
             "email": "mail@torounit.com"
         }
     ],
-    "require": {},
+    "require": {
+    },
     "extra": {
         "wordpress-install-dir": "server/wordpress",
         "installer-paths": {
