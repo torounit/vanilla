@@ -72,7 +72,7 @@
             "bash ./bin/server.sh"
         ],
         "test": [
-            "find . -path './server/wordpress' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {}",
+            "find . -path './server/wordpress' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {} \\;",
             "@phpcs"
         ],
         "phpcs": [
