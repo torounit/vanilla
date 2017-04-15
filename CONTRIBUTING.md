@@ -18,9 +18,10 @@ $ brew install composer wp-cli mysql jq
     ```
     $ git clone git@github.com:torounit/vanilla.git
     ```
-1. Initalize Composer
+1. Initalize Composer and node modules.
     ```
     $ cd vanilla
+    $ npm install
     $ composer install
     ```
 1. Edit `.env.json` (optional)
