@@ -35,7 +35,16 @@ export default  {
 	 *
 	 */
 	php: {
-		src: "./**/*.php",
+		src: [
+			"./**/*.php",
+			"!./assets/**",
+			"!./bin/**",
+			"!./dist/**",
+			"!./gulp/**",
+			"!./node_modules/**",
+			"!./vendor/**",
+			"!./server/**"
+		],
 		dest: "./server/wordpress/wp-content/themes/vanilla/",
 	},
 

@@ -2,7 +2,7 @@ Thanks for contributing to `Vanilla` !!!
 
 ## Getting Started
 
-### 0. Install PHP, composer, WP-CLI, MySQL ( or mariaDB ) and jq, cURL.
+### 0. Install PHP, node.js, composer, WP-CLI, MySQL ( or mariaDB ) and jq, cURL.
 
 ##### for OSX
 
