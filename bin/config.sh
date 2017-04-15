@@ -2,13 +2,10 @@
 
 set -ex;
 
+WP_CLI=$(cd $(dirname $0);cd ../vendor/bin;pwd)/wp
+
 if ! which jq; then
     echo "jq is not installed"
-    exit 0;
-fi
-
-if ! which wp; then
-    echo "WP-CLI is not installed"
     exit 0;
 fi
 

@@ -4,12 +4,12 @@ set -ex;
 
 SH_DIR=$(cd $(dirname $0);pwd)
 
-. $SH_DIR/check-dependency.sh
+
 . $SH_DIR/config.sh
 . $SH_DIR/check-mysql.sh
 
 ## Start Server if installed.
-if ! $(wp core is-installed); then
+if ! $($WP_CLI core is-installed); then
 
     ## Recreate DB for WordPress.
     if [ $DB_PASS ]; then
@@ -21,7 +21,7 @@ if ! $(wp core is-installed); then
     fi
 
     ## Install WordPress.
-    wp core install \
+    $WP_CLI core install \
     --url=http://$HOST:$PORT \
     --title="$WP_TITLE" \
     --admin_user="$WP_ADMIN_USER" \
@@ -29,31 +29,31 @@ if ! $(wp core is-installed); then
     --admin_email="$WP_ADMIN_EMAIL"
 
     ## Setup Options.
-    wp option update blogname "$WP_TITLE"
+    $WP_CLI option update blogname "$WP_TITLE"
 
     if [ $WP_DESCRIPTION ]; then
-        wp option update blogdescription "$WP_DESCRIPTION"
+        $WP_CLI option update blogdescription "$WP_DESCRIPTION"
     fi
 
     if [ $WP_GMT_OFFSET ]; then
-        wp option update gmt_offset "$WP_GMT_OFFSET"
+        $WP_CLI option update gmt_offset "$WP_GMT_OFFSET"
     fi
 
     if [ $WP_LANG ]; then
-        wp core language install $WP_LANG
-        wp core language activate $WP_LANG
+        $WP_CLI core language install $WP_LANG
+        $WP_CLI core language activate $WP_LANG
     fi
 
     if [ $WP_REWRITE_STRUCTURE ]; then
-        wp rewrite structure "$WP_REWRITE_STRUCTURE"
+        $WP_CLI rewrite structure "$WP_REWRITE_STRUCTURE"
     fi
 
 fi
 
 # Activate Theme.
 if [ $WP_THEME ]; then
-	wp theme activate "$WP_THEME"
+	$WP_CLI theme activate "$WP_THEME"
 fi
 
 # Activate Plugins.
-wp plugin activate --all
+$WP_CLI plugin activate --all
