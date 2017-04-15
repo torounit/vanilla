@@ -1,6 +1,7 @@
-import env from './.env.json'
+import env from "./.env.json"
 
-const server = env.server.host + ':' + env.server.port
+const server = env.server.host + ":" + env.server.port
+const themeDir = "./server/wordpress/wp-content/themes/" + env.wp.theme;
 export default  {
 
 	/**
@@ -11,9 +12,9 @@ export default  {
 	browserSync: {
 		proxy: server,
 		files: [
-			"./server/wordpress/wp-content/themes/vanilla/style.css",
-			"./server/wordpress/wp-content/themes/vanilla/bundle.js",
-			"./server/wordpress/wp-content/themes/vanilla/**/*.php",
+			themeDir + "/style.css",
+			themeDir + "/bundle.js",
+			themeDir + "/**/*.php",
 		]
 	},
 
@@ -23,10 +24,10 @@ export default  {
 	 *
 	 */
 	stylus: {
-		src: './assets/styles/**/style.styl',
-		watch: './assets/styles/**/*.styl',
-		dest: './server/wordpress/wp-content/themes/vanilla/',
-		sourceRoot: './assets/styles'
+		src: "./assets/styles/**/style.styl",
+		watch: "./assets/styles/**/*.styl",
+		dest: themeDir,
+		sourceRoot: "./assets/styles"
 	},
 
 	/**
@@ -45,7 +46,7 @@ export default  {
 			"!./vendor/**",
 			"!./server/**"
 		],
-		dest: "./server/wordpress/wp-content/themes/vanilla/",
+		dest: themeDir,
 	},
 
 	/**
@@ -59,10 +60,10 @@ export default  {
 			packageCache: {},
 			fullPaths: false,
 			debug: true,
-			entries: './assets/scripts/theme.js',
-			extensions: ['js', 'jsx']
+			entries: "./assets/scripts/theme.js",
+			extensions: ["js", "jsx"]
 		},
-		dest: './server/wordpress/wp-content/themes/vanilla/',
-		filename: 'bundle.js'
+		dest: themeDir,
+		filename: "bundle.js"
 	}
 };
