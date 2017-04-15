@@ -8,3 +8,7 @@ style.css.map
 release.zip
 vanilla.zip
 dist
+server/wordpress
+.env.json
+theme-unit-test-data.xml
+server/salt.php

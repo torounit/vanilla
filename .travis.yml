@@ -14,13 +14,12 @@ env:
   - GIT_AUTHOR_NAME=torounit
   - GIT_AUTHOR_EMAIL=mail@torounit.com
 before_script:
-- nvm install 6
+- composer install
+- nvm install 7
 - npm install
 - npm run build
-- composer install
 script:
-- find . -path './vendor' -prune -o -name '*.php' -exec php -lf {} \;
-- composer phpcs
+- composer test
 after_success:
 - bash ./bin/dist.sh
 

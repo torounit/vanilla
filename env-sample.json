@@ -1,0 +1,27 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": "8080"
+    },
+    "mysql": {
+        "database": "wp_vanilla_dev",
+        "username": "root",
+        "password": "",
+        "host": "localhost",
+        "table_prefix": "wp_"
+    },
+    "wp": {
+        "title": "Vanilla",
+        "description": "Vanilla",
+        "gmt_offset": "0",
+        "lang": "",
+        "rewrute_structure": "/archives/%post_id%",
+        "theme": "vanilla",
+        "admin": {
+            "user": "admin",
+            "password": "admin",
+            "email": "admin@example.com"
+        }
+    },
+    "theme_unit_test_uri": "https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml"
+}

@@ -6,7 +6,7 @@
 //
 // ==================================
 
-import config from '../config.js';
+import config from '../../gulp.config.js';
 import handleErrors from '../util/handleErrors.js';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';

@@ -7,7 +7,7 @@
 // ==================================
 
 import browserSync from 'browser-sync';
-import config from '../config.js';
+import config from '../../gulp.config.js';
 import gulp from 'gulp';
 
 

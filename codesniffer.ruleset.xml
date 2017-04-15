@@ -15,4 +15,5 @@
     </rule>
 
     <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/server/*</exclude-pattern>
 </ruleset>
