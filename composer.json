@@ -73,7 +73,7 @@
       "bash ./bin/import-theme-unit-test.sh"
     ],
     "test": [
-      "find . -path './server/wordpress' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {} \\;",
+      "find . -path './server/wordpress' -prune -o -path './node_modules' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {} \\;",
       "@phpcs"
     ],
     "phpcs": [

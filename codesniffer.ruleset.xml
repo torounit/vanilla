@@ -16,4 +16,5 @@
 
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/server/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
 </ruleset>
