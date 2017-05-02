@@ -2,14 +2,14 @@ Thanks for contributing to `Vanilla` !!!
 
 ## Getting Started
 
-### 0. Install PHP, node.js, composer, WP-CLI, MySQL ( or mariaDB ) and jq, cURL.
+### 0. Install PHP, node.js, composer, MySQL, cURL.
 
 ##### for OSX
 
 PHP and cURL are pre-installed.
 
 ```
-$ brew install composer wp-cli mysql jq 
+$ brew install composer mysql node 
 ```
 
 ### 1.Start Development!
@@ -32,10 +32,6 @@ $ brew install composer wp-cli mysql jq
 	```
 	$ composer provision
 	```
-1. Run built-in Server
-	```
-	$ composer server
-	```
 1. Start `npm start`.
 	```
 	$ npm start
@@ -46,10 +42,6 @@ $ brew install composer wp-cli mysql jq
 * `composer provision` 
 
 	Provisioning WordPress.
-
-* `composer server` 
-
-	Start `wp server` and open browser.
 
 * `npm start`
 

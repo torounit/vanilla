@@ -7,5 +7,5 @@ import './gulp/tasks/dist';
 import './gulp/tasks/release';
 
 gulp.task('build', ['stylus', 'browserify']);
-gulp.task('default', ['setWatch', 'watch', 'browserSync', 'stylus', 'browserify']);
+gulp.task('default', ['setWatch', 'watch', 'connectSync', 'stylus', 'browserify']);
 

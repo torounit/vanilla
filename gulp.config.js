@@ -30,20 +30,19 @@ export default  {
 		sourceRoot: "./assets/styles"
 	},
 
-	/**
-	 *
-	 * php
-	 *
-	 */
-	php: {
+
+	cloneTheme: {
 		src: [
-			"./**/*.php",
-			"!./assets/**",
-			"!./bin/**",
+			'./**/*.php',
+			'./assets/**',
+			'./LICENSE',
+			'./readme.txt',
+			'./screenshot.png',
+			'./style.css',
+			'./bundle.js',
 			"!./dist/**",
-			"!./gulp/**",
-			"!./node_modules/**",
-			"!./vendor/**",
+			"!./node_modules/**/*.*",
+			"!./vendor/**/*.*",
 			"!./server/**"
 		],
 		dest: themeDir,

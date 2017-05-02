@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex;
+set -eu;
 
 SH_DIR=$(cd $(dirname $0);pwd)
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex;
+set -eu;
 
 MYSQLADMIN_PING="mysqladmin ping -u ${DB_USER}";
 if [ -n "${DB_PASS}" ]; then
