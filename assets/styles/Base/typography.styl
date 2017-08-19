@@ -28,9 +28,8 @@
 	src: local("YuGothic-Bold"), local("Yu Gothic");
 }
 
-
 html {
-	font-size: percentage(10/16);
+	font-size: percentage(10 / 16);
 	min-height: 100%;
 }
 
@@ -48,8 +47,6 @@ body {
 	line-height: 1.75;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
-	//letter-spacing: .05rem;
-	//text-align: justify;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -66,5 +63,21 @@ pre {
 	background: #EEE;
 	margin: 1.2em 0;
 	padding: 1em;
-	line-height: 1.5
+	line-height: 1.5;
+}
+
+code,kbd {
+	background: #EEE;
+	padding: 0.2em 0.4em;
+}
+
+blockquote {
+	margin: 1em 0;
+	padding 0 2em;
+	border-left: 1px solid currentColor;
+
+	cite {
+		display: block;
+		text-align: right;
+	}
 }
