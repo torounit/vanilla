@@ -25,10 +25,15 @@ $grid-gutter ?= 20px;
 		}
 	}
 
+	&-caption {
+		margin: 0.6em 0 0.2em;
+		font-size: 0.9em;
+	}
+
 	gallery-item-width($width) {
 		flex-basis: $width;
 	}
-	
+
 	@media $medium-up {
 		for $i in (1..9) {
 			&.gallery-columns-{$i} &-item {
