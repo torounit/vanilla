@@ -5,7 +5,8 @@ import './gulp/tasks/server';
 import './gulp/tasks/watch';
 import './gulp/tasks/dist';
 import './gulp/tasks/release';
+import './gulp/tasks/cloneTheme'
 
 gulp.task('build', ['stylus', 'browserify']);
-gulp.task('default', ['setWatch', 'watch', 'connectSync', 'stylus', 'browserify']);
+gulp.task('default', [ 'cloneTheme', 'setWatch', 'watch', 'connectSync', 'stylus', 'browserify']);
 

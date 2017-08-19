@@ -40,11 +40,13 @@ export default  {
 			'./screenshot.png',
 			'./style.css',
 			'./bundle.js',
+			"!./server/**",
 			"!./dist/**",
 			"!./node_modules/**/*.*",
 			"!./vendor/**/*.*",
 			"!./server/**"
 		],
+		base: "./",
 		dest: themeDir,
 	},
 

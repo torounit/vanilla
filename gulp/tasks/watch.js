@@ -28,7 +28,7 @@ gulp.task('watch', function () {
 		gulp.start('stylus');
 	});
 
-	watch(config.cloneTheme.src)
+	watch(config.cloneTheme.src, { base: config.cloneTheme.base })
 		.pipe(debug())
 		.pipe(gulp.dest(config.cloneTheme.dest));
 });

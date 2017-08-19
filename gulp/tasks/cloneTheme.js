@@ -8,7 +8,7 @@ import debug from 'gulp-debug';
 
 gulp.task('cloneTheme', function () {
 
-	gulp.src(config.cloneTheme.src)
+	gulp.src(config.cloneTheme.src, { base: config.cloneTheme.base })
 		.pipe(debug())
 		.pipe(gulp.dest(config.cloneTheme.dest));
 });
