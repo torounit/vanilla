@@ -29,7 +29,7 @@ gulp.task('connectSync', function() {
 		port: env.server.port,
 		host: env.server.host,
 		base: './server',
-		router: './vendor/wp-cli/wp-cli/php/router.php'
+		router: './vendor/wp-cli/server-command/router.php'
 	}, function (){
 		browserSync(config.browserSync);
 	});
