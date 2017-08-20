@@ -46,10 +46,8 @@ global $vanillacounter;
 						<?php
 						while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 							?>
-							<article class="postlist__item" itemscope
-							    itemtype="http://schema.org/Article">
-								<time class="postlist__pubdate"
-								      itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
+							<article class="postlist__item" itemscope itemtype="http://schema.org/Article">
+								<time class="postlist__pubdate" itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
 								<meta itemprop="dateModified" content="<?php the_modified_date( 'c' );?>">
 								<h5 class="postlist__title"><a href="<?php the_permalink(); ?>"><span itemprop="headline"><?php the_title(); ?></span></a></h5>
 							</article>

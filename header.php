@@ -45,13 +45,7 @@
 
 	</header>
 
-	<nav class="drawer"
-	     role="navigation"
-	     data-drawer
-	     data-drawer-container-selector="body"
-	     id="primary-menu"
-	     aria-hidden="true"
-	     aria-expanded="false">
+	<nav class="drawer" role="navigation" data-drawer data-drawer-container-selector="body" id="primary-menu" aria-hidden="true" aria-expanded="false">
 
 		<div class="drawer__body primary-menu">
 			<div class="drawer__search">
