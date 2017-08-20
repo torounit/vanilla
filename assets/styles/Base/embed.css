@@ -1,0 +1,34 @@
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+video {
+	margin-bottom: 1em;
+}
+
+figure {
+
+	margin: 1em 0;
+
+	& figcaption {
+		text-align: center;
+
+		font-size: 1em;
+	}
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid currentColor;
+	opacity: 0.4;
+	width: 80%;
+	margin: 1.2em auto;
+	clear: both;
+}
+

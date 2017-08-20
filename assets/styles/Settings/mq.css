@@ -1,0 +1,3 @@
+@custom-media --viewport-small-up (width >= 600px);
+@custom-media --viewport-medium-up (width >= 782px);
+@custom-media --viewport-large-up (width >= 1000px);

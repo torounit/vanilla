@@ -30,6 +30,13 @@ export default  {
 		sourceRoot: "./assets/styles"
 	},
 
+	postcss: {
+		src: "./assets/styles/**/style.css",
+		watch: "./assets/styles/**/*.css",
+		dest: themeDir,
+		sourceRoot: "./assets/styles"
+	},
+
 
 	cloneTheme: {
 		src: [

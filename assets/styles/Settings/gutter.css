@@ -1,0 +1,11 @@
+:root {
+	--gutter: 16px;
+	--gutter-small: 16px;
+	--gutter-medium: 32px;
+	--gutter-large: 32px;
+
+	--container-max-width: 1000px;
+	--container-gutter: var(--gutter);
+	--container-gutter-medium: 32px;
+	--grid-gutter: var(--gutter);
+}

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/*
+Theme Name: Vanilla
+Theme URI: {{ homepage }}
+Author: {{ author.name }}
+Author URI: {{ author.url }}
+Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
+Description: {{ description }}
+Version: {{ version }}
+Tags: one-column, custom-logo, custom-colors, custom-menu, custom-background, editor-style, sticky-post, microformats, featured-images, footer-widgets, threaded-comments, translation-ready, blog, photography
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: vanilla
+*/
+
+/**
+ *
+ * ex. ITCSS
+ * @link https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+ *
+ */
+
+/**
+ * =============================================
+ *
+ * Settings
+ *
+ * =============================================
+ */
+/*noinspection CssUnknownTarget*/
+@import "Settings/*";
+
+/**
+ * =============================================
+ *
+ * Tools
+ *
+ * =============================================
+ */
+/*noinspection CssUnknownTarget*/
+@import "Tools/*";
+
+
+/**
+ * =============================================
+ *
+ * Generic
+ *
+ * =============================================
+ */
+
+@import "../../node_modules/normalize.css/normalize.css";
+
+
+/**
+ * =============================================
+ *
+ * Base
+ *
+ * =============================================
+ */
+/*noinspection CssUnknownTarget*/
+@import "Base/*";
+
+
+/**
+ * =============================================
+ *
+ * Objects
+ *
+ * =============================================
+ */
+/*noinspection CssUnknownTarget*/
+@import "Objects/*";
+
+/**
+ * =============================================
+ *
+ * Components
+ *
+ * =============================================
+ */
+/*noinspection CssUnknownTarget*/
+@import "Components/*";
+
+/**
+ * =============================================
+ *
+ * Trumps
+ *
+ * =============================================
+ */
+/*noinspection CssUnknownTarget*/
+@import "Trumps/*";
+
+

@@ -1,0 +1,53 @@
+html {
+	font-size: 62.5%;
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: var(--base-font);
+	font-size: 1.4em;
+
+	@media (--viewport-medium-up) {
+		font-size: 1.6em;
+	}
+
+	color: var(--color-black);
+	background-color: #fff;
+	line-height: 1.75;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+strong {
+	font-weight: bold;
+}
+
+p {
+	margin: 1em 0;
+}
+
+pre {
+	overflow: scroll;
+	background: #EEE;
+	margin: 1.2em 0;
+	padding: 1em;
+	line-height: 1.5;
+}
+
+code,kbd {
+	background: #EEE;
+	padding: 0.2em 0.4em;
+}
+
+blockquote {
+	margin: 1em 0;
+	padding: 0 2em;
+	border-left: 1px solid currentColor;
+
+	& cite {
+		display: block;
+		text-align: right;
+	}
+}

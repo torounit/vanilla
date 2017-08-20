@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 300;
+	src: local("YuGothic-Regular"), local("Yu Gothic"), local("YuGothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 400;
+	src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular"), local("Yu Gothic"), local("YuGothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 500;
+	src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular"), local("Yu Gothic"), local("YuGothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 600;
+	src: local("YuGothic-Bold"), local("Yu Gothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 700;
+	src: local("YuGothic-Bold"), local("Yu Gothic");
+}

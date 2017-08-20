@@ -1,0 +1,84 @@
+// menu Button
+:root {
+	--hamburger-button-width: 22px;
+	--hamburger-button-height: 16px;
+	--hamburger-button-bar-thickness: 2px;
+	--hamburger-button-pad: 0;
+	--hamburger-button-trans-delay: 0s;
+	--hamburger-button-color: currentColor;
+}
+
+.hamburger-button {
+	background-color: transparent;
+	display: block;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: var(--hamburger-button-width);
+	height: var(--hamburger-button-height);
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+
+	&__bars {
+		display: block;
+		position: absolute;
+		top: calc(var(--hamburger-button-height) / 2 - var(--hamburger-button-bar-thickness) / 2);
+		left: var(--hamburger-button-pad);
+		right: var(--hamburger-button-pad);
+		height: var(--hamburger-button-bar-thickness);
+		background-color: var(--hamburger-button-color);
+		transition: background 0s var(--hamburger-button-trans-delay);
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			left: 0;
+			width: 100%;
+			height: var(--hamburger-button-bar-thickness);
+			background-color: var(--hamburger-button-color);
+			content: "";
+			transition-duration: var(--hamburger-button-trans-delay), var(--hamburger-button-trans-delay);
+			transition-delay: var(--hamburger-button-trans-delay), 0s;
+		}
+		&::before {
+			top: calc( -1 * (var(--hamburger-button-height) / 2 - var(--hamburger-button-bar-thickness) / 2 - var(--hamburger-button-pad)));
+			transition-property: top, transform;
+		}
+		&::after {
+			bottom: calc( -1 * (var(--hamburger-button-height) / 2 - var(--hamburger-button-bar-thickness) / 2 - var(--hamburger-button-pad)));
+			transition-property: bottom, transform;
+		}
+	}
+
+	&--fixed-pad {
+		margin: calc(-1 * var(--hamburger-button-pad));
+	}
+
+}
+
+.hamburger-button[aria-expanded="true"] .hamburger-button__bars,
+[aria-expanded="true"] .hamburger-button .hamburger-button__bars,
+.hamburger-button--close .hamburger-button__bars {
+	background: none;
+	&::before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+	&::after {
+		bottom: 0;
+		transform: rotate(-45deg);
+	}
+	&::before, &::after {
+		transition-delay: 0s, var(--hamburger-button-trans-delay);
+	}
+}

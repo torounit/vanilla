@@ -1,0 +1,44 @@
+:root {
+
+	--dashicons: {
+		display: inline-block;
+		font: normal normal normal 14px/1 dashicons;
+		text-decoration: inherit;
+		font-weight: 400;
+		font-style: normal;
+		vertical-align: top;
+		text-align: center;
+		transition: color .1s ease-in 0s;
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+:root {
+	--margin: {
+		margin: var(--gutter);
+		@media  (--viewport-small-up) {
+			margin: var(--gutter-small);
+		}
+		@media (--viewport-medium-up) {
+			margin: var(--gutter-medium);
+		}
+		@media (--viewport-large-up) {
+			margin: var(--gutter-large);
+		}
+	}
+}
+
+:root {
+	--padding: {
+		padding: var(--gutter);
+		@media  (--viewport-small-up) {
+			padding: var(--gutter-small);
+		}
+		@media (--viewport-medium-up) {
+			padding: var(--gutter-medium);
+		}
+		@media (--viewport-large-up) {
+			padding: var(--gutter-large);
+		}
+	}
+}

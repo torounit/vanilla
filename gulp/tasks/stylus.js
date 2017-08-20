@@ -46,3 +46,17 @@ gulp.task('stylus', function () {
 		}))
 		.pipe(gulp.dest(config.stylus.dest));
 });
+
+gulp.task('postcss', function () {
+	return gulp.src([config.postcss.src])
+		.pipe(plumber())
+		.pipe(sourcemaps.init())
+		.pipe(handlebars(packageJson))
+		.on('error', handleErrors)
+		.pipe(postcss(processors, { parser: comment }))
+		.pipe(sourcemaps.write({
+			includeContent: false,
+			sourceRoot: config.postcss.sourceRoot
+		}))
+		.pipe(gulp.dest(config.postcss.dest));
+});
