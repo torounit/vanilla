@@ -13,7 +13,8 @@ get_header(); ?>
 			<?php do_action( 'vanilla_site_main_prepend' ); ?>
 
 			<?php
-			if ( have_posts() ) :?>
+			if ( have_posts() ) :
+			?>
 				<?php if ( ! is_front_page() ) : ?>
 					<header class="archive-header">
 						<div class="container">
@@ -31,7 +32,8 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<?php
-				while ( have_posts() ) : the_post();
+				while ( have_posts() ) :
+the_post();
 					get_template_part( 'template-parts/content' );
 				endwhile;
 
@@ -41,13 +43,15 @@ get_header(); ?>
 					'before_page_number' => '<span class="pagination__numbers">',
 					'after_page_number'  => '</span>',
 
-				) ); ?>
+				) );
+				?>
 
 				<?php
 
 			else :
 				get_template_part( 'template-parts/content', 'none' );
-			endif; ?>
+			endif;
+			?>
 
 			<?php if ( is_active_sidebar( 'site-main-tail-widget' ) ) : ?>
 				<div class="container">

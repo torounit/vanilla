@@ -86,7 +86,7 @@ endif;
  * @param WP_Customize_Partial|null $partial WP_Customize_Partial object.
  * @param int                       $id      panel ID.
  */
-function vanilla_front_page_section( $partial = null, $id = 0  ) {
+function vanilla_front_page_section( $partial = null, $id = 0 ) {
 
 	if ( is_a( $partial, 'WP_Customize_Partial' ) ) {
 		// Find out the id and set it up during a selective refresh.
@@ -108,9 +108,9 @@ function vanilla_front_page_section( $partial = null, $id = 0  ) {
 	} elseif ( is_customize_preview() ) {
 		// The output placeholder anchor.
 		?>
-		<article class="entry panel panel--placeholder" id="panel<?php echo esc_attr( $id );?>">
+		<article class="entry panel panel--placeholder" id="panel<?php echo esc_attr( $id ); ?>">
 			<div class="entry__body container">
-				<div class="panel__content"><?php echo esc_html( sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id ) );?></div>
+				<div class="panel__content"><?php echo esc_html( sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id ) ); ?></div>
 			</div>
 		</article>
 		<?php
