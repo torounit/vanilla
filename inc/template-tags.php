@@ -62,6 +62,7 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link entry-meta__item">';
 			echo '<span class="entry-meta__icon dashicons dashicons-admin-comments"></span>';
+			/* translators: %s: Name of current post */
 			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'vanilla' ), get_the_title() ) );
 			echo '</span>';
 		}
@@ -75,6 +76,7 @@ if ( ! function_exists( 'vanilla_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function vanilla_entry_footer() {
+		/* translators: %s: Name of current post */
 		edit_post_link( sprintf( esc_html__( 'Edit %s', 'vanilla' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ), '<span class="edit-link">', '</span>' );
 	}
 endif;
@@ -110,7 +112,12 @@ function vanilla_front_page_section( $partial = null, $id = 0 ) {
 		?>
 		<article class="entry panel panel--placeholder" id="panel<?php echo esc_attr( $id ); ?>">
 			<div class="entry__body container">
-				<div class="panel__content"><?php echo esc_html( sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id ) ); ?></div>
+				<div class="panel__content">
+					<?php
+					/* translators: %1$s: Section Number */
+					echo esc_html( sprintf( __( 'Front Page Section %1$s Placeholder', 'vanilla' ), $id ) );
+					?>
+				</div>
 			</div>
 		</article>
 		<?php

@@ -29,6 +29,7 @@ if ( post_password_required() ) {
 		<h4 class="comments-area__title">
 			<?php
 			printf( // WPCS: XSS OK.
+				/* translators: %1$s: comments count. %2$s: Post Title. */
 				esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'vanilla' ) ),
 				number_format_i18n( get_comments_number() ),
 				'<span>' . get_the_title() . '</span>'

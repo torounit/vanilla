@@ -22,6 +22,7 @@
 
 				<p>
 				<?php
+				/* translators: add post link. */
 				printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'vanilla' ), array(
 					'a' => array(
 						'href' => array(),

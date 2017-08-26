@@ -63,8 +63,7 @@ $recent_posts->the_post();
 
 			<?php else : ?>
 				<?php
-				/* translators: %s: Name of current post */
-				the_content( sprintf(
+				the_content( /* translators: %s: Name of current post */ sprintf(
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'vanilla' ),
 					get_the_title()
 				) );
