@@ -4,7 +4,7 @@ Donate link: https://www.amazon.co.jp/registry/wishlist/COKSXS25MVQV
 Tags: one-column, custom-logo, custom-colors, custom-header, custom-menu, custom-background, editor-style, sticky-post, microformats, featured-image-header, featured-images, footer-widgets, threaded-comments, translation-ready, blog, news, photography, portfolio, food-and-drink
 Requires at least: 4.7
 Tested up to: 4.7
-Stable tag: 1.6.4
+Stable tag: 1.6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ License: GPL2.0+
 
 
 == Changelog ==
+
+= 2.0.0 =
+* Update Base fonts.
+* Fix gallery gutter.
 
 = 1.6.4 =
 * Fix hr style.

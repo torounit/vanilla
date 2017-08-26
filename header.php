@@ -23,7 +23,11 @@
 <body <?php body_class(); ?>>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
-<div id="page" class="site [ app-layout <?php if ( ! is_front_page() ) : ?>app-layout--disable<?php endif;?> ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
+<div id="page" class="site [ app-layout
+<?php
+if ( ! is_front_page() ) :
+?>
+app-layout--disable<?php endif; ?> ]" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
 	<header class="app-layout__header" aria-hidden="false" role="banner">
 		<div class="navbar container">
 			<div  class="navbar__branding">
@@ -33,7 +37,7 @@
 					<h1 class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif;?>
+					<?php endif; ?>
 				</div>
 			</div>
 
@@ -45,24 +49,20 @@
 
 	</header>
 
-	<nav class="drawer"
-	     role="navigation"
-	     data-drawer
-	     data-drawer-container-selector="body"
-	     id="primary-menu"
-	     aria-hidden="true"
-	     aria-expanded="false">
+	<nav class="drawer" role="navigation" data-drawer data-drawer-container-selector="body" id="primary-menu" aria-hidden="true" aria-expanded="false">
 
 		<div class="drawer__body primary-menu">
 			<div class="drawer__search">
-				<?php get_search_form();?>
+				<?php get_search_form(); ?>
 			</div>
 
 
-			<?php wp_nav_menu( array(
+			<?php
+			wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'menu_class' => 'primary-menu__links',
-			) );?>
+			) );
+			?>
 
 
 		</div>
@@ -70,10 +70,14 @@
 
 	<div class="site-content [ app-layout__content ]">
 
-		<?php if ( is_front_page() and ! is_paged() ) : ?>
-			<div id="masthead" class="app-layout__spacer custom-header <?php if ( get_header_image() ) : ?> custom-header--has-image <?php endif;?>" role="banner">
+		<?php if ( is_front_page() && ! is_paged() ) : ?>
+			<div id="masthead" class="app-layout__spacer custom-header
+			<?php
+			if ( get_header_image() ) :
+?>
+ custom-header--has-image <?php endif; ?>" role="banner">
 				<div class="custom-header__media custom-header-media ">
-					<?php the_custom_header_markup();?>
+					<?php the_custom_header_markup(); ?>
 				</div>
 				<div class="custom-header__branding">
 					<div class="container">
@@ -84,7 +88,7 @@
 			</div>
 		<?php else : ?>
 			<div class="app-layout__spacer"></div>
-		<?php endif;?>
+		<?php endif; ?>
 		<div id="content" class="content-area">
 
 

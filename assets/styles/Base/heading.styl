@@ -22,16 +22,30 @@ h2 {
 	box-sizing: border-box;
 	font-size: 1.7em;
 	margin: 1em 0;
-	border-top: 1px solid rgba(0, 0, 0, .1);
-	padding-top: 1em;
+
+
+	&::before {
+		content '';
+		border-top: 1px solid currentColor;
+		opacity: 0.1;
+		display: block;
+		padding-bottom: 1em;
+	}
 
 }
 
 h3 {
 	font-weight: 600;
 	font-size: 1.38em;
-	border-top: 1px solid rgba(0, 0, 0, .05);
-	padding-top: 1em;
+
+	&::before {
+		content '';
+		border-top: 1px solid currentColor;
+		opacity: 0.06;
+		display: block;
+		padding-bottom: 1em;
+	}
+
 
 }
 

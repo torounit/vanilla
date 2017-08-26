@@ -1,11 +1,41 @@
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 300;
+	src: local("YuGothic-Regular"), local("Yu Gothic"), local("YuGothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 400;
+	src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular"), local("Yu Gothic"), local("YuGothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 500;
+	src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular"), local("Yu Gothic"), local("YuGothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 600;
+	src: local("YuGothic-Bold"), local("Yu Gothic");
+}
+
+@font-face {
+	font-family: "Cross Yu Gothic";
+	font-weight: 700;
+	src: local("YuGothic-Bold"), local("Yu Gothic");
+}
+
 html {
-	font-size: percentage(10/16);
+	font-size: percentage(10 / 16);
 	min-height: 100%;
 }
 
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Roboto', 'Droid Sans', '游ゴシック  Medium', meiryo, sans-serif;
+	font-family: 'Avenir', -apple-system, BlinkMacSystemFont, 'Cross Yu Gothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Roboto', 'Droid Sans', '游ゴシック  Medium', meiryo, sans-serif;
 	font-size: 1.4em;
 
 	+medium-up() {
@@ -17,8 +47,6 @@ body {
 	line-height: 1.75;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
-	//letter-spacing: .05rem;
-	//text-align: justify;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -35,5 +63,21 @@ pre {
 	background: #EEE;
 	margin: 1.2em 0;
 	padding: 1em;
-	line-height: 1.5
+	line-height: 1.5;
+}
+
+code,kbd {
+	background: #EEE;
+	padding: 0.2em 0.4em;
+}
+
+blockquote {
+	margin: 1em 0;
+	padding 0 2em;
+	border-left: 1px solid currentColor;
+
+	cite {
+		display: block;
+		text-align: right;
+	}
 }
