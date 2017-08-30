@@ -26,7 +26,7 @@ export default  {
 	stylus: {
 		src: "./assets/styles/**/style.styl",
 		watch: "./assets/styles/**/*.styl",
-		dest: themeDir,
+		dest: "./",
 		sourceRoot: "./assets/styles"
 	},
 
@@ -64,7 +64,7 @@ export default  {
 			entries: "./assets/scripts/theme.js",
 			extensions: ["js", "jsx"]
 		},
-		dest: themeDir,
+		dest: "./",
 		filename: "bundle.js"
 	}
 };
