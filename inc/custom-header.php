@@ -73,8 +73,8 @@ function vanilla_header_style() {
 	?>
 	<style id="vanilla-custom-header-styles" type="text/css">
 		<?php
-			// Has the text been hidden?
-			if ( 'blank' === $header_text_color ) :
+		// Has the text been hidden?
+		if ( 'blank' === $header_text_color ) :
 		?>
 		.custom-header__branding {
 		position: absolute;
@@ -82,12 +82,14 @@ function vanilla_header_style() {
 		}
 		<?php
 		// If the user has set a custom color for the text use that.
-			else :
+		else :
 		?>
 		.custom-header {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
-		<?php endif; ?>
+		<?php
+		endif;
+		?>
 	</style>
 	<?php
 }

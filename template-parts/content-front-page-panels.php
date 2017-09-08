@@ -47,7 +47,7 @@ global $vanillacounter;
 					<div class="postlist">
 						<?php
 						while ( $recent_posts->have_posts() ) :
-$recent_posts->the_post();
+							$recent_posts->the_post();
 							?>
 							<article class="postlist__item" itemscope itemtype="http://schema.org/Article">
 								<time class="postlist__pubdate" itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
