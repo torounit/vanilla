@@ -32,6 +32,7 @@
     "browserify-shim": "^3.8.12",
     "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.0",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-connect-php": "^1.0.0",
     "gulp-debug": "^2.1.2",

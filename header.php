@@ -33,7 +33,7 @@
 					<h1 class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif;?>
+					<?php endif; ?>
 				</div>
 			</div>
 
@@ -49,14 +49,16 @@
 
 		<div class="drawer__body primary-menu">
 			<div class="drawer__search">
-				<?php get_search_form();?>
+				<?php get_search_form(); ?>
 			</div>
 
 
-			<?php wp_nav_menu( array(
+			<?php
+			wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'menu_class' => 'primary-menu__links',
-			) );?>
+			) );
+			?>
 
 
 		</div>
@@ -64,10 +66,14 @@
 
 	<div class="site-content app-layout__content">
 
-		<?php if ( is_front_page() and ! is_paged() ) : ?>
-			<div id="masthead" class="app-layout__spacer custom-header <?php if ( get_header_image() ) : ?> custom-header--has-image <?php endif;?>" role="banner">
+		<?php if ( is_front_page() && ! is_paged() ) : ?>
+			<div id="masthead" class="app-layout__spacer custom-header
+			<?php
+			if ( get_header_image() ) :
+?>
+ custom-header--has-image <?php endif; ?>" role="banner">
 				<div class="custom-header__media custom-header-media ">
-					<?php the_custom_header_markup();?>
+					<?php the_custom_header_markup(); ?>
 				</div>
 				<div class="custom-header__branding">
 					<div class="container">
@@ -78,7 +84,7 @@
 			</div>
 		<?php else : ?>
 			<div class="app-layout__spacer"></div>
-		<?php endif;?>
+		<?php endif; ?>
 		<div id="content" class="content-area">
 
 

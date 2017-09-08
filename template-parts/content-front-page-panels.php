@@ -16,7 +16,7 @@ global $vanillacounter;
 				<?php the_post_thumbnail( 'vanilla-featured-image' ); ?>
 			<?php else : ?>
 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'vanilla-featured-image' ); ?></a>
-			<?php endif;?>
+			<?php endif; ?>
 
 		</div>
 	<?php endif; ?>
@@ -30,9 +30,11 @@ global $vanillacounter;
 
 			<?php
 			// Show recent blog posts if is blog posts page (Note that get_option returns a string, so we're casting the result as an int).
-			if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) : ?>
+			if ( get_the_ID() === (int) get_option( 'page_for_posts' ) ) :
+			?>
 
-				<?php // Show four most recent posts.
+				<?php
+				// Show four most recent posts.
 				$recent_posts = new WP_Query( array(
 					'post_status'         => 'publish',
 					'ignore_sticky_posts' => true,
@@ -44,11 +46,12 @@ global $vanillacounter;
 
 					<div class="postlist">
 						<?php
-						while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+						while ( $recent_posts->have_posts() ) :
+							$recent_posts->the_post();
 							?>
 							<article class="postlist__item" itemscope itemtype="http://schema.org/Article">
 								<time class="postlist__pubdate" itemprop="datePublished" content="<?php the_time( 'c' ); ?>"><?php the_time( 'Y.m.d' ); ?></time>
-								<meta itemprop="dateModified" content="<?php the_modified_date( 'c' );?>">
+								<meta itemprop="dateModified" content="<?php the_modified_date( 'c' ); ?>">
 								<h5 class="postlist__title"><a href="<?php the_permalink(); ?>"><span itemprop="headline"><?php the_title(); ?></span></a></h5>
 							</article>
 							<?php
@@ -60,8 +63,7 @@ global $vanillacounter;
 
 			<?php else : ?>
 				<?php
-				/* translators: %s: Name of current post */
-				the_content( sprintf(
+				the_content( /* translators: %s: Name of current post */ sprintf(
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'vanilla' ),
 					get_the_title()
 				) );

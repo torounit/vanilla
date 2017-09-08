@@ -239,7 +239,8 @@ function vanilla_sanitize_posts_layout_on_front_page( $input ) {
 function vanilla_color_css() {
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
-		if ( $value = get_theme_mod( $key ) ) {
+		$value = get_theme_mod( $key );
+		if ( $value ) {
 			$css = vanilla_create_css( $param['selector'], $param['property'], $value );
 		} else {
 			$css = vanilla_create_css( $param['selector'], $param['property'], $param['default'] );
