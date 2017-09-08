@@ -6,13 +6,10 @@ import ContentSpacer from './AppLayout/ContentSpacer';
 import './skip-link-focus-fix';
 
 $(function() {
-
 	$("[data-drawer]").each(function(){
 		new Drawer($(this));
 	});
-
 });
-
 
 $(function() {
 
@@ -53,10 +50,9 @@ $(function() {
 
 
 $(function() {
-
 	let $appLayout = $(".app-layout");
 	$(window).on( 'load resize', () => {
-		$appLayout.removeClass("app-layout--disable");
+		$appLayout.find(".app-layout__header").removeClass("app-layout__header--static");
 	} );
 	new HeaderClassController( $appLayout, "app-layout__header--fixed", 46 );
 	new HeaderEscaper( $appLayout, "app-layout__header--escape", 64 );

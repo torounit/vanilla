@@ -1,23 +1,7 @@
 $app-layout-use-escape = true;
 
 .app-layout {
-	//box-sizing border-box;
-	//display: flex;
-	//width: 100%;
-	//min-height: 100vh;
-	//flex-direction: column;
-
-	background-color: inherit
-	&.app-layout--disable &__header {
-		position: relative !important;
-		top: 0 !important;
-		padding-top: 0px !important;
-	}
-
-	//
-	//&.app-layout--disable &__content {
-	//	padding-top: 0px !important;
-	//}
+	background-color: inherit;
 
 	&__header {
 		background-color: #FFF;
@@ -26,13 +10,18 @@ $app-layout-use-escape = true;
 		left: 0;
 		top: 0;
 
+		&--static {
+			position: relative;
+		}
+
+
 		//for WordPress
 		.admin-bar & {
 			padding-top: 46px;
 			position: absolute;
 
 			&--fixed {
-				padding-top: 0px;
+				padding-top: 0;
 				position: fixed;
 			}
 
@@ -68,15 +57,14 @@ $app-layout-use-escape = true;
 	&__content {
 		box-sizing: border-box;
 		//flex-grow: 1;
-
-		background-color: inherit
+		background-color: inherit;
 	}
 
 	& &__header {
 
 		if $app-layout-use-escape {
 			&--escape {
-				transform: translateY(-100%);
+				//transform: translateY(-100%);
 			}
 		}
 

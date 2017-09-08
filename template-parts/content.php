@@ -15,7 +15,6 @@
 			<?php else : ?>
 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'vanilla-featured-image' ); ?></a>
 			<?php endif; ?>
-
 		</div>
 	<?php endif; ?>
 

@@ -23,8 +23,8 @@
 <body <?php body_class(); ?>>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'vanilla' ); ?></a>
 
-<div id="page" class="site app-layout <?php if ( ! is_front_page() ) : ?>app-layout--disable<?php endif;?>" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
-	<header class="app-layout__header" aria-hidden="false" role="banner">
+<div id="page" class="site app-layout" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
+	<header class="app-layout__header <?php echo ( ! is_front_page() ) ? 'app-layout__header--static' : ''; ?>" aria-hidden="false" role="banner">
 		<div class="navbar container">
 			<div  class="navbar__branding">
 				<div class="site-branding">
