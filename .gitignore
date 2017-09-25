@@ -7,6 +7,7 @@ npm-debug.log
 /style.css.map
 release.zip
 vanilla.zip
+*.zip
 dist
 server/wordpress
 .env.json
