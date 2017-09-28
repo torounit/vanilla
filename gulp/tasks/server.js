@@ -10,7 +10,6 @@ import browserSync from 'browser-sync';
 import config from '../../gulp.config.js';
 import gulp from 'gulp';
 import connect from 'gulp-connect-php';
-import env from '../../.env.json';
 
 
 
@@ -25,6 +24,7 @@ gulp.task('browserSync', function () {
 });
 
 gulp.task('connectSync', function() {
+	const env = require(  '../../.env.json' );
 	connect.server({
 		port: env.server.port,
 		host: env.server.host,
