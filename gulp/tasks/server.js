@@ -31,7 +31,14 @@ gulp.task('connectSync', function() {
 		base: './server',
 		router: './vendor/wp-cli/server-command/router.php'
 	}, function (){
-		browserSync(config.browserSync);
+		browserSync({
+			proxy: env.server.host + ":" + env.server.port,
+			files: [
+				config.themeDir + "/style.css",
+				config.themeDir + "/bundle.js",
+				config.themeDir + "/**/*.php",
+			]
+		});
 	});
 
 });

@@ -1,22 +1,5 @@
-import env from "./.env.json"
-
-const server = env.server.host + ":" + env.server.port
-const themeDir = "./server/wordpress/wp-content/themes/" + env.wp.theme;
+export const themeDir = "./server/wordpress/wp-content/themes/vanilla";
 export default  {
-
-	/**
-	 *
-	 * browserSync.
-	 *
-	 */
-	browserSync: {
-		proxy: server,
-		files: [
-			themeDir + "/style.css",
-			themeDir + "/bundle.js",
-			themeDir + "/**/*.php",
-		]
-	},
 
 	/**
 	 *
