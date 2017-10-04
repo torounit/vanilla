@@ -1,6 +1,5 @@
-export const themeDir = "./server/wordpress/wp-content/themes/vanilla";
-export default  {
-
+const themeDir = "./server/wordpress/wp-content/themes/vanilla";
+module.exports = {
 	/**
 	 *
 	 * sass Compile Option.
@@ -51,3 +50,5 @@ export default  {
 		filename: "bundle.js"
 	}
 };
+
+module.exports.themeDir = themeDir;

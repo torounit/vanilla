@@ -1,9 +1,9 @@
 'use strict';
 
-import config from '../../gulp.config.js';
-import gulp from 'gulp';
-import debug from 'gulp-debug';
-import changed from 'gulp-changed';
+const config = require( '../../gulp.config.js' );
+const gulp = require( 'gulp' );
+const debug = require( 'gulp-debug' );
+const changed = require( 'gulp-changed' );
 
 
 

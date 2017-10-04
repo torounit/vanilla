@@ -6,20 +6,17 @@
 //
 // ==================================
 
-import source from 'vinyl-source-stream';
-import buffer from 'vinyl-buffer';
+const source  = require( 'vinyl-source-stream' );
 
-import browserify from 'browserify';
+const browserify  = require( 'browserify' );
 //tranform
-import babelify from 'babelify';
-import browserifyShim from 'browserify-shim';
-import watchify from 'watchify';
+const babelify  = require( 'babelify' );
+const browserifyShim  = require( 'browserify-shim' );
+const watchify  = require( 'watchify' );
 
-import config from '../../gulp.config.js';
-import handleErrors from '../util/handleErrors.js';
-import gulp from 'gulp';
-import debug from 'gulp-debug';
-
+const config  = require( '../../gulp.config.js' );
+const handleErrors  = require( '../util/handleErrors.js' );
+const gulp  = require( 'gulp' );
 
 
 // ==================================

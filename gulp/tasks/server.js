@@ -6,10 +6,10 @@
 //
 // ==================================
 
-import browserSync from 'browser-sync';
-import config from '../../gulp.config.js';
-import gulp from 'gulp';
-import connect from 'gulp-connect-php';
+const browserSync = require( 'browser-sync' );
+const config = require( '../../gulp.config.js' );
+const gulp = require( 'gulp' );
+const connect = require( 'gulp-connect-php' );
 
 
 

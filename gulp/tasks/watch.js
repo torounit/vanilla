@@ -6,11 +6,9 @@
 //
 // ==================================
 
-import config from '../../gulp.config.js';
-import gulp from 'gulp';
-import debug from 'gulp-debug';
-import watch from 'gulp-watch';
-
+const config = require( '../../gulp.config.js' );
+const gulp = require( 'gulp' );
+const watch = require( 'gulp-watch' );
 
 // ==================================
 //

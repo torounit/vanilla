@@ -5,9 +5,9 @@
 // distribution
 //
 // ==================================
-import gulp from 'gulp';
-import zip from 'gulp-zip';
-import minimist from 'minimist';
+const gulp  = require( 'gulp' );
+const zip  = require( 'gulp-zip' );
+const minimist  = require( 'minimist' );
 
 gulp.task('release', ['dist'], function(){
 	let env = minimist(process.argv.slice(2));

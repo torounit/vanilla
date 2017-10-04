@@ -6,17 +6,17 @@
 //
 // ==================================
 
-import config from '../../gulp.config.js';
-import handleErrors from '../util/handleErrors.js';
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import stylus from 'gulp-stylus';
-import sourcemaps from 'gulp-sourcemaps';
-import autoprefixer from 'autoprefixer';
-import postcss from 'gulp-postcss';
-import mqpacker from 'css-mqpacker';
-import packageJson from '../../package.json';
-import handlebars from 'gulp-compile-handlebars';
+const config = require( '../../gulp.config.js' );
+const handleErrors = require( '../util/handleErrors.js' );
+const gulp = require( 'gulp' );
+const plumber = require( 'gulp-plumber' );
+const stylus = require( 'gulp-stylus' );
+const sourcemaps = require( 'gulp-sourcemaps' );
+const autoprefixer = require( 'autoprefixer' );
+const postcss = require( 'gulp-postcss' );
+const mqpacker = require( 'css-mqpacker' );
+const packageJson = require( '../../package.json' );
+const handlebars = require( 'gulp-compile-handlebars' );
 
 var processors = [
 	autoprefixer(),
