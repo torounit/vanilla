@@ -4,10 +4,10 @@ php:
 - '5.5'
 - '7'
 addons:
+  chrome: stable
   apt:
     packages:
     - fonts-noto-hinted
-    - chromium-browser
 cache:
   directories:
   - node_modules
