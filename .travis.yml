@@ -22,6 +22,7 @@ before_script:
   - nvm install 7
   - npm install
   - npm run build
+  - composer provision
 script:
   - composer test
   - npm run test
