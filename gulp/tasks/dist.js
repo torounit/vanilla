@@ -20,6 +20,7 @@ gulp.task('copy', function() {
 				'./style.css',
 				'./bundle.js',
 				"!./dist/**",
+				"!./backstop_data/**",
 				"!./node_modules/**/*.*",
 				"!./vendor/**/*.*",
 				"!./server/**"

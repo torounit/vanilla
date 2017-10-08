@@ -13,3 +13,5 @@ server/wordpress
 .env.json
 theme-unit-test-data.xml
 server/salt.php
+/backstop_data/bitmaps_test
+/backstop_data/html_report

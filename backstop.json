@@ -1,0 +1,57 @@
+{
+  "id": "vanilla_wp",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+
+  "onBeforeScript": "chromy/onBefore.js",
+  "onReadyScript": "chromy/onReady.js",
+  "scenarios": [
+    {
+      "label": "Front Page",
+      "url": "http://127.0.0.1:8080/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 1000,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": "",
+      "selectors": [
+        "body"
+      ]
+    },
+    {
+      "label": "Markup and Formats",
+      "url": "http://127.0.0.1:8080/archives/1178",
+      "selectors": []
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "delay": 1000,
+  "misMatchThreshold" : 0.1,
+  "report": ["browser", "cli"],
+  "engine": "chrome",
+  "engineFlags": [],
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
