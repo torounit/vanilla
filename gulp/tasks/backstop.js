@@ -21,11 +21,11 @@ const run = (command) => {
 	});
 };
 
-gulp.task('test', [] , () => {
+gulp.task('test', ['build', 'cloneTheme'] , () => {
 	return run('test');
 });
 
-gulp.task('reference', [] , () => {
+gulp.task('reference', ['build', 'cloneTheme'] , () => {
 	return run('reference');
 });
 
