@@ -3,6 +3,10 @@ sudo: false
 php:
 - '5.5'
 - '7'
+addons:
+  apt:
+    packages:
+    - fonts-noto-hinted
 cache:
   directories:
   - node_modules
@@ -20,6 +24,7 @@ before_script:
   - npm run build
 script:
   - composer test
+  - npm run test
 after_success:
   - bash ./bin/dist.sh
 
