@@ -5,11 +5,8 @@ const gulp = require( 'gulp' );
 const debug = require( 'gulp-debug' );
 const changed = require( 'gulp-changed' );
 
-
-
 gulp.task('cloneTheme', function () {
-
-	gulp.src(config.cloneTheme.src, { base: config.cloneTheme.base })
+	return gulp.src(config.cloneTheme.src, { base: config.cloneTheme.base })
 		.pipe(changed(config.cloneTheme.dest))
 		.pipe(debug({
 			title: 'Clone:',
