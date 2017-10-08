@@ -37,7 +37,7 @@ var b = browserify(config.browserify.bundleOption)
 gulp.task('browserify', function () {
 
 	var bundle = function () {
-		b.bundle().on('error', handleErrors)
+		return b.bundle().on('error', handleErrors)
 			.pipe(source(config.browserify.filename))
 			.pipe(gulp.dest(config.browserify.dest));
 	};
