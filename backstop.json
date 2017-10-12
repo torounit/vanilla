@@ -35,7 +35,8 @@
     {
       "label": "Markup and Formats",
       "url": "http://127.0.0.1:8080/archives/1178",
-      "selectors": []
+      "selectors": [
+      ]
     }
   ],
   "paths": {
@@ -47,11 +48,11 @@
   },
   "delay": 1000,
   "misMatchThreshold" : 0.1,
-  "report": ["cli"],
+  "report": ["browser", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 1,
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
   "debug": false,
   "debugWindow": false
 }
