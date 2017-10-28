@@ -48,7 +48,7 @@
   },
   "delay": 1000,
   "misMatchThreshold" : 0.1,
-  "report": ["browser", "cli"],
+  "report": ["CI"],
   "engine": "chrome",
   "engineFlags": [],
   "asyncCaptureLimit": 5,
