@@ -68,7 +68,7 @@ jobs:
       - run:
           name: dist build
           command: npm run dist
-      - run:
+      - deploy:
           command: |
             if [[ `git status --porcelain` ]]; then
               git add -A
