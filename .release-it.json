@@ -1,5 +1,5 @@
 {
-  "beforeStartCommand": "npm run release -- ${src.tagName}",
+  "buildCommand": "npm run release -- ${src.tagName}",
   "github": {
     "release": true,
     "assets": "vanilla-*.zip"
