@@ -19,13 +19,10 @@
     {
       "label": "Front Page",
       "url": "http://localhost/",
-      "hideSelectors": [
-        "#wp-custom-header",
-        "img"
+      "removeSelectors": [
+        "#masthead"
       ],
       "selectors": [
-        "#content",
-        "#colophon"
       ]
     },
     {
