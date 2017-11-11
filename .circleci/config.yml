@@ -46,6 +46,9 @@ jobs:
       - store_artifacts:
           path: backstop_data/ci_report/xunit.xml
           prefix: tests
+      - store_artifacts:
+          path: backstop_data/html_report
+
 
   deploy:
     docker:
