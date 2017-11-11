@@ -33,6 +33,8 @@ jobs:
           paths:
             - vendor
       - run:
+          command: sudo /usr/bin/supervisord
+      - run:
           name: wp
           command: wp theme activate vanilla --path=/var/www/wordpress
   test:
