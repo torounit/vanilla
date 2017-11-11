@@ -44,16 +44,11 @@ jobs:
           name: Test
           command: npm test
       - store_artifacts:
-          path: backstop_data/ci_report/xunit.xml
-          prefix: tests
-      - store_artifacts:
-          path: backstop_data/html_report
-      - store_artifacts:
-          path: backstop_data/bitmaps_test
+          path: backstop_data
 
   deploy:
     docker:
-      - image: torounit/wp-theme-test:0.0.2
+      - image: torounit/wp-theme-test:0.0.3
     working_directory: /var/www/wordpress/wp-content/themes/vanilla
     steps:
       - checkout
