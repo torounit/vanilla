@@ -105,7 +105,7 @@ jobs:
       - run:
           command: npm run release -- $CIRCLE_TAG
       - run:
-          command: npm run gh-release -- -n $CIRCLE_TAG -c master -d --assets vanilla-$CIRCLE_TAG.zip
+          command: node node_modules/.bin/gh-release -n $CIRCLE_TAG -c master -d --assets vanilla-$CIRCLE_TAG.zip
 
 workflows:
   version: 2
@@ -128,4 +128,4 @@ workflows:
             - deployment
           filters:
             tags:
-              only: /.*/
+              only: /.+/
