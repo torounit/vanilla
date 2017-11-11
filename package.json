@@ -31,16 +31,15 @@
     "release": "gulp release -v"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.5",
+    "autoprefixer": "^7.1.6",
     "babel-preset-es2015": "^6.24.1",
-    "babelify": "^7.3.0",
-    "backstopjs": "^3.1.2",
+    "babelify": "^8.0.0",
     "browser-sync": "^2.18.13",
-    "browserify": "^14.4.0",
+    "browserify": "^14.5.0",
     "browserify-shim": "^3.8.14",
     "css-mqpacker": "^6.0.1",
     "gulp": "^3.9.1",
-    "gulp-changed": "^3.1.0",
+    "gulp-changed": "^3.1.1",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-connect-php": "^1.0.1",
     "gulp-debug": "^3.1.0",
@@ -57,7 +56,8 @@
     "run-sequence": "^2.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.9.0"
+    "watchify": "^3.9.0",
+    "backstopjs": "torounit/backstopjs#fix-error-show-content"
   },
   "babel": {
     "presets": [
