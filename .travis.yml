@@ -5,9 +5,10 @@ php:
 - '7'
 addons:
   chrome: stable
+  apt:
+    packages:
+    - fonts-noto
 
-cache:
-  - NotoSansCJKjp-hinted.zip
   directories:
   - $HOME/.noto
   - node_modules
@@ -19,13 +20,10 @@ env:
   - GIT_AUTHOR_NAME=torounit
   - GIT_AUTHOR_EMAIL=mail@torounit.com
 before_script:
-  - bash ./bin/noto-fonts.sh
   - nvm install 8.7.0
   - composer install
   - npm install
   - npm run build
-
-  - npm run docker-start
 script:
   - composer test
   - npm run test
