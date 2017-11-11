@@ -24,9 +24,13 @@ before_script:
   - composer install
   - npm install
   - npm run build
-  - npm run docker-start
+  - docker run --name vanilla -u www-data -v `pwd`:/var/www/wordpress/wp-content/themes/vanilla --shm-size 1024m -p 80:80 -d torounit/wp-theme-test:0.0.1
+  - sleep 5s
+  - docker exec -u www-data vanilla bash -c 'wp theme activate vanilla --path=/var/www/wordpress'
 script:
   - composer test
+  - docker exec -u www-data vanilla bash -c 'whoami'
+  - docker exec -u www-data vanilla bash -c 'ls -la /var/www/wordpress/wp-content/themes/vanilla'
   - docker exec -u www-data vanilla bash -c 'cd /var/www/wordpress/wp-content/themes/vanilla &&  npm run test'
 after_success:
   - bash ./bin/dist.sh
