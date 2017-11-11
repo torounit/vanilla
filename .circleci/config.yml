@@ -60,8 +60,11 @@ jobs:
       # Store
       - store_test_results:
           path: backstop_data/ci_report
+          destination: results
       - store_artifacts:
           path: backstop_data
+          destination: artifacts
+
 
   deployment:
     docker:
