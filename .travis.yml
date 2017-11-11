@@ -20,7 +20,7 @@ env:
   - GIT_AUTHOR_NAME=torounit
   - GIT_AUTHOR_EMAIL=mail@torounit.com
 before_script:
-  - nvm install 8.7.0
+  - nvm install 8.9.1
   - composer install
   - npm install
   - npm run build
