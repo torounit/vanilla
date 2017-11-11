@@ -58,13 +58,11 @@ jobs:
           command: npm test
 
       # Store
-      - store_test_results:
-          path: backstop_data/ci_report
-          destination: results
       - store_artifacts:
           path: backstop_data
           destination: artifacts
-
+      - store_test_results:
+          path: backstop_data/ci_report
 
   deployment:
     docker:
