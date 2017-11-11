@@ -17,9 +17,18 @@
   "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
+      "label": "Front Page masthead",
+      "url": "http://localhost/",
+      "selectors": [
+        "#masthead"
+      ]
+    },
+    {
       "label": "Front Page",
       "url": "http://localhost/",
-      "selectors": []
+      "removeSelectors": [
+        "#masthead"
+      ]
     },
     {
       "label": "Markup and Formats",
@@ -38,8 +47,8 @@
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 10,
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
   "debug": false,
   "debugWindow": false
 }
