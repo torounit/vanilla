@@ -55,3 +55,12 @@ jobs:
       - store_artifacts:
           path: backstop_data/ci_report/xunit.xml
           prefix: tests
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
