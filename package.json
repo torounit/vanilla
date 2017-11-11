@@ -1,6 +1,6 @@
 {
   "name": "@torounit/vanilla",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
   "repository": {
     "type": "git",
@@ -28,8 +28,7 @@
     "gulp": "gulp",
     "start": "gulp",
     "dist": "gulp dist",
-    "release": "gulp release -v",
-    "gh-release": "gh-release"
+    "release": "gulp release -v"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -41,7 +40,6 @@
     "browserify": "^14.5.0",
     "browserify-shim": "^3.8.14",
     "css-mqpacker": "^6.0.1",
-    "gh-release": "^3.1.1",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.1.1",
     "gulp-compile-handlebars": "^0.6.1",
@@ -57,6 +55,7 @@
     "gulp-zip": "^4.0.0",
     "minimist": "^1.2.0",
     "node-jq": "^0.7.0",
+    "release-it": "^3.2.0",
     "run-sequence": "^2.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",

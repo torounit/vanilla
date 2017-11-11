@@ -1,0 +1,10 @@
+{
+  "beforeStartCommand": "npm run release -- ${src.tagName}",
+  "github": {
+    "release": true,
+    "assets": "vanilla-*.zip"
+  },
+  "npm": {
+    "publish": false
+  }
+}
