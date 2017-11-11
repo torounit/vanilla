@@ -24,9 +24,10 @@ before_script:
   - composer install
   - npm install
   - npm run build
+  - npm run docker-start
 script:
   - composer test
-  - npm run test
+  - docker exec vanilla bash -c 'cd /var/www/wordpress/wp-content/themes/vanilla &&  npm run test'
 after_success:
   - bash ./bin/dist.sh
 
