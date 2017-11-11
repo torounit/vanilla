@@ -67,13 +67,14 @@ jobs:
           name: dist build
           command: npm run dist
       - run:
-          command: cd dist
-      - run:
           command: git add -A
+          working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
       - run:
           command: git commit -m "Update from travis $CIRCLE_BUILD_URL"
+          working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
       - run:
           command: git push "${CIRCLE_REPOSITORY_URL}" dist
+          working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
 
 workflows:
   version: 2
