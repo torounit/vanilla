@@ -5,7 +5,8 @@ jobs:
     docker:
       - image: torounit/wp-theme-test:0.0.1
     steps:
-      - checkout
+      - checkout:
+          path: /var/www/wordpress/wp-content/themes/vanilla
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - restore_cache:
