@@ -33,7 +33,11 @@ jobs:
           paths:
             - vendor
       - run:
-          command: sudo /usr/bin/supervisord
+          command: sudo service php7.0-fpm start
+      - run:
+          command: sudo service nginx start
+      - run:
+          command: sudo service mysql start
       - run:
           name: wp
           command: wp theme activate vanilla --path=/var/www/wordpress
