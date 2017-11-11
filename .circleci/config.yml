@@ -48,7 +48,8 @@ jobs:
           prefix: tests
       - store_artifacts:
           path: backstop_data/html_report
-
+      - store_artifacts:
+          path: backstop_data/bitmaps_test
 
   deploy:
     docker:
