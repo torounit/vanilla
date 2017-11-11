@@ -46,6 +46,8 @@ jobs:
       - run:
           name: Test
           command: npm test
+      - store_test_results:
+          path: backstop_data/ci_report
       - store_artifacts:
           path: backstop_data
 
