@@ -41,7 +41,7 @@
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "misMatchThreshold" : 0.1,
+  "misMatchThreshold" : 0.2,
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
