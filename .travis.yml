@@ -27,7 +27,7 @@ before_script:
   - npm run docker-start
 script:
   - composer test
-  - docker exec vanilla bash -c 'cd /var/www/wordpress/wp-content/themes/vanilla &&  npm run test'
+  - docker exec -u www-data vanilla bash -c 'cd /var/www/wordpress/wp-content/themes/vanilla &&  npm run test'
 after_success:
   - bash ./bin/dist.sh
 
