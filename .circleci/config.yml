@@ -7,6 +7,8 @@ jobs:
     working_directory: /var/www/wordpress/wp-content/themes/vanilla
     steps:
       - checkout
+
+      # npm
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -21,6 +23,8 @@ jobs:
           command: npm run build
       - restore_cache:
            key: dependency-cache-{{ checksum "composer.json" }}
+
+      # composer
       - run:
           name: Install Composer
           command: composer install
@@ -28,24 +32,32 @@ jobs:
           key: dependency-cache-{{ checksum "composer.json" }}
           paths:
             - vendor
+
+      # Server
       - run:
           name: Start Services
           command: |
             sudo service php7.0-fpm start
             sudo service nginx start
             sudo service mysql start
+
+      # WordPress
       - run:
           name: Activate Theme
           command: wp theme activate vanilla --path=/var/www/wordpress
       - run:
           name: Access WordPress
           command: curl http://localhost > /dev/null
+
+      # Tests
       - run:
           name: PHP Test
           command: composer test
       - run:
           name: Test
           command: npm test
+
+      # Store
       - store_test_results:
           path: backstop_data/ci_report
       - store_artifacts:
@@ -57,8 +69,11 @@ jobs:
     working_directory: /var/www/wordpress/wp-content/themes/vanilla
     steps:
       - checkout
+      # npm
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+
+      # git
       - run:
           command: |
             git config --global user.email "circleci@torounit.com"
