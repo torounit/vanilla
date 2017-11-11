@@ -70,9 +70,11 @@ jobs:
           command: npm run dist
       - run:
           command: |
-            git add -A
-            git commit -m "Update from travis $CIRCLE_BUILD_URL"
-            git push "${CIRCLE_REPOSITORY_URL}" dist
+            if ! git diff-index --quiet HEAD --; then
+              git add -A
+              git commit -m "Update from travis $CIRCLE_BUILD_URL"
+              git push "${CIRCLE_REPOSITORY_URL}" dist
+            fi
           working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
 
 workflows:
