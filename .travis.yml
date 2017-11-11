@@ -26,8 +26,6 @@ before_script:
   - npm run build
 script:
   - composer test
-after_success:
-  - bash ./bin/dist.sh
 
 before_deploy:
   - npm run release -- $TRAVIS_TAG
