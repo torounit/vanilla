@@ -17,17 +17,12 @@
   "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
-      "label": "Front Page masthead",
-      "url": "http://localhost/",
-      "selectors": [
-        "#masthead"
-      ]
-    },
-    {
       "label": "Front Page",
       "url": "http://localhost/",
-      "removeSelectors": [
-        "#masthead"
+      "selectors": [
+        "#masthead",
+        "#content",
+        "#colophon"
       ]
     },
     {
