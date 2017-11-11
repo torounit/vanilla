@@ -5,4 +5,4 @@
  * @package vanilla
  */
 
-echo 'hoge';
+echo 'hoge?';
