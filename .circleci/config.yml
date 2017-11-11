@@ -38,6 +38,9 @@ jobs:
           name: wp
           command: wp theme activate vanilla --path=/var/www/wordpress
       - run:
+          name: Access wp
+          command: curl http://localhost > /dev/null
+      - run:
           name: PHP Test
           command: composer test
       - run:
