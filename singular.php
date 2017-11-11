@@ -45,7 +45,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php if ( is_active_sidebar( 'site-main-tail-widget' ) ) : ?>
-				<div class="container">
+				<div class="container" id="main-tail-widget-area">
 					<?php dynamic_sidebar( 'site-main-tail-widget' ); ?>
 				</div>
 			<?php endif; ?>
