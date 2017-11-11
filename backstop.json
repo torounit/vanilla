@@ -18,16 +18,22 @@
   "scenarios": [
     {
       "label": "Front Page",
-      "url": "http://localhost/",
-      "removeSelectors": [
-        "#masthead"
-      ],
+      "url": "http://localhost",
+      "removeSelectors": [],
       "selectors": [
+        "body",
+        "#primary",
+        "#colophon"
       ]
     },
     {
       "label": "Markup and Formats",
       "url": "http://localhost/archives/1178",
+      "selectors": []
+    },
+    {
+      "label": "Image Alignment",
+      "url": "http://localhost/about/page-image-alignment",
       "selectors": []
     }
   ],
@@ -42,8 +48,8 @@
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 5,
-  "asyncCompareLimit": 50,
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 10,
   "debug": false,
   "debugWindow": false
 }
