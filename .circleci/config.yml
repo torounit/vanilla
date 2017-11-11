@@ -96,11 +96,14 @@ workflows:
   version: 2
   test_and_deployment:
     jobs:
-      - test
+      - test:
+          filters:
+            branches:
+              ignore: dist
       - deployment:
           requires:
             - test
-          filters:
-            branches:
-              only: master
+            filters:
+              branches:
+                only: master
 
