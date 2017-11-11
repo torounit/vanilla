@@ -49,7 +49,7 @@ jobs:
       - store_artifacts:
           path: backstop_data
 
-  deploy:
+  deployment:
     docker:
       - image: torounit/wp-theme-test:0.0.3
     working_directory: /var/www/wordpress/wp-content/themes/vanilla
@@ -77,10 +77,10 @@ jobs:
 
 workflows:
   version: 2
-  test_and_deploy:
+  test_and_deployment:
     jobs:
       - test
-      - deploy:
+      - deployment:
           requires:
             - test
           filters:
