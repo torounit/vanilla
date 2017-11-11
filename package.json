@@ -32,8 +32,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
+    "backstopjs": "torounit/backstopjs#fix-error-show-content",
     "browser-sync": "^2.18.13",
     "browserify": "^14.5.0",
     "browserify-shim": "^3.8.14",
@@ -56,8 +58,7 @@
     "run-sequence": "^2.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.9.0",
-    "backstopjs": "torounit/backstopjs#fix-error-show-content"
+    "watchify": "^3.9.0"
   },
   "babel": {
     "presets": [
