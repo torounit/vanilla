@@ -70,7 +70,7 @@ jobs:
           command: npm run dist
       - run:
           command: |
-            if ! git diff-index --quiet HEAD --; then
+            if [[ `git status --porcelain` ]]; then
               git add -A
               git commit -m "Update from travis $CIRCLE_BUILD_URL"
               git push "${CIRCLE_REPOSITORY_URL}" dist
