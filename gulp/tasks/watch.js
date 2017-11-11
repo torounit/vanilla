@@ -26,14 +26,4 @@ gulp.task('watch', function () {
 		gulp.start('stylus');
 	});
 
-	gulp.watch([
-		'./**/*.php',
-		'./assets/images/**',
-		'./style.css',
-		'./bundle.js',
-		"!./dist/**",
-		"!./node_modules/**/*.*",
-		"!./vendor/**/*.*",
-		"!./server/**"
-	], ['cloneTheme']);
 });

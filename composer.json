@@ -2,19 +2,6 @@
   "name": "torounit/vanilla",
   "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
   "type": "wordpress-theme",
-  "require-dev": {
-    "composer/installers": "^1.0",
-    "squizlabs/php_codesniffer": "^3.0",
-    "wp-coding-standards/wpcs": "^0.13.0",
-    "johnpbloch/wordpress": "^4.7",
-    "wpackagist-theme/twentyseventeen": "^1.0",
-    "wpackagist-plugin/built-in-server-helper": "^1.0",
-    "wpackagist-plugin/theme-check": ">=20160523.1",
-    "wpackagist-plugin/wp-multibyte-patch": "^2.8.1",
-    "wpackagist-plugin/wordpress-importer": "^0.6.3",
-    "wp-cli/wp-cli": "^1.3",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2"
-  },
   "license": "GPL-2.0+",
   "repositories": [
     {
@@ -30,49 +17,14 @@
   ],
   "require": {
   },
-  "extra": {
-    "wordpress-install-dir": "server/wordpress",
-    "installer-paths": {
-      "server/wordpress/wp-content/plugins/{$name}/": [
-        "type:wordpress-plugin"
-      ],
-      "server/wordpress/wp-content/themes/{$name}/": [
-        "type:wordpress-theme"
-      ]
-    }
-  },
-  "config": {
-    "process-timeout": 0
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0",
+    "wp-coding-standards/wpcs": "^0.13.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2"
   },
   "scripts": {
     "post-install-cmd": [
-      "@create-env",
-      "@install-codestandards",
-      "@clone-theme"
-    ],
-    "post-update-cmd": [
-      "@clone-theme"
-    ],
-    "provision": [
-      "@create-salt",
-      "@install-wp",
-      "@import-theme-unit-test"
-    ],
-    "create-salt": [
-      "if [ ! -e server/salt.php ]; then  echo '<?php ' > server/salt.php && curl https://api.wordpress.org/secret-key/1.1/salt/ >> server/salt.php; fi"
-    ],
-    "clone-theme": [
-      "find . -path './vendor' -prune -o -path './release' -prune -o -path './node_modules' -prune -o -path './dist' -prune -o -path './server' -prune -o -type f -name '*.php' | cpio -pdmu ./server/wordpress/wp-content/themes/vanilla",
-      "touch ./server/wordpress/wp-content/themes/vanilla/style.css"
-    ],
-    "install-wp": [
-      "bash ./bin/install-wp.sh"
-    ],
-    "create-env": [
-      "bash ./bin/create-env.sh"
-    ],
-    "import-theme-unit-test": [
-      "bash ./bin/import-theme-unit-test.sh"
+      "@install-codestandards"
     ],
     "test": [
       "find . -path './server/wordpress' -prune -o -path './node_modules' -prune -o -path './vendor' -prune -o -name '*.php' -exec php -lf {} \\;",
@@ -83,6 +35,6 @@
     ],
     "install-codestandards": [
       "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-  ]
+    ]
   }
 }

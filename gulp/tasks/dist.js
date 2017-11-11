@@ -22,8 +22,7 @@ gulp.task('copy', function() {
 				"!./dist/**",
 				"!./backstop_data/**",
 				"!./node_modules/**/*.*",
-				"!./vendor/**/*.*",
-				"!./server/**"
+				"!./vendor/**/*.*"
 			],
 			{ base: './' }
 		)

@@ -1,4 +1,3 @@
-const themeDir = "./server/wordpress/wp-content/themes/vanilla";
 module.exports = {
 	/**
 	 *
@@ -12,25 +11,6 @@ module.exports = {
 		sourceRoot: "./assets/styles"
 	},
 
-
-	cloneTheme: {
-		src: [
-			'./**/*.php',
-			'./assets/**',
-			'./LICENSE',
-			'./readme.txt',
-			'./screenshot.png',
-			'./style.css',
-			'./bundle.js',
-			"!./server/**",
-			"!./dist/**",
-			"!./node_modules/**/*.*",
-			"!./vendor/**/*.*",
-			"!./server/**"
-		],
-		base: "./",
-		dest: themeDir,
-	},
 
 	/**
 	 *
@@ -51,4 +31,3 @@ module.exports = {
 	}
 };
 
-module.exports.themeDir = themeDir;

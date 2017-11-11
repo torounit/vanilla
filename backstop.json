@@ -18,25 +18,13 @@
   "scenarios": [
     {
       "label": "Front Page",
-      "url": "http://127.0.0.1:8080/",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 1000,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": "",
-      "selectors": [
-        "body"
-      ]
+      "url": "http://localhost/",
+      "selectors": []
     },
     {
       "label": "Markup and Formats",
-      "url": "http://127.0.0.1:8080/archives/1178",
-      "selectors": [
-      ]
+      "url": "http://localhost/archives/1178",
+      "selectors": []
     }
   ],
   "paths": {
@@ -46,13 +34,12 @@
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "delay": 1000,
   "misMatchThreshold" : 0.1,
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 5,
-  "asyncCompareLimit": 50,
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 10,
   "debug": false,
   "debugWindow": false
 }
