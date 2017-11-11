@@ -20,7 +20,8 @@
       "label": "Front Page",
       "url": "http://localhost/",
       "hideSelectors": [
-        "#wp-custom-header"
+        "#wp-custom-header",
+        "img"
       ],
       "selectors": [
         "#content",
