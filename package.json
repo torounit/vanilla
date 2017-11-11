@@ -28,7 +28,8 @@
     "gulp": "gulp",
     "start": "gulp",
     "dist": "gulp dist",
-    "release": "gulp release -v"
+    "release": "gulp release -v",
+    "gh-release": "gh-release"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -40,6 +41,7 @@
     "browserify": "^14.5.0",
     "browserify-shim": "^3.8.14",
     "css-mqpacker": "^6.0.1",
+    "gh-release": "^3.1.1",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.1.1",
     "gulp-compile-handlebars": "^0.6.1",

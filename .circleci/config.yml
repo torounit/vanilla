@@ -93,6 +93,20 @@ jobs:
             fi
           working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
 
+  release:
+    docker:
+      - image: torounit/wp-theme-test:0.0.3
+    working_directory: /var/www/wordpress/wp-content/themes/vanilla
+    steps:
+      - checkout
+      # npm
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          command: npm run release -- $CIRCLE_TAG
+      - run:
+          command: npm run gh-release -- -n $CIRCLE_TAG -c master -d --assets vanilla-$CIRCLE_TAG.zip
+
 workflows:
   version: 2
   test_and_deployment:
@@ -109,4 +123,9 @@ workflows:
             branches:
               only:
                 - master
-
+      - release:
+          requires:
+            - deployment
+          filters:
+            tags:
+              only: /.*/
