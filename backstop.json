@@ -19,8 +19,10 @@
     {
       "label": "Front Page",
       "url": "http://localhost/",
+      "hideSelectors": [
+        "#wp-custom-header"
+      ],
       "selectors": [
-        "#masthead",
         "#content",
         "#colophon"
       ]
