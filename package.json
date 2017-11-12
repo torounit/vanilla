@@ -1,6 +1,6 @@
 {
   "name": "@torounit/vanilla",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Vanilla is the simple theme for blogging. And for single column modern websites.",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
     "start": "gulp",
     "dist": "gulp dist",
     "release": "gulp release -v",
-    "release-it": "release-it"
+    "release-it": "node -r dotenv/config node_modules/.bin/release-it"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
