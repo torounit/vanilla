@@ -27,13 +27,33 @@
       ]
     },
     {
-      "label": "Markup and Formats",
-      "url": "http://localhost/archives/1178",
+      "label": "Markup: HTML Tags and Formatting",
+      "url": "http://localhost/markup-html-tags-and-formatting/",
+      "selectors": []
+    },
+    {
+      "label": "Page Markup And Formatting",
+      "url": "http://localhost/about/page-markup-and-formatting/",
+      "selectors": []
+    },
+    {
+      "label": "Template: Comments",
+      "url": "http://localhost/template-comments/",
+      "selectors": []
+    },
+    {
+      "label": "Post Format: Gallery",
+      "url": "http://localhost/post-format-gallery/2/",
       "selectors": []
     },
     {
       "label": "Image Alignment",
-      "url": "http://localhost/about/page-image-alignment",
+      "url": "http://localhost/about/page-image-alignment/",
+      "selectors": []
+    },
+    {
+      "label": "Lorem Ipsum",
+      "url": "http://localhost/lorem-ipsum/",
       "selectors": []
     }
   ],
