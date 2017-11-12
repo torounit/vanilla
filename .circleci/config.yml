@@ -80,7 +80,7 @@ jobs:
             git config --global user.email "circleci@torounit.com"
             git config --global user.name "Circle CI"
       - run:
-          command: git clone -b dist --quiet "[ci skip] ${CIRCLE_REPOSITORY_URL}" dist
+          command: git clone -b dist --quiet "${CIRCLE_REPOSITORY_URL}" dist
       - run:
           name: dist build
           command: npm run dist
@@ -88,7 +88,7 @@ jobs:
           command: |
             if [[ `git status --porcelain` ]]; then
               git add -A
-              git commit -m "Update from travis $CIRCLE_BUILD_URL"
+              git commit -m "[ci skip] Update from travis $CIRCLE_BUILD_URL"
               git push "${CIRCLE_REPOSITORY_URL}" dist
             fi
           working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
