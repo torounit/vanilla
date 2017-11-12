@@ -5,6 +5,7 @@
   },
   "github": {
     "release": true,
+    "draft": true,
     "assets": "vanilla-*.zip"
   },
   "npm": {
