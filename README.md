@@ -1,8 +1,9 @@
 # Vanilla
 
-[![Build Status](https://travis-ci.org/torounit/vanilla.svg?branch=master)](https://travis-ci.org/torounit/vanilla)
-[![Latest Stable Version](https://poser.pugx.org/torounit/vanilla/v/stable)](https://packagist.org/packages/torounit/vanilla)
-[![License](https://poser.pugx.org/torounit/vanilla/license)](https://packagist.org/packages/torounit/vanilla)
+[![CircleCI](https://circleci.com/gh/torounit/vanilla.svg?style=svg)](https://circleci.com/gh/torounit/vanilla)
+[![WordPress theme](https://img.shields.io/wordpress/theme/dt/vanilla.svg?style=flat-square)]()
+[![Latest Stable Version](https://poser.pugx.org/torounit/vanilla/v/stable)](https://packagist.org/packages/torounit/vanilla?format=flat-square)
+[![License](https://poser.pugx.org/torounit/vanilla/license)](https://packagist.org/packages/torounit/vanilla?format=flat-square)
 
 Vanilla is the simple theme for blogging. And for single column modern websites.
 
@@ -24,6 +25,48 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 2. Upload the "vanilla" folder to the "/wp-content/themes/" directory.
 
 ## Change log
+
+### 2.0.2
+* Fix Navbar fixed.
+
+### 2.0.0
+* Update Base fonts.
+* Fix gallery gutter.
+
+### 1.6.4
+* Fix hr style.
+
+### 1.6.3
+* Update theme homepage.
+
+### 1.6.2
+* Accordion button bug fix.
+
+### 1.6.1
+* Add sanitize for posts_layout_on_front_page.
+
+### 1.6.0
+* Add blocked style for posts in front page.
+
+### 1.5.1
+* remove widget site main head.
+
+### 1.5.0
+* Add widget area in site main area.
+* Fix navbar.
+* fixed custom header style on loading.
+
+### 1.4.3
+* Fix header image size for mobile.
+
+### 1.4.2
+* Fix default font weight.
+
+### 1.4.0
+* Fix submenu for accessibility.
+
+### 1.3.8
+* Fix comments style bug.
 
 ### 1.3.6
 * reset button support.
