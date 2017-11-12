@@ -67,6 +67,10 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 2.1.0 =
+* Fix clear float.
+* Update Gallery Style.
+
 = 2.0.2 =
 * Fix Navbar fixed.
 

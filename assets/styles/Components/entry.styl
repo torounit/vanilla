@@ -39,11 +39,19 @@
 		padding: 0;
 
 		&::before {
-			display none;
+			display: none;
 		}
 	}
 
 	&__content {
 		gutter( margin-bottom );
+	}
+
+	&__content-body {
+		&::after {
+			content: '';
+			clear: both;
+			display: block;
+		}
 	}
 }
