@@ -80,7 +80,7 @@ jobs:
             git config --global user.email "circleci@torounit.com"
             git config --global user.name "Circle CI"
       - run:
-          command: git clone -b dist --quiet "${CIRCLE_REPOSITORY_URL}" dist
+          command: git clone -b dist --quiet "[ci skip] ${CIRCLE_REPOSITORY_URL}" dist
       - run:
           name: dist build
           command: npm run dist
@@ -103,9 +103,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          command: npm run release -- $CIRCLE_TAG
-      - run:
-          command: node node_modules/.bin/gh-release -n $CIRCLE_TAG -c master -d --assets vanilla-$CIRCLE_TAG.zip
+          command: node_modules/.bin/release-it -n $CIRCLE_TAG
 
 workflows:
   version: 2

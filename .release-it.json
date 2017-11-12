@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run release -- ${src.tagName}",
+  "buildCommand": "npm run release -- ${version}",
   "github": {
     "release": true,
-    "assets": "vanilla-*.zip"
+    "assets": "vanilla-${version}.zip"
   },
   "npm": {
     "publish": false
