@@ -1,5 +1,5 @@
 {
-  "buildCommand": "sed -i -r 's/^Stable tag: .*/Stable tag: ${version}/g' readme.txt; npm run release -- ${version}",
+  "buildCommand": "bash ./bin/create-release.sh ${version}",
   "github": {
     "release": true,
     "assets": "vanilla-${version}.zip"

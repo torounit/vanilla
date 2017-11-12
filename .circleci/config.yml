@@ -93,7 +93,6 @@ jobs:
             fi
           working_directory: /var/www/wordpress/wp-content/themes/vanilla/dist
 
-
 workflows:
   version: 2
   test_and_deployment:
