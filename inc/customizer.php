@@ -50,7 +50,7 @@ function vanilla_get_customize_color_settings() {
 		),
 		'post_thumbnail_background_color' => array(
 			'label'    => __( 'Post thumbnail background color', 'vanilla' ),
-			'selector' => '.post-thumbnail',
+			'selector' => '.post-thumbnail,.gallery-icon',
 			'property' => 'background-color',
 			'default'  => '#eeeeee',
 		),
