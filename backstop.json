@@ -27,7 +27,7 @@
       ]
     },
     {
-      "label": "Markup: HTML Tags and Formatting",
+      "label": "Markup HTML Tags and Formatting",
       "url": "http://localhost/markup-html-tags-and-formatting/",
       "selectors": []
     },
@@ -37,12 +37,12 @@
       "selectors": []
     },
     {
-      "label": "Template: Comments",
+      "label": "Template Comments",
       "url": "http://localhost/template-comments/",
       "selectors": []
     },
     {
-      "label": "Post Format: Gallery",
+      "label": "Post Format Gallery",
       "url": "http://localhost/post-format-gallery/2/",
       "selectors": []
     },
@@ -68,8 +68,8 @@
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 10,
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
   "debug": false,
   "debugWindow": false
 }
