@@ -1,8 +1,11 @@
 {
   "buildCommand": "bash ./bin/create-release.sh ${version}",
+  "src": {
+    "afterReleaseCommand": "rm vanilla-*.zip"
+  },
   "github": {
     "release": true,
-    "assets": "vanilla-${version}.zip"
+    "assets": "vanilla-*.zip"
   },
   "npm": {
     "publish": false
