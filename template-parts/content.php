@@ -59,18 +59,24 @@
 		<div class="entry-content entry__content">
 			<?php
 			if ( is_singular() ) :
-				the_content();
+				?>
 
+				<div class="entry__content-body">
+					<?php the_content();?>
+				</div>
+
+				<?php
 				wp_link_pages( array(
 					'before'      => '<div class="page-links pagination">',
 					'after'       => '</div>',
 					'link_before' => '<span class="pagination__numbers">',
 					'link_after'  => '</span>',
-
 				) );
 			else :
-				the_excerpt();
 				?>
+				<div class="entry__content-body">
+					<?php the_excerpt();?>
+				</div>
 				<p><a href="<?php the_permalink(); ?>" class="read-more"><?php /* translators: Continue reading 'post title'. */  printf( wp_kses_post( __( 'Continue reading <span class="screen-reader-text">%1$s</span>', 'vanilla' ) ), esc_attr( strip_tags( get_the_title() ) ) ); ?></a></p>
 				<?php
 			endif;
