@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
 
+      - setup_remote_docker:
+          docker_layer_caching: true
+
       # npm
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
