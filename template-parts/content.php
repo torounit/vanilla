@@ -62,7 +62,7 @@
 				?>
 
 				<div class="entry__content-body">
-					<?php the_content();?>
+					<?php the_content(); ?>
 				</div>
 
 				<?php
@@ -75,7 +75,7 @@
 			else :
 				?>
 				<div class="entry__content-body">
-					<?php the_excerpt();?>
+					<?php the_excerpt(); ?>
 				</div>
 				<p><a href="<?php the_permalink(); ?>" class="read-more"><?php /* translators: Continue reading 'post title'. */  printf( wp_kses_post( __( 'Continue reading <span class="screen-reader-text">%1$s</span>', 'vanilla' ) ), esc_attr( strip_tags( get_the_title() ) ) ); ?></a></p>
 				<?php
