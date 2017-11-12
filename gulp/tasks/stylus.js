@@ -34,9 +34,10 @@ var processors = [
 gulp.task('stylus', function () {
 	let env = minimist(process.argv.slice(2));
 	let version = env.v || '';
-	let meta = Object.assign({},packageJson, {
-		version
-	});
+	let meta = packageJson;
+	if(version){
+		meta.version = version;
+	}
 	return gulp.src([config.stylus.src])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())

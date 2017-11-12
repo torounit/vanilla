@@ -110,4 +110,3 @@ workflows:
             branches:
               only:
                 - master
-
