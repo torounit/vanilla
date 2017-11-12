@@ -17,6 +17,7 @@ const postcss = require( 'gulp-postcss' );
 const mqpacker = require( 'css-mqpacker' );
 const packageJson = require( '../../package.json' );
 const handlebars = require( 'gulp-compile-handlebars' );
+const minimist  = require( 'minimist' );
 
 var processors = [
 	autoprefixer(),
@@ -31,13 +32,18 @@ var processors = [
 
 
 gulp.task('stylus', function () {
+	let env = minimist(process.argv.slice(2));
+	let version = env.v || '';
+	let meta = Object.assign({},packageJson, {
+		version
+	});
 	return gulp.src([config.stylus.src])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(stylus({
 			'include css': true
 		}))
-		.pipe(handlebars(packageJson))
+		.pipe(handlebars(meta))
 		.on('error', handleErrors)
 		.pipe(postcss(processors))
 		.pipe(sourcemaps.write({
