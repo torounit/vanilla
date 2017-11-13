@@ -61,7 +61,6 @@
 		value.bind( function( to ) {
 			var $body = $( 'body' );
 			if ( $body.hasClass( 'singular-with-thumbnail' ) ) {
-				console.log( to )
 				if ( to ) {
 					$body.addClass( 'navbar-transparent' );
 				} else {
@@ -112,7 +111,6 @@
 			if ( 'blank' === to ) {
 				$( '.custom-header__branding' ).css({
 					clip: 'rect(1px, 1px, 1px, 1px)',
-					position: 'absolute'
 				});
 				// Add class for different logo styles if title and description are hidden.
 				$( 'body' ).addClass( 'title-tagline-hidden' );
@@ -122,10 +120,9 @@
 				if ( ! to.length ) {
 					$( '#vanilla-custom-header-styles' ).remove();
 				}
-				// $( '.custom-header__branding' ).css({
-				// 	clip: 'auto',
-				// 	position: 'relative'
-				// });
+				$( '.custom-header__branding' ).css({
+					clip: 'auto',
+				});
 				$( '.custom-header' ).css({
 					color: to
 				});
