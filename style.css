@@ -1712,7 +1712,7 @@ body.is-drawer-open {
   display: block;
   padding: 1em;
   text-decoration: none;
-  border-top: 1px solid rgba(0,0,0,0.12);
+  border-top: 1px solid rgba(0,0,0,0.06);
 }
 .primary-menu__links .dropdown-toggle {
   position: absolute;
