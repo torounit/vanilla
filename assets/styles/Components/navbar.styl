@@ -59,11 +59,19 @@
 		white-space: nowrap;
 		order: 20;
 		margin: -16px;
-		padding 24px;
+		padding 23px;
+		border 1px dotted;
+		border-color: transparent;
 		color: inherit;
 		font-size: 1.6rem;
-		border: none;
 		font-weight: normal;
+		outline: none;
+		box-sizing: border-box;
+
+
+		&:focus {
+			border-color: currentColor;
+		}
 
 	}
 }
