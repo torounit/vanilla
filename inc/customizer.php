@@ -165,6 +165,7 @@ function vanilla_setup_theme_options_front_page_section( WP_Customize_Manager $w
 			'transport'         => 'postMessage',
 		) );
 
+		/** @noinspection SqlNoDataSourceInspection */
 		$wp_customize->add_control( 'panel_' . $i, array(
 			/* translators: %d is the front page section number */
 			'label'           => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
