@@ -40,11 +40,13 @@ grid-sizer($size) {
 	}
 
 	@media $small-up {
-		for $cols in $colslist {
-			for $i in (1..$cols) {
-				&__u--small--{$i}_{$cols} {
-					$width = $i/$cols;
-					grid-sizer(percentage($width));
+		& {
+			for $cols in $colslist {
+				for $i in (1..$cols) {
+					&__u--small--{$i}_{$cols} {
+						$width = $i/$cols;
+						grid-sizer(percentage($width));
+					}
 				}
 			}
 		}
@@ -52,22 +54,26 @@ grid-sizer($size) {
 
 
 	@media $medium-up {
-		for $cols in $colslist {
-			for $i in (1..$cols) {
-				&__u--medium--{$i}_{$cols} {
-					$width = $i/$cols;
-					grid-sizer(percentage($width));
+		& {
+			for $cols in $colslist {
+				for $i in (1..$cols) {
+					&__u--medium--{$i}_{$cols} {
+						$width = $i/$cols;
+						grid-sizer(percentage($width));
+					}
 				}
 			}
 		}
 	}
 
 	@media $large-up {
-		for $cols in $colslist {
-			for $i in (1..$cols) {
-				&__u--large--{$i}_{$cols} {
-					$width = $i/$cols;
-					grid-sizer(percentage($width));
+		& {
+			for $cols in $colslist {
+				for $i in (1..$cols) {
+					&__u--large--{$i}_{$cols} {
+						$width = $i/$cols;
+						grid-sizer(percentage($width));
+					}
 				}
 			}
 		}

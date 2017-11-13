@@ -54,7 +54,7 @@ $(function() {
 	$(window).on( 'load resize', () => {
 		$appLayout.find(".app-layout__header").removeClass("app-layout__header--static");
 	} );
-	new HeaderClassController( $appLayout, "app-layout__header--fixed", 46 );
+	new HeaderClassController( $appLayout, "app-layout__header--fixed", 32 );
 	new HeaderEscaper( $appLayout, "app-layout__header--escape", 64 );
 	new ContentSpacer( $appLayout );
 

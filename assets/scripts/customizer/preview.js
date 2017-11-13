@@ -43,6 +43,33 @@
 		} );
 	} );
 
+	// Navbar
+	api( 'navbar_transparent_at_front_page', function( value ) {
+		value.bind( function( to ) {
+			var $body = $( 'body' );
+			if ( $body.hasClass( 'home' ) ) {
+				if ( to ) {
+					$body.addClass( 'navbar-transparent' );
+				} else {
+					$body.removeClass( 'navbar-transparent' );
+				}
+			}
+		} );
+	} );
+
+	api( 'navbar_transparent_at_post_with_thumbnail', function( value ) {
+		value.bind( function( to ) {
+			var $body = $( 'body' );
+			if ( $body.hasClass( 'singular-with-thumbnail' ) ) {
+				if ( to ) {
+					$body.addClass( 'navbar-transparent' );
+				} else {
+					$body.removeClass( 'navbar-transparent' );
+				}
+			}
+		} );
+	} );
+
 	// Page layouts.
 	api( 'posts_layout_on_front_page', function( value ) {
 		value.bind( function( to ) {
@@ -84,7 +111,6 @@
 			if ( 'blank' === to ) {
 				$( '.custom-header__branding' ).css({
 					clip: 'rect(1px, 1px, 1px, 1px)',
-					position: 'absolute'
 				});
 				// Add class for different logo styles if title and description are hidden.
 				$( 'body' ).addClass( 'title-tagline-hidden' );
@@ -94,10 +120,9 @@
 				if ( ! to.length ) {
 					$( '#vanilla-custom-header-styles' ).remove();
 				}
-				// $( '.custom-header__branding' ).css({
-				// 	clip: 'auto',
-				// 	position: 'relative'
-				// });
+				$( '.custom-header__branding' ).css({
+					clip: 'auto',
+				});
 				$( '.custom-header' ).css({
 					color: to
 				});

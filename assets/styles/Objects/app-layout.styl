@@ -49,13 +49,25 @@ $app-layout-use-escape = true;
 				0 0px 5px 0 rgba(51, 51, 51, .12);
 
 		transition-delay: 0ms;
-		transition-duration: .24s;
+		transition-duration: .3s;
 		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-		transition-property: transform, height, box-shadow;
+		transition-property: transform, height, box-shadow, background, color;
 	}
 
 	.admin-bar &__spacer {
 		padding-top: 64px;
+	}
+
+	.navbar-transparent & {
+		&__spacer {
+			padding-top: 0 !important;
+		}
+
+		&__header:not(.app-layout__header--fixed) {
+			background-color: transparent !important;
+			box-shadow: none;
+			position fixed;
+		}
 	}
 
 	&__content {
