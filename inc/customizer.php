@@ -125,7 +125,7 @@ function vanilla_setup_theme_options_panel( WP_Customize_Manager $wp_customize )
 	$wp_customize->add_panel( 'theme_options', array(
 		'title'    => __( 'Theme Options', 'vanilla' ),
 		'priority' => 130, // Before Additional CSS.
-	));
+	) );
 
 	vanilla_setup_theme_options_front_page_section( $wp_customize );
 	vanilla_setup_theme_options_navbar_section( $wp_customize );
@@ -144,8 +144,8 @@ function vanilla_setup_theme_options_front_page_section( WP_Customize_Manager $w
 	 * Theme options.
 	 */
 	$wp_customize->add_section( 'front_page', array(
-		'title'    => __( 'Front Page', 'vanilla' ),
-		'panel'    => 'theme_options',
+		'title' => __( 'Front Page', 'vanilla' ),
+		'panel' => 'theme_options',
 	) );
 
 	/**
@@ -228,8 +228,8 @@ add_filter( 'body_class', 'vanilla_customizer_postlist_body_class' );
 function vanilla_setup_theme_options_navbar_section( WP_Customize_Manager $wp_customize ) {
 
 	$wp_customize->add_section( 'navbar', array(
-		'title'    => __( 'Navbar', 'vanilla' ),
-		'panel'    => 'theme_options',
+		'title' => __( 'Navbar', 'vanilla' ),
+		'panel' => 'theme_options',
 	) );
 
 	$wp_customize->add_setting( 'navbar_transparent_at_front_page', array(
@@ -239,9 +239,9 @@ function vanilla_setup_theme_options_navbar_section( WP_Customize_Manager $wp_cu
 	) );
 
 	$wp_customize->add_control( 'navbar_transparent_at_front_page', array(
-		'label'           => __( 'Transparent Navbar at Front Page', 'vanilla' ),
-		'section'         => 'navbar',
-		'type'            => 'checkbox',
+		'label'   => __( 'Transparent Navbar at Front Page', 'vanilla' ),
+		'section' => 'navbar',
+		'type'    => 'checkbox',
 	) );
 
 	$wp_customize->add_setting( 'navbar_transparent_at_post_with_thumbnail', array(
@@ -251,9 +251,9 @@ function vanilla_setup_theme_options_navbar_section( WP_Customize_Manager $wp_cu
 	) );
 
 	$wp_customize->add_control( 'navbar_transparent_at_post_with_thumbnail', array(
-		'label'           => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
-		'section'         => 'navbar',
-		'type'            => 'checkbox',
+		'label'   => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
+		'section' => 'navbar',
+		'type'    => 'checkbox',
 	) );
 }
 
@@ -269,9 +269,10 @@ function vanilla_customizer_navbar_body_class( $classes ) {
 		$classes[] = 'navbar-transparent';
 	}
 
-	if ( is_singular() &&  has_post_thumbnail()  ) {
+	if ( is_singular() && has_post_thumbnail() ) {
 		$classes[] = 'singular-with-thumbnail';
-		if( get_theme_mod( 'navbar_transparent_at_post_with_thumbnail' ) ) {
+
+		if ( get_theme_mod( 'navbar_transparent_at_post_with_thumbnail' ) ) {
 			$classes[] = 'navbar-transparent';
 		}
 	}
@@ -280,7 +281,6 @@ function vanilla_customizer_navbar_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'vanilla_customizer_navbar_body_class' );
-
 
 
 /**
