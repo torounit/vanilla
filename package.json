@@ -19,7 +19,7 @@
   "scripts": {
     "docker-run": "docker run --name vanilla -u www-data -v `pwd`:/var/www/wordpress/wp-content/themes/vanilla --shm-size 2048m -p 80:80 -d torounit/wp-theme-test-env",
     "docker-config": "docker exec vanilla bash -c 'wp theme activate vanilla --path=/var/www/wordpress'",
-    "docker-start": "npm run docker-run && sleep 5s && npm run docker-config",
+    "docker-start": "npm run docker-run && sleep 10s && npm run docker-config",
     "docker-stop": "docker kill vanilla && docker rm vanilla",
     "build": "gulp build",
     "backstop": "backstop",
