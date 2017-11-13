@@ -129,6 +129,36 @@ function vanilla_setup_theme_options_panel( WP_Customize_Manager $wp_customize )
 
 	vanilla_setup_theme_options_front_page_section( $wp_customize );
 
+	$wp_customize->add_section( 'navbar', array(
+		'title'    => __( 'Navbar', 'vanilla' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$wp_customize->add_setting( 'navbar_transparent_at_front_page', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'navbar_transparent_at_front_page', array(
+		'label'           => __( 'Transparent Navbar at Front Page', 'vanilla' ),
+		'section'         => 'navbar',
+		'type'            => 'checkbox',
+		'active_callback' => 'is_front_page',
+	) );
+
+	$wp_customize->add_setting( 'navbar_transparent_at_post_with_thumbnail', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'navbar_transparent_at_post_with_thumbnail', array(
+		'label'           => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
+		'section'         => 'navbar',
+		'type'            => 'checkbox',
+	) );
+
 }
 
 add_action( 'customize_register', 'vanilla_setup_theme_options_panel', 12 );
@@ -346,6 +376,7 @@ add_action( 'customize_controls_print_footer_scripts', 'vanilla_color_scheme_css
  * @return array
  */
 function vanilla_customizer_body_class( $classes ) {
+
 	if ( 'block' == get_theme_mod( 'posts_layout_on_front_page' ) ) {
 		$classes[] = 'postlist-style-block';
 	} else {
