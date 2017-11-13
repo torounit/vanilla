@@ -43,6 +43,34 @@
 		} );
 	} );
 
+	// Navbar
+	api( 'navbar_transparent_at_front_page', function( value ) {
+		value.bind( function( to ) {
+			var $body = $( 'body' );
+			if ( $body.hasClass( 'home' ) ) {
+				if ( to ) {
+					$body.addClass( 'navbar-transparent' );
+				} else {
+					$body.removeClass( 'navbar-transparent' );
+				}
+			}
+		} );
+	} );
+
+	api( 'navbar_transparent_at_post_with_thumbnail', function( value ) {
+		value.bind( function( to ) {
+			var $body = $( 'body' );
+			if ( $body.hasClass( 'singular-with-thumbnail' ) ) {
+				console.log( to )
+				if ( to ) {
+					$body.addClass( 'navbar-transparent' );
+				} else {
+					$body.removeClass( 'navbar-transparent' );
+				}
+			}
+		} );
+	} );
+
 	// Page layouts.
 	api( 'posts_layout_on_front_page', function( value ) {
 		value.bind( function( to ) {

@@ -128,37 +128,7 @@ function vanilla_setup_theme_options_panel( WP_Customize_Manager $wp_customize )
 	));
 
 	vanilla_setup_theme_options_front_page_section( $wp_customize );
-
-	$wp_customize->add_section( 'navbar', array(
-		'title'    => __( 'Navbar', 'vanilla' ),
-		'panel'    => 'theme_options',
-	) );
-
-	$wp_customize->add_setting( 'navbar_transparent_at_front_page', array(
-		'default'           => 0,
-		'sanitize_callback' => 'absint',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'navbar_transparent_at_front_page', array(
-		'label'           => __( 'Transparent Navbar at Front Page', 'vanilla' ),
-		'section'         => 'navbar',
-		'type'            => 'checkbox',
-		'active_callback' => 'is_front_page',
-	) );
-
-	$wp_customize->add_setting( 'navbar_transparent_at_post_with_thumbnail', array(
-		'default'           => 0,
-		'sanitize_callback' => 'absint',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'navbar_transparent_at_post_with_thumbnail', array(
-		'label'           => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
-		'section'         => 'navbar',
-		'type'            => 'checkbox',
-	) );
-
+	vanilla_setup_theme_options_navbar_section( $wp_customize );
 }
 
 add_action( 'customize_register', 'vanilla_setup_theme_options_panel', 12 );
@@ -249,6 +219,69 @@ function vanilla_customizer_postlist_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'vanilla_customizer_postlist_body_class' );
+
+/**
+ * Add Navbar section.
+ *
+ * @param WP_Customize_Manager $wp_customize The Customizer object.
+ */
+function vanilla_setup_theme_options_navbar_section( WP_Customize_Manager $wp_customize ) {
+
+	$wp_customize->add_section( 'navbar', array(
+		'title'    => __( 'Navbar', 'vanilla' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$wp_customize->add_setting( 'navbar_transparent_at_front_page', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'navbar_transparent_at_front_page', array(
+		'label'           => __( 'Transparent Navbar at Front Page', 'vanilla' ),
+		'section'         => 'navbar',
+		'type'            => 'checkbox',
+	) );
+
+	$wp_customize->add_setting( 'navbar_transparent_at_post_with_thumbnail', array(
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'navbar_transparent_at_post_with_thumbnail', array(
+		'label'           => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
+		'section'         => 'navbar',
+		'type'            => 'checkbox',
+	) );
+}
+
+/**
+ * Add body class for for navbar.
+ *
+ * @param String $classes body_class parts.
+ *
+ * @return array
+ */
+function vanilla_customizer_navbar_body_class( $classes ) {
+	if ( is_front_page() && get_theme_mod( 'navbar_transparent_at_front_page' ) ) {
+		$classes[] = 'navbar-transparent';
+	}
+
+	if ( is_singular() &&  has_post_thumbnail()  ) {
+		$classes[] = 'singular-with-thumbnail';
+		if( get_theme_mod( 'navbar_transparent_at_post_with_thumbnail' ) ) {
+			$classes[] = 'navbar-transparent';
+		}
+	}
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'vanilla_customizer_navbar_body_class' );
+
+
 
 /**
  * Return whether we're previewing the front page and it's a static page.
