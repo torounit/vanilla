@@ -26,13 +26,13 @@ function vanilla_get_customize_color_settings() {
 		),
 		'navbar_textcolor'                => array(
 			'label'    => __( 'Navigation bar text color', 'vanilla' ),
-			'selector' => '.app-layout__header',
+			'selector' => '.navbar',
 			'property' => 'color',
 			'default'  => '#000000',
 		),
 		'navbar_background_color'         => array(
 			'label'    => __( 'Navigation bar background color', 'vanilla' ),
-			'selector' => '.app-layout__header',
+			'selector' => '.navbar',
 			'property' => 'background-color',
 			'default'  => '#ffffff',
 		),

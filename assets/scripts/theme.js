@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _ from 'underscore';
 import Drawer from './Drawer';
 import HeaderClassController from './AppLayout/HeaderClassController';
 import HeaderEscaper from './AppLayout/HeaderEscaper';
@@ -50,13 +51,25 @@ $(function() {
 
 
 $(function() {
+	let $window = $(window);
 	let $appLayout = $(".app-layout");
-	$(window).on( 'load resize', () => {
+	let $navbar = $('.navbar');
+	$window.on( 'load resize', () => {
 		$appLayout.find(".app-layout__header").removeClass("app-layout__header--static");
 	} );
-	new HeaderClassController( $appLayout, "app-layout__header--fixed", 32 );
-	new HeaderEscaper( $appLayout, "app-layout__header--escape", 64 );
+	new HeaderClassController( $appLayout, "app-layout__header--fixed", 46 );
+	new HeaderEscaper( $appLayout, "app-layout__header--escape", 128 );
 	new ContentSpacer( $appLayout );
+
+
+	$window.on( 'scroll resize', _.throttle(function(){
+		if( $window.scrollTop() > 128 ) {
+			$navbar.addClass( 'navbar--opaque' );
+		}
+		else {
+			$navbar.removeClass( 'navbar--opaque' );
+		}
+	}, 1 ) );
 
 });
 
