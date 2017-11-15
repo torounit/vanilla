@@ -26,6 +26,12 @@ Vanilla is the simple theme for blogging. And for single column modern websites.
 
 ## Change log
 
+### 2.2.0
+* Add transparent navbar mode.
+* Use panel for theme options.
+* Fix menu button clickable area.
+* Customizer header text bug fix.
+
 ### 2.1.0
 * Fix clear float.
 * Update Gallery Style.

@@ -67,6 +67,12 @@ License: GPL2.0+
 
 == Changelog ==
 
+= 2.2.0 =
+* Add transparent navbar mode.
+* Use panel for theme options.
+* Fix menu button clickable area.
+* Customizer header text bug fix.
+
 = 2.1.0 =
 * Fix clear float.
 * Update Gallery Style.
