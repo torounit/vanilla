@@ -72,6 +72,7 @@ License: GPL2.0+
 * Use panel for theme options.
 * Fix menu button clickable area.
 * Customizer header text bug fix.
+* Background image support.
 
 = 2.1.0 =
 * Fix clear float.
