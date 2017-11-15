@@ -25,22 +25,25 @@
 
 <div id="page" class="site app-layout" data-app-layout-header=".app-layout__header" data-app-layout-spacer=".app-layout__spacer" data-app-layout-scroll-area="window">
 	<header class="app-layout__header <?php echo ( ! is_front_page() ) ? 'app-layout__header--static' : ''; ?>" aria-hidden="false" role="banner">
-		<div class="navbar container">
-			<div  class="navbar__branding">
-				<div class="site-branding">
-					<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
-					<?php if ( is_front_page() ) : ?>
-					<h1 class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
+		<div class="navbar">
+			<div class="navbar__container">
+				<div  class="navbar__branding">
+					<div class="site-branding">
+						<div class="site-branding__logo"><?php the_custom_logo(); ?></div>
+						<?php if ( is_front_page() ) : ?>
+							<h1 class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<p class="site-branding__name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php endif; ?>
+					</div>
 				</div>
+
+				<button class="navbar__drawer-button" aria-controls="primary-menu" aria-expanded="false" >
+					<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
+					<span class="screen-reader-text">menu</span>
+				</button>
 			</div>
 
-			<button class="navbar__drawer-button" aria-controls="primary-menu" aria-expanded="false" >
-				<span class="hamburger-button"><span class="hamburger-button__bars"></span></span>
-				<span class="screen-reader-text">menu</span>
-			</button>
 		</div>
 
 	</header>

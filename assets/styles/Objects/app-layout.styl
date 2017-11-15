@@ -4,7 +4,6 @@ $app-layout-use-escape = true;
 	background-color: inherit;
 
 	&__header {
-		background-color: #FFF;
 		-webkit-overflow-scrolling: touch;
 		position: fixed;
 		left: 0;
@@ -43,15 +42,12 @@ $app-layout-use-escape = true;
 		}
 
 		width: 100%;
-		box-shadow:
-				0 1px 2px 0 rgba(51, 51, 51, .14),
-				0 3px 1px -2px rgba(51, 51, 51, .2),
-				0 0px 5px 0 rgba(51, 51, 51, .12);
+
 
 		transition-delay: 0ms;
 		transition-duration: .3s;
 		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-		transition-property: transform, height, box-shadow, background, color;
+		transition-property: transform, height;
 	}
 
 	.admin-bar &__spacer {
