@@ -95,3 +95,21 @@ $container-max-width ?= 1200px;
 
 	}
 }
+
+.navbar-transparent {
+
+	.navbar {
+		transition-delay: .3s;
+		transition-duration: .3s;
+		transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+		transition-property: color, background, box-shadow;
+	}
+	//transparent style
+	.navbar:not(.navbar--opaque) {
+		box-shadow: none;
+		transition-delay: 0s;
+		background-color: transparent !important;
+	}
+
+
+}
