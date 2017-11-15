@@ -63,7 +63,7 @@ $(function() {
 
 
 	$window.on( 'scroll resize', _.throttle(function(){
-		if( $window.scrollTop() > 128 ) {
+		if( $window.scrollTop() > 64 ) {
 			$navbar.addClass( 'navbar--opaque' );
 		}
 		else {
