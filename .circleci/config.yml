@@ -69,7 +69,7 @@ jobs:
 
   deployment:
     docker:
-      - image: torounit/wp-theme-test-env:0.0.1
+      - image: torounit/wp-theme-test-env:latest
     working_directory: /var/www/wordpress/wp-content/themes/vanilla
     steps:
       - checkout
