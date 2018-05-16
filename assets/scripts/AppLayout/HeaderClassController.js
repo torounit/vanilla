@@ -24,6 +24,7 @@ export default class AppLayoutClassController {
 		}
 
 		this.initialize();
+		this.toggleClass();
 		this.on();
 	}
 
