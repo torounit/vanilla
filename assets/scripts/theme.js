@@ -61,15 +61,18 @@ $(function() {
 	new HeaderEscaper( $appLayout, "app-layout__header--escape", 128 );
 	new ContentSpacer( $appLayout );
 
-
-	$window.on( 'scroll resize', _.throttle(function(){
+	function setOpaque () {
 		if( $window.scrollTop() > 64 ) {
 			$navbar.addClass( 'navbar--opaque' );
 		}
 		else {
 			$navbar.removeClass( 'navbar--opaque' );
 		}
-	}, 1 ) );
+	}
+	setOpaque();
+	$window.on( 'load scroll resize', _.throttle(function(){
+		setOpaque()
+	}, 10 ) );
 
 });
 
