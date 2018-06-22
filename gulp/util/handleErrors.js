@@ -10,6 +10,8 @@ module.exports = function() {
 		message: "<%= error.message %>"
 	}).apply(this, args);
 
+	console.log( "Compile Error")
+
 	// Keep gulp from hanging on this task
 	this.emit('end');
 };

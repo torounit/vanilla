@@ -9,7 +9,6 @@
 const config = require( '../../gulp.config.js' );
 const handleErrors = require( '../util/handleErrors.js' );
 const gulp = require( 'gulp' );
-const plumber = require( 'gulp-plumber' );
 const stylus = require( 'gulp-stylus' );
 const sourcemaps = require( 'gulp-sourcemaps' );
 const autoprefixer = require( 'autoprefixer' );
@@ -39,7 +38,6 @@ gulp.task('stylus', function () {
 		meta.version = version;
 	}
 	return gulp.src([config.stylus.src])
-		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(stylus({
 			'include css': true

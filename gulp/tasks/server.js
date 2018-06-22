@@ -1,4 +1,5 @@
-'use strict';
+'use strict'
+require( 'dotenv' ).config()
 
 // ==================================
 //
@@ -6,10 +7,8 @@
 //
 // ==================================
 
-const browserSync = require( 'browser-sync' );
-const config = require( '../../gulp.config.js' );
-const gulp = require( 'gulp' );
-
+const browserSync = require( 'browser-sync' )
+const gulp = require( 'gulp' )
 
 // ==================================
 //
@@ -17,14 +16,14 @@ const gulp = require( 'gulp' );
 //
 // ==================================
 
-gulp.task('browserSync', function () {
-	browserSync({
-		proxy: 'localhost',
+gulp.task( 'browserSync', function () {
+	return browserSync( {
+		proxy: 'localhost:' + process.env.PORT,
 		files: [
-			"./style.css",
-			"./bundle.js",
-			"./**/*.php",
+			'./style.css',
+			'./bundle.js',
+			'./**/*.php',
 		]
-	});
-});
+	} )
+} )
 

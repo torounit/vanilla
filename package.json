@@ -17,10 +17,6 @@
   },
   "homepage": "https://vanilla.torounit.com",
   "scripts": {
-    "docker-start": "npm run docker-run && sleep 10s && npm run docker-config",
-    "docker-run": "docker run --name vanilla -u www-data -v `pwd`:/var/www/wordpress/wp-content/themes/vanilla --shm-size 2048m -p 80:80 -d torounit/wp-theme-test-env",
-    "docker-config": "docker exec vanilla bash -c 'wp theme activate vanilla --path=/var/www/wordpress'",
-    "docker-stop": "docker kill vanilla && docker rm vanilla",
     "build": "gulp build",
     "backstop": "backstop",
     "test": "backstop test",
@@ -28,39 +24,34 @@
     "gulp": "gulp",
     "start": "gulp",
     "dist": "gulp dist",
-    "release": "gulp release -v",
+    "release": "gulp release --num",
     "release-it": "node -r dotenv/config node_modules/.bin/release-it"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
-    "babel-core": "^6.26.0",
+    "ajv": "^6.5.1",
+    "autoprefixer": "^8.6.3",
+    "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
-    "backstopjs": "^3.1.19",
-    "browser-sync": "^2.23.6",
-    "browserify": "^14.5.0",
+    "backstopjs": "^3.2.19",
+    "browser-sync": "^2.24.4",
+    "browserify": "^16.2.2",
     "browserify-shim": "^3.8.14",
     "css-mqpacker": "^6.0.2",
-    "dotenv": "^4.0.0",
-    "gulp": "^3.9.1",
-    "gulp-changed": "^3.2.0",
+    "dotenv": "^6.0.0",
+    "gulp": "^4.0.0",
     "gulp-compile-handlebars": "^0.6.1",
-    "gulp-connect-php": "^1.0.3",
-    "gulp-debug": "^3.2.0",
-    "gulp-minify-css": "^1.2.4",
     "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
-    "gulp-watch": "^4.3.11",
     "gulp-zip": "^4.1.0",
     "minimist": "^1.2.0",
-    "node-jq": "^0.7.0",
-    "release-it": "^3.2.0",
-    "run-sequence": "^2.2.1",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^1.1.2",
+    "node-jq": "^1.3.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "release-it": "^7.4.7",
+    "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0"
   },
   "babel": {
@@ -73,6 +64,6 @@
     "underscore": "global:_"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^8.0.0"
   }
 }

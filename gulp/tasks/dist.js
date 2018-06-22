@@ -1,35 +1,30 @@
-'use strict';
+'use strict'
 
 // ==================================
 //
 // distribution
 //
 // ==================================
-const gulp = require( 'gulp' );
-const debug = require( 'gulp-debug' );
-const runSequence = require( 'run-sequence' );
+const gulp = require( 'gulp' )
 
-gulp.task('copy', function() {
+gulp.task( 'copy', function () {
 	return gulp.src(
-			[
-				'./**/*.php',
-				'./assets/**',
-				'./LICENSE',
-				'./readme.txt',
-				'./screenshot.png',
-				'./style.css',
-				'./bundle.js',
-				"!./dist/**",
-				"!./backstop_data/**",
-				"!./node_modules/**/*.*",
-				"!./vendor/**/*.*"
-			],
-			{ base: './' }
-		)
-		.pipe( debug() )
-		.pipe( gulp.dest( 'dist' ) );
-} );
+		[
+			'./**/*.php',
+			'./assets/**',
+			'./LICENSE',
+			'./readme.txt',
+			'./screenshot.png',
+			'./style.css',
+			'./bundle.js',
+			'!./dist/**',
+			'!./backstop_data/**',
+			'!./node_modules/**/*.*',
+			'!./vendor/**/*.*'
+		],
+		{ base: './' }
+	)
+		.pipe( gulp.dest( 'dist' ) )
+} )
 
-gulp.task('dist', function(cb){
-	return runSequence( 'build', 'copy', cb );
-});
+gulp.task( 'dist', gulp.series('build', 'copy') )
