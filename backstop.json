@@ -18,7 +18,7 @@
   "scenarios": [
     {
       "label": "Front Page",
-      "url": "http://localhost",
+      "url": "http://localhost:9000",
       "removeSelectors": [],
       "selectors": [
         "body",
@@ -28,22 +28,22 @@
     },
     {
       "label": "Markup HTML Tags and Formatting",
-      "url": "http://localhost/markup-html-tags-and-formatting/",
+      "url": "http://localhost:9000/markup-html-tags-and-formatting/",
       "selectors": []
     },
     {
       "label": "Page Markup And Formatting",
-      "url": "http://localhost/about/page-markup-and-formatting/",
+      "url": "http://localhost:9000/about/page-markup-and-formatting/",
       "selectors": []
     },
     {
       "label": "Template Comments",
-      "url": "http://localhost/template-comments/",
+      "url": "http://localhost:9000/template-comments/",
       "selectors": []
     },
     {
       "label": "Post Format Gallery",
-      "url": "http://localhost/post-format-gallery/2/",
+      "url": "http://localhost:9000/post-format-gallery/2/",
       "selectors": [
         "#gallery-1",
         "#gallery-2",
@@ -59,12 +59,12 @@
     },
     {
       "label": "Image Alignment",
-      "url": "http://localhost/about/page-image-alignment/",
+      "url": "http://localhost:9000/about/page-image-alignment/",
       "selectors": []
     },
     {
       "label": "Lorem Ipsum",
-      "url": "http://localhost/lorem-ipsum/",
+      "url": "http://localhost:9000/lorem-ipsum/",
       "selectors": []
     }
   ],
@@ -79,8 +79,8 @@
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 3,
-  "asyncCompareLimit": 30,
+  "asyncCaptureLimit": 2,
+  "asyncCompareLimit": 10,
   "debug": false,
   "debugWindow": false
 }

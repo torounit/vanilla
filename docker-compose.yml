@@ -45,6 +45,16 @@ services:
     volumes:
       - .:/app
 
+  backstopjs:
+    image: torounit/backstopjs-noto
+    network_mode: host
+    volumes:
+      - .:/src
+#    entrypoint: bash
+#    depends_on:
+#      - mysql
+#      - wordpress
+
 volumes:
   testsuite:
   wordpress:
