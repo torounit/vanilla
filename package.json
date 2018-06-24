@@ -18,8 +18,6 @@
   "homepage": "https://vanilla.torounit.com",
   "scripts": {
     "build": "gulp build",
-    "backstop": "backstop",
-    "test": "backstop test",
     "reference": "backstop reference",
     "gulp": "gulp",
     "start": "gulp",

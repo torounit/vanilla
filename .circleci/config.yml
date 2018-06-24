@@ -2,14 +2,16 @@ version: 2.0
 jobs:
   test:
     # The primary container is an instance of the first list image listed. Your build commands run in this container.
-    docker:
-      - image: torounit/wp-theme-test-env:latest
-    working_directory: /var/www/wordpress/wp-content/themes/vanilla
+    machine: true
     steps:
       - checkout
 
       - setup_remote_docker:
           docker_layer_caching: true
+
+      - run:
+            name: docker-compose up
+            command: docker-compose up -d
 
       # npm
       - restore_cache:
@@ -36,29 +38,14 @@ jobs:
           paths:
             - vendor
 
-      # Server
-      - run:
-          name: Start Services
-          command: |
-            sudo service php7.0-fpm start
-            sudo service nginx start
-            sudo service mysql start
-
-      # WordPress
-      - run:
-          name: Activate Theme
-          command: wp theme activate vanilla --path=/var/www/wordpress
-      - run:
-          name: Access WordPress
-          command: curl http://localhost > /dev/null
-
       # Tests
       - run:
           name: PHP Test
           command: composer test
+
       - run:
-          name: Test
-          command: npm test
+          name: backstopjs
+          command: docker-compose run --rm backstopjs test
 
       # Store
       - store_artifacts:

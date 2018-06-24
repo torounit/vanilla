@@ -46,11 +46,11 @@ services:
       - .:/app
 
   backstopjs:
+    shm_size: 2gb
     image: torounit/backstopjs-noto
     network_mode: host
     volumes:
       - .:/src
-#    entrypoint: bash
 #    depends_on:
 #      - mysql
 #      - wordpress
