@@ -79,7 +79,7 @@
   "report": ["CI", "cli"],
   "engine": "chrome",
   "engineFlags": [],
-  "asyncCaptureLimit": 3,
+  "asyncCaptureLimit": 4,
   "asyncCompareLimit": 30,
   "debug": false,
   "debugWindow": false
