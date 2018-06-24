@@ -68,6 +68,9 @@ jobs:
       # npm
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install npm
+          command:  npm install
 
       # git
       - run:
