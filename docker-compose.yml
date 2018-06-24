@@ -45,6 +45,12 @@ services:
     volumes:
       - .:/app
 
+  node:
+    image: node
+    working_dir: /app
+    volumes:
+      - .:/app
+
   backstopjs:
     shm_size: 2gb
     image: torounit/backstopjs-noto

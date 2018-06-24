@@ -15,21 +15,21 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install npm
-          command: npm install
+          command: docker-compose run --rm node npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run:
           name: build
-          command: npm run build
+          command: docker-compose run --rm node npm run build
       - restore_cache:
            key: dependency-cache-{{ checksum "composer.json" }}
 
       # composer
       - run:
           name: Install Composer
-          command: composer install
+          command: docker-compose run --rm composer composer install
       - save_cache:
           key: dependency-cache-{{ checksum "composer.json" }}
           paths:
@@ -38,7 +38,7 @@ jobs:
       # Tests
       - run:
           name: PHP Test
-          command: composer test
+          command: docker-compose run --rm composer composer test
 
       - run:
           name: backstopjs
