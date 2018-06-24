@@ -37,8 +37,8 @@ jobs:
 
       # setup wordpress
       - run:
-        name: Install WordPress
-        command: docker-compose run --rm cli  sh /opt/bin/wait-for.sh mysql:3306 -t 60 -- sh /opt/bin/install.sh 9000
+          name: Install WordPress
+          command: docker-compose run --rm cli  sh /opt/bin/wait-for.sh mysql:3306 -t 60 -- sh /opt/bin/install.sh 9000
 
       # Tests
       - run:
