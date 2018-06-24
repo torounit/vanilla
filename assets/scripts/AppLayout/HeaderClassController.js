@@ -16,14 +16,14 @@ export default class AppLayoutClassController {
 		let header = $el.data('app-layout-header');
 		let content = $el.data('app-layout-scroll-area');
 		this.$header = $( header );
-		if ( content && content != 'window' ) {
+		if ( content && content !== 'window' ) {
 			this.$content = $( content );
-		}
-		else {
+		} else {
 			this.$content = $( window );
 		}
 
 		this.initialize();
+		this.toggleClass();
 		this.on();
 	}
 
@@ -32,7 +32,7 @@ export default class AppLayoutClassController {
 	}
 
 	on() {
-		this.$content.on( 'scroll resize', _.throttle(function(){
+		this.$content.on( 'load scroll resize', _.throttle(function(){
 			this.toggleClass();
 		}, 1 ).bind(this) );
 	}
@@ -47,7 +47,7 @@ export default class AppLayoutClassController {
 	}
 
 	getThreshold() {
-		if( typeof this.threshold  == "function" ) {
+		if( typeof this.threshold === "function" ) {
 			return this.threshold();
 		}
 		else {

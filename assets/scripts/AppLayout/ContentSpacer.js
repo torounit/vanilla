@@ -26,7 +26,6 @@ export default class ContentSpacer {
 	}
 
 	getHeaderHeight() {
-
 		return this.$header.height();
 	}
 }
