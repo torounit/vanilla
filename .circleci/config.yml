@@ -1,64 +1,56 @@
 version: 2.0
 jobs:
+
   test:
     # The primary container is an instance of the first list image listed. Your build commands run in this container.
-    docker:
-      - image: torounit/wp-theme-test-env:latest
-    working_directory: /var/www/wordpress/wp-content/themes/vanilla
+    machine: true
+    environment:
+      - COMPOSE_FILE: docker-compose.test.yml
     steps:
       - checkout
 
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - run:
+            name: docker-compose up
+            command: docker-compose up -d
 
       # npm
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install npm
-          command: npm install
+          command: docker-compose run --rm node npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run:
           name: build
-          command: npm run build
+          command: docker-compose run --rm node npm run build
       - restore_cache:
            key: dependency-cache-{{ checksum "composer.json" }}
 
       # composer
       - run:
           name: Install Composer
-          command: composer install
+          command: docker-compose run --rm composer composer install
       - save_cache:
           key: dependency-cache-{{ checksum "composer.json" }}
           paths:
             - vendor
 
-      # Server
+      # setup wordpress
       - run:
-          name: Start Services
-          command: |
-            sudo service php7.0-fpm start
-            sudo service nginx start
-            sudo service mysql start
-
-      # WordPress
-      - run:
-          name: Activate Theme
-          command: wp theme activate vanilla --path=/var/www/wordpress
-      - run:
-          name: Access WordPress
-          command: curl http://localhost > /dev/null
+          name: Install WordPress
+          command: docker-compose run --rm cli  sh /opt/bin/wait-for.sh mysql:3306 -t 60 -- sh /opt/bin/install.sh 9000
 
       # Tests
       - run:
           name: PHP Test
-          command: composer test
+          command: docker-compose run --rm composer composer test
+
       - run:
-          name: Test
-          command: npm test
+          name: backstopjs
+          command: docker-compose run --rm backstopjs test
 
       # Store
       - store_artifacts:
@@ -69,7 +61,7 @@ jobs:
 
   deployment:
     docker:
-      - image: torounit/wp-theme-test-env:latest
+      - image: node
     working_directory: /var/www/wordpress/wp-content/themes/vanilla
     steps:
       - checkout

@@ -18,22 +18,17 @@
   "homepage": "https://vanilla.torounit.com",
   "scripts": {
     "build": "gulp build",
-    "backstop": "backstop",
-    "test": "backstop test",
     "reference": "backstop reference",
     "gulp": "gulp",
     "start": "gulp",
     "dist": "gulp dist",
-    "release": "gulp release --num",
-    "release-it": "node -r dotenv/config node_modules/.bin/release-it"
+    "release": "gulp release --num"
   },
   "devDependencies": {
-    "ajv": "^6.5.1",
     "autoprefixer": "^8.6.3",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
-    "backstopjs": "^3.2.19",
     "browser-sync": "^2.24.4",
     "browserify": "^16.2.2",
     "browserify-shim": "^3.8.14",
@@ -48,9 +43,6 @@
     "gulp-zip": "^4.1.0",
     "minimist": "^1.2.0",
     "node-jq": "^1.3.0",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-    "release-it": "^7.4.7",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0"
   },
