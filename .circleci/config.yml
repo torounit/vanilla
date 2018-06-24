@@ -1,14 +1,17 @@
 version: 2.0
 jobs:
+
   test:
     # The primary container is an instance of the first list image listed. Your build commands run in this container.
     machine: true
+    environment:
+      - COMPOSE_FILE: docker-compose.test.yml
     steps:
       - checkout
 
       - run:
             name: docker-compose up
-            command: docker-compose -f docker-compose.test.yml up -d
+            command: docker-compose up -d
 
       # npm
       - restore_cache:
