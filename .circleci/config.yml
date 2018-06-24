@@ -8,7 +8,7 @@ jobs:
 
       - run:
             name: docker-compose up
-            command: docker-compose up -d
+            command: docker-compose up -d -f docker-compose.test.yml
 
       # npm
       - restore_cache:
@@ -34,6 +34,11 @@ jobs:
           key: dependency-cache-{{ checksum "composer.json" }}
           paths:
             - vendor
+
+      # setup wordpress
+      - run:
+        name: Install WordPress
+        command: docker-compose run --rm cli  sh /opt/bin/wait-for.sh mysql:3306 -t 60 -- sh /opt/bin/install.sh 9000
 
       # Tests
       - run:

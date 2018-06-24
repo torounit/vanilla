@@ -5,7 +5,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - ${PORT}:80
+      - 9000:80
     environment:
       WORDPRESS_DB_PASSWORD: wordpress
       ABSPATH: /usr/src/wordpress/
@@ -20,8 +20,6 @@ services:
       - ./bin:/opt/bin
       - wordpress:/var/www/html
       - .:/var/www/html/wp-content/themes/vanilla
-    command: >
-      sh /opt/bin/wait-for.sh mysql:3306 -t 60 -- sh /opt/bin/install.sh $PORT
 
   mysql:
     image: mysql:5.7
@@ -37,12 +35,24 @@ services:
       - .:/app
       - testsuite:/tmp
 
+  composer:
+    image: composer
+    volumes:
+      - .:/app
+
+  node:
+    image: node
+    working_dir: /app
+    volumes:
+      - .:/app
+
   backstopjs:
     shm_size: 2gb
     image: torounit/backstopjs-noto
     network_mode: host
     volumes:
       - .:/src
+
 
 volumes:
   testsuite:
