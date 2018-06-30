@@ -11,11 +11,12 @@ $container-max-width ?= 1200px;
 
 	&__container {
 		display: flex;
-		flex: 100% 1 0;
+		flex: 100% 0 0;
 		justify-content: space-between;
 		align-items: center;
 		box-sizing: content-box;
 		margin: 0 auto;
+		width: calc(100% - $container-gutter * 2);
 		padding: 0 $container-gutter;
 		max-width: $container-max-width;
 
