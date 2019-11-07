@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
-	?>
+		?>
 		<h4 class="comments-area__title">
 			<?php
 			printf( // WPCS: XSS OK.
@@ -39,11 +39,13 @@ if ( post_password_required() ) {
 
 		<div class="comment-list">
 			<?php
-			wp_list_comments( array(
-				'avatar_size' => 24,
-				'style'      => 'div',
-				'short_ping' => true,
-			) );
+			wp_list_comments(
+				array(
+					'avatar_size' => 24,
+					'style'      => 'div',
+					'short_ping' => true,
+				)
+			);
 			?>
 		</div>
 
@@ -52,12 +54,14 @@ if ( post_password_required() ) {
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'vanilla' ); ?></h2>
 				<div class="pagination pagination--small">
 					<?php
-					paginate_comments_links( array(
-						'prev_text' => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
-						'next_text' => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
-						'before_page_number' => '<span class="pagination__numbers">',
-						'after_page_number' => '</span>',
-					) );
+					paginate_comments_links(
+						array(
+							'prev_text' => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
+							'next_text' => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
+							'before_page_number' => '<span class="pagination__numbers">',
+							'after_page_number' => '</span>',
+						)
+					);
 					?>
 				</div>
 			</nav>
@@ -68,7 +72,7 @@ if ( post_password_required() ) {
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+		?>
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'vanilla' ); ?></p>
 		<?php

@@ -14,7 +14,8 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 		$format = get_post_format();
 		if ( current_theme_supports( 'post-formats', $format ) ) {
-			printf( '<span class="entry-format entry-meta__item">%1$s<a href="%2$s">%3$s</a></span>',
+			printf(
+				'<span class="entry-format entry-meta__item">%1$s<a href="%2$s">%3$s</a></span>',
 				sprintf( '<span>%s </span>', esc_html_x( 'Format', 'Used before post format.', 'vanilla' ) ),
 				esc_url( get_post_format_link( $format ) ),
 				esc_html( get_post_format_string( $format ) )
@@ -23,7 +24,8 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 		if ( 'post' == get_post_type() ) {
 			if ( is_singular() || is_multi_author() ) {
-				printf( '<span class="byline entry-meta__item"><span class="author vcard"><span class="entry-meta__icon dashicons dashicons-admin-users"></span><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
+				printf(
+					'<span class="byline entry-meta__item"><span class="author vcard"><span class="entry-meta__icon dashicons dashicons-admin-users"></span><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
 					esc_html_x( 'Author', 'Used before post author name.', 'vanilla' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
@@ -32,7 +34,8 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 			$categories_list = get_the_category_list( esc_html_x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
 			if ( $categories_list ) {
-				printf( '<span class="cat-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-category"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				printf(
+					'<span class="cat-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-category"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
 					esc_html_x( 'Categories', 'Used before category names.', 'vanilla' ),
 					wp_kses( $categories_list, wp_kses_allowed_html( 'post' ) )
 				);
@@ -40,7 +43,8 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'Used between list items, there is a space after the comma.', 'vanilla' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-tag"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				printf(
+					'<span class="tags-links entry-meta__item"><span class="entry-meta__icon dashicons dashicons-tag"></span><span class="screen-reader-text">%1$s </span>%2$s</span>',
 					esc_html_x( 'Tags', 'Used before tag names.', 'vanilla' ),
 					wp_kses( $tags_list, wp_kses_allowed_html( 'post' ) )
 				);
@@ -51,7 +55,8 @@ if ( ! function_exists( 'vanilla_entry_meta' ) ) :
 			// Retrieve attachment metadata.
 			$metadata = wp_get_attachment_metadata();
 
-			printf( '<span class="full-size-link entry-meta__item"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
+			printf(
+				'<span class="full-size-link entry-meta__item"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
 				esc_html_x( 'Full size', 'Used before full size attachment link.', 'vanilla' ),
 				esc_url( wp_get_attachment_url() ),
 				esc_html( $metadata['width'] ),

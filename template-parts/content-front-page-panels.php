@@ -31,15 +31,17 @@ global $vanillacounter;
 			<?php
 			// Show recent blog posts if is blog posts page (Note that get_option returns a string, so we're casting the result as an int).
 			if ( get_the_ID() === (int) get_option( 'page_for_posts' ) ) :
-			?>
+				?>
 
 				<?php
 				// Show four most recent posts.
-				$recent_posts = new WP_Query( array(
-					'post_status'         => 'publish',
-					'ignore_sticky_posts' => true,
-					'no_found_rows'       => true,
-				) );
+				$recent_posts = new WP_Query(
+					array(
+						'post_status'         => 'publish',
+						'ignore_sticky_posts' => true,
+						'no_found_rows'       => true,
+					)
+				);
 				?>
 
 				<?php if ( $recent_posts->have_posts() ) : ?>
@@ -63,10 +65,12 @@ global $vanillacounter;
 
 			<?php else : ?>
 				<?php
-				the_content( /* translators: %s: Name of current post */ sprintf(
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'vanilla' ),
-					get_the_title()
-				) );
+				the_content(
+					/* translators: %s: Name of current post */ sprintf(
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'vanilla' ),
+						get_the_title()
+					)
+				);
 				?>
 			<?php endif; ?>
 

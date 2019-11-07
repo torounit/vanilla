@@ -23,7 +23,7 @@
 		<header class="entry-header entry__header">
 			<?php
 			if ( is_sticky() && is_home() && ! is_paged() ) :
-			?>
+				?>
 				<div class="sticky-post">
 					<span class="dashicons dashicons-admin-post"></span>
 					<?php esc_html_e( 'Featured', 'vanilla' ); ?>
@@ -31,7 +31,7 @@
 
 				<?php
 			elseif ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) :
-			?>
+				?>
 
 				<p class="entry__posted-on posted-on">
 					<span class="dashicons dashicons-calendar"></span>
@@ -66,12 +66,14 @@
 				</div>
 
 				<?php
-				wp_link_pages( array(
-					'before'      => '<div class="page-links pagination">',
-					'after'       => '</div>',
-					'link_before' => '<span class="pagination__numbers">',
-					'link_after'  => '</span>',
-				) );
+				wp_link_pages(
+					array(
+						'before'      => '<div class="page-links pagination">',
+						'after'       => '</div>',
+						'link_before' => '<span class="pagination__numbers">',
+						'link_after'  => '</span>',
+					)
+				);
 			else :
 				?>
 				<div class="entry__content-body">
@@ -86,7 +88,7 @@
 		</div>
 		<?php
 		if ( is_singular() && ( comments_open() || get_comments_number() ) ) :
-		?>
+			?>
 			<?php comments_template(); ?>
 		<?php endif; ?>
 
