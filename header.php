@@ -57,10 +57,12 @@
 
 
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_class' => 'primary-menu__links',
-			) );
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'menu_class' => 'primary-menu__links',
+				)
+			);
 			?>
 
 
@@ -73,7 +75,7 @@
 			<div id="masthead" class="app-layout__spacer custom-header
 			<?php
 			if ( get_header_image() ) :
-?>
+				?>
  custom-header--has-image <?php endif; ?>" role="banner">
 				<div class="custom-header__media custom-header-media ">
 					<?php the_custom_header_markup(); ?>

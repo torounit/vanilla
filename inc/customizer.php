@@ -81,32 +81,45 @@ function vanilla_customize_register( WP_Customize_Manager $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'            => '.site-title a',
-			'container_inclusive' => false,
-			'render_callback'     => 'vanilla_customize_partial_blogname',
-		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'            => '.site-description',
-			'container_inclusive' => false,
-			'render_callback'     => 'vanilla_customize_partial_blogdescription',
-		) );
+		$wp_customize->selective_refresh->add_partial(
+			'blogname',
+			array(
+				'selector'            => '.site-title a',
+				'container_inclusive' => false,
+				'render_callback'     => 'vanilla_customize_partial_blogname',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'blogdescription',
+			array(
+				'selector'            => '.site-description',
+				'container_inclusive' => false,
+				'render_callback'     => 'vanilla_customize_partial_blogdescription',
+			)
+		);
 
 	}
 
 	foreach ( vanilla_get_customize_color_settings() as $key => $param ) {
 
 		// Add page background color setting and control.
-		$wp_customize->add_setting( $key, array(
-			'default'           => $param['default'],
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'         => 'postMessage',
-		) );
+		$wp_customize->add_setting(
+			$key,
+			array(
+				'default'           => $param['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage',
+			)
+		);
 
-		$control = new WP_Customize_Color_Control( $wp_customize, $key, array(
-			'label'   => $param['label'],
-			'section' => 'colors',
-		) );
+		$control = new WP_Customize_Color_Control(
+			$wp_customize,
+			$key,
+			array(
+				'label'   => $param['label'],
+				'section' => 'colors',
+			)
+		);
 
 		$wp_customize->add_control( $control );
 
@@ -122,10 +135,13 @@ add_action( 'customize_register', 'vanilla_customize_register', 11 );
  */
 function vanilla_setup_theme_options_panel( WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_panel( 'theme_options', array(
-		'title'    => __( 'Theme Options', 'vanilla' ),
-		'priority' => 130, // Before Additional CSS.
-	) );
+	$wp_customize->add_panel(
+		'theme_options',
+		array(
+			'title'    => __( 'Theme Options', 'vanilla' ),
+			'priority' => 130, // Before Additional CSS.
+		)
+	);
 
 	vanilla_setup_theme_options_front_page_section( $wp_customize );
 	vanilla_setup_theme_options_navbar_section( $wp_customize );
@@ -143,10 +159,13 @@ function vanilla_setup_theme_options_front_page_section( WP_Customize_Manager $w
 	/**
 	 * Theme options.
 	 */
-	$wp_customize->add_section( 'front_page', array(
-		'title' => __( 'Front Page', 'vanilla' ),
-		'panel' => 'theme_options',
-	) );
+	$wp_customize->add_section(
+		'front_page',
+		array(
+			'title' => __( 'Front Page', 'vanilla' ),
+			'panel' => 'theme_options',
+		)
+	);
 
 	/**
 	 * Filter number of front page sections in Twenty Seventeen.
@@ -159,47 +178,62 @@ function vanilla_setup_theme_options_front_page_section( WP_Customize_Manager $w
 
 	// Create a setting and control for each of the sections available in the theme.
 	for ( $i = 1; $i < ( 1 + $num_sections ); $i ++ ) {
-		$wp_customize->add_setting( 'panel_' . $i, array(
-			'default'           => false,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		) );
+		$wp_customize->add_setting(
+			'panel_' . $i,
+			array(
+				'default'           => false,
+				'sanitize_callback' => 'absint',
+				'transport'         => 'postMessage',
+			)
+		);
 
 		/* @noinspection SqlNoDataSourceInspection */
-		$wp_customize->add_control( 'panel_' . $i, array(
-			/* translators: %d is the front page section number */
-			'label'           => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
-			'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
-			'section'         => 'front_page',
-			'type'            => 'dropdown-pages',
-			'allow_addition'  => true,
-			'active_callback' => 'vanilla_is_static_front_page',
-		) );
+		$wp_customize->add_control(
+			'panel_' . $i,
+			array(
+				/* translators: %d is the front page section number */
+				'label'           => sprintf( __( 'Front Page Section %d Content', 'vanilla' ), $i ),
+				'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'vanilla' ) ),
+				'section'         => 'front_page',
+				'type'            => 'dropdown-pages',
+				'allow_addition'  => true,
+				'active_callback' => 'vanilla_is_static_front_page',
+			)
+		);
 
-		$wp_customize->selective_refresh->add_partial( 'panel_' . $i, array(
-			'selector'            => '#panel' . $i,
-			'render_callback'     => 'vanilla_front_page_section',
-			'container_inclusive' => true,
-		) );
+		$wp_customize->selective_refresh->add_partial(
+			'panel_' . $i,
+			array(
+				'selector'            => '#panel' . $i,
+				'render_callback'     => 'vanilla_front_page_section',
+				'container_inclusive' => true,
+			)
+		);
 	}
 
-	$wp_customize->add_setting( 'posts_layout_on_front_page', array(
-		'default'           => 'list',
-		'sanitize_callback' => 'vanilla_sanitize_posts_layout_on_front_page',
-		'transport'         => 'postMessage',
-	) );
+	$wp_customize->add_setting(
+		'posts_layout_on_front_page',
+		array(
+			'default'           => 'list',
+			'sanitize_callback' => 'vanilla_sanitize_posts_layout_on_front_page',
+			'transport'         => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control( 'posts_layout_on_front_page', array(
-		'label'           => __( 'Posts Layout on Front Page', 'vanilla' ),
-		'description'     => __( 'Select style for posts list', 'vanilla' ),
-		'section'         => 'front_page',
-		'type'            => 'radio',
-		'choices'         => array(
-			'list'  => __( 'list', 'vanilla' ),
-			'block' => __( 'block', 'vanilla' ),
-		),
-		'active_callback' => 'vanilla_is_static_front_page',
-	) );
+	$wp_customize->add_control(
+		'posts_layout_on_front_page',
+		array(
+			'label'           => __( 'Posts Layout on Front Page', 'vanilla' ),
+			'description'     => __( 'Select style for posts list', 'vanilla' ),
+			'section'         => 'front_page',
+			'type'            => 'radio',
+			'choices'         => array(
+				'list'  => __( 'list', 'vanilla' ),
+				'block' => __( 'block', 'vanilla' ),
+			),
+			'active_callback' => 'vanilla_is_static_front_page',
+		)
+	);
 }
 
 /**
@@ -228,34 +262,49 @@ add_filter( 'body_class', 'vanilla_customizer_postlist_body_class' );
  */
 function vanilla_setup_theme_options_navbar_section( WP_Customize_Manager $wp_customize ) {
 
-	$wp_customize->add_section( 'navbar', array(
-		'title' => __( 'Navbar', 'vanilla' ),
-		'panel' => 'theme_options',
-	) );
+	$wp_customize->add_section(
+		'navbar',
+		array(
+			'title' => __( 'Navbar', 'vanilla' ),
+			'panel' => 'theme_options',
+		)
+	);
 
-	$wp_customize->add_setting( 'navbar_transparent_at_front_page', array(
-		'default'           => 0,
-		'sanitize_callback' => 'absint',
-		'transport'         => 'postMessage',
-	) );
+	$wp_customize->add_setting(
+		'navbar_transparent_at_front_page',
+		array(
+			'default'           => 0,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control( 'navbar_transparent_at_front_page', array(
-		'label'   => __( 'Transparent Navbar at Front Page', 'vanilla' ),
-		'section' => 'navbar',
-		'type'    => 'checkbox',
-	) );
+	$wp_customize->add_control(
+		'navbar_transparent_at_front_page',
+		array(
+			'label'   => __( 'Transparent Navbar at Front Page', 'vanilla' ),
+			'section' => 'navbar',
+			'type'    => 'checkbox',
+		)
+	);
 
-	$wp_customize->add_setting( 'navbar_transparent_at_post_with_thumbnail', array(
-		'default'           => 0,
-		'sanitize_callback' => 'absint',
-		'transport'         => 'postMessage',
-	) );
+	$wp_customize->add_setting(
+		'navbar_transparent_at_post_with_thumbnail',
+		array(
+			'default'           => 0,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control( 'navbar_transparent_at_post_with_thumbnail', array(
-		'label'   => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
-		'section' => 'navbar',
-		'type'    => 'checkbox',
-	) );
+	$wp_customize->add_control(
+		'navbar_transparent_at_post_with_thumbnail',
+		array(
+			'label'   => __( 'Transparent Navbar on Post with Thumbnail', 'vanilla' ),
+			'section' => 'navbar',
+			'type'    => 'checkbox',
+		)
+	);
 }
 
 /**
@@ -388,13 +437,19 @@ add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_controls_js
  * Customizer default value.
  */
 function vanilla_customize_control_js() {
-	wp_enqueue_script( 'vanilla-customize-color', get_template_directory_uri() . '/assets/scripts/customizer/color.js', array(
-		'customize-controls',
-		'customize-preview',
-		'iris',
-		'underscore',
-		'wp-util',
-	), '1.0.0', true );
+	wp_enqueue_script(
+		'vanilla-customize-color',
+		get_template_directory_uri() . '/assets/scripts/customizer/color.js',
+		array(
+			'customize-controls',
+			'customize-preview',
+			'iris',
+			'underscore',
+			'wp-util',
+		),
+		'1.0.0',
+		true
+	);
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'vanilla_customize_control_js' );

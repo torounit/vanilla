@@ -15,31 +15,47 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'editor-styles' );
+		add_theme_support( 'responsive-embeds' );
+
+		// Adding support for core block visual styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
 		add_editor_style( get_stylesheet_uri() );
 
 		add_image_size( 'vanilla-featured-image', 1920, 960, true );
 
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'vanilla' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => esc_html__( 'Primary Menu', 'vanilla' ),
+			)
+		);
 
 		/**
 		 * Add support for core custom logo.
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 150,
-			'width'       => 150,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 150,
+				'width'       => 150,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Indicate widget sidebars can use selective refresh in the Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -81,15 +97,17 @@ add_action( 'after_setup_theme', 'vanilla_content_width', 0 );
  */
 function vanilla_widgets_init() {
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer primary widget area', 'vanilla' ),
-		'id'            => 'footer-primary-widget',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title widget__title">',
-		'after_title'   => '</h4>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer primary widget area', 'vanilla' ),
+			'id'            => 'footer-primary-widget',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title widget__title">',
+			'after_title'   => '</h4>',
+		)
+	);
 
 	$column        = apply_filters( 'vanilla_footer_secondary_widget_column', 1 );
 	$column_small  = apply_filters( 'vanilla_footer_secondary_widget_column_small', 2 );
@@ -102,25 +120,29 @@ function vanilla_widgets_init() {
 		$column_medium,
 		$column_large
 	);
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer secondary widget area', 'vanilla' ),
-		'id'            => 'footer-secondary-widget',
-		'description'   => '',
-		'before_widget' => '<div class="' . esc_attr( $class_name ) . '"><section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section></div>',
-		'before_title'  => '<h4 class="widget-title widget__title">',
-		'after_title'   => '</h4>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer secondary widget area', 'vanilla' ),
+			'id'            => 'footer-secondary-widget',
+			'description'   => '',
+			'before_widget' => '<div class="' . esc_attr( $class_name ) . '"><section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section></div>',
+			'before_title'  => '<h4 class="widget-title widget__title">',
+			'after_title'   => '</h4>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'The tail of site main area', 'vanilla' ),
-		'id'            => 'site-main-tail-widget',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title widget__title">',
-		'after_title'   => '</h4>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'The tail of site main area', 'vanilla' ),
+			'id'            => 'site-main-tail-widget',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title widget__title">',
+			'after_title'   => '</h4>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'vanilla_widgets_init' );
@@ -135,14 +157,24 @@ function vanilla_scripts() {
 		wp_enqueue_style( get_template() . '-style', get_template_directory_uri() . '/style.css', array( 'dashicons' ), $version );
 	}
 	wp_enqueue_style( get_stylesheet() . '-style', get_stylesheet_uri(), array( 'dashicons' ), $version );
-	wp_enqueue_script( 'vanilla-script', get_template_directory_uri() . '/bundle.js', array(
-		'jquery',
-		'underscore',
-	), $version, true );
-	wp_localize_script( 'vanilla-script', 'screenReaderText', array(
-		'expand'   => __( 'expand child menu', 'vanilla' ),
-		'collapse' => __( 'collapse child menu', 'vanilla' ),
-	) );
+	wp_enqueue_script(
+		'vanilla-script',
+		get_template_directory_uri() . '/bundle.js',
+		array(
+			'jquery',
+			'underscore',
+		),
+		$version,
+		true
+	);
+	wp_localize_script(
+		'vanilla-script',
+		'screenReaderText',
+		array(
+			'expand'   => __( 'expand child menu', 'vanilla' ),
+			'collapse' => __( 'collapse child menu', 'vanilla' ),
+		)
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

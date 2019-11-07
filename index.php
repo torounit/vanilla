@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<?php
 			if ( have_posts() ) :
-			?>
+				?>
 				<?php if ( ! is_front_page() ) : ?>
 					<header class="archive-header">
 						<div class="container">
@@ -46,13 +46,15 @@ get_header(); ?>
 					get_template_part( 'template-parts/content' );
 				endwhile;
 
-				the_posts_pagination( array(
-					'prev_text'          => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
-					'next_text'          => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
-					'before_page_number' => '<span class="pagination__numbers">',
-					'after_page_number'  => '</span>',
+				the_posts_pagination(
+					array(
+						'prev_text'          => '<span class="pagination__arrow dashicons dashicons-arrow-left-alt2"></span><span class="screen-reader-text">Prev</span>',
+						'next_text'          => '<span class="pagination__arrow dashicons dashicons-arrow-right-alt2"></span><span class="screen-reader-text">Next</span>',
+						'before_page_number' => '<span class="pagination__numbers">',
+						'after_page_number'  => '</span>',
 
-				) );
+					)
+				);
 				?>
 
 				<?php
