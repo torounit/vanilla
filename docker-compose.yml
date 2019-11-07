@@ -1,11 +1,26 @@
 version: '3.1'
 services:
-  wordpress:
-    image: wordpress
+
+  nginx:
+    shm_size: 64mb
+    image: nginx:1-alpine
     depends_on:
-      - mysql
+      - wordpress
     ports:
       - ${PORT}:80
+    volumes:
+      - ./conf/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - wordpress:/var/www/html
+      - .:/var/www/html/wp-content/themes/vanilla
+      - .:/home/www-data/app
+
+  # WordPress
+  #
+  wordpress:
+    shm_size: 256mb
+    image: wordpress:fpm-alpine
+    depends_on:
+      - mysql
     environment:
       WORDPRESS_DB_PASSWORD: wordpress
       ABSPATH: /usr/src/wordpress/
@@ -13,9 +28,20 @@ services:
       - wordpress:/var/www/html
       - .:/var/www/html/wp-content/themes/vanilla
 
+  site-perms-helper:
+    image: alpine:3.8
+    depends_on:
+      - wordpress
+    restart: "no"
+    volumes:
+      - wordpress:/var/www/html
+      - .:/var/www/html/wp-content/themes/vanilla
+    command: /bin/ash -c "chmod 767 /var/www/html/wp-content && chmod 767 /var/www/html/wp-content/plugins"
+
   cli:
     image: wordpress:cli
-    user: xfs
+    depends_on:
+      - site-perms-helper
     volumes:
       - ./bin:/opt/bin
       - wordpress:/var/www/html
@@ -28,21 +54,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress_test
-
-  wordpress_phpunit:
-    image: chriszarate/wordpress-phpunit
-    environment:
-      PHPUNIT_DB_HOST: mysql
-    volumes:
-      - .:/app
-      - testsuite:/tmp
-
-  backstopjs:
-    shm_size: 2gb
-    image: torounit/backstopjs-noto
-    network_mode: host
-    volumes:
-      - .:/src
 
 volumes:
   testsuite:

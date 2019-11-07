@@ -15,6 +15,14 @@ if ( ! function_exists( 'vanilla_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'editor-styles' );
+		add_theme_support( 'responsive-embeds' );
+
+		// Adding support for core block visual styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
 		add_editor_style( get_stylesheet_uri() );
 
 		add_image_size( 'vanilla-featured-image', 1920, 960, true );
