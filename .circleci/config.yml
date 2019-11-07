@@ -42,13 +42,7 @@ jobs:
           command: docker-compose run --rm -u root cli chmod 767 /var/www/html/wp-content
 
       - run:
-          command: docker-compose run --rm -u root cli chmod -R 767 /var/www/html/wp-content/uploads
-
-      - run:
           command: docker-compose run --rm -u root cli chmod 767 /var/www/html/wp-content/plugins
-
-      - run:
-          command: docker-compose run --rm -u root cli chmod 767 /var/www/html/wp-content/languages
 
 
       # setup wordpress
