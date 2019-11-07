@@ -5,7 +5,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - 9000:80
+      - ${PORT}:80
     environment:
       WORDPRESS_DB_PASSWORD: wordpress
       ABSPATH: /usr/src/wordpress/

@@ -38,6 +38,12 @@ services:
       - .:/var/www/html/wp-content/themes/vanilla
     command: /bin/ash -c "chmod 767 /var/www/html/wp-content && chmod 767 /var/www/html/wp-content/plugins"
 
+  backstopjs:
+    shm_size: 2gb
+    image: torounit/backstopjs-noto
+    network_mode: host
+    volumes:
+      - .:/src
   cli:
     image: wordpress:cli
     depends_on:
