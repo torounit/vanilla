@@ -41,7 +41,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
     "gulp-zip": "^4.1.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.6",
     "node-jq": "^1.10.3",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.1"
